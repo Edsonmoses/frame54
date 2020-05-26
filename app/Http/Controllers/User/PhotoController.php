@@ -70,7 +70,7 @@ class PhotoController extends Controller
             'subtitle' => 'required',
             'slug' => 'required',
             'body' => 'required',
-            'image' => 'required',
+            'image' => 'required|min:2560',
             'visit_count' => 'nullable',
             ]);
         if ($request->hasFile('image')) {
@@ -137,7 +137,7 @@ class PhotoController extends Controller
             'subtitle' => 'required',
             'slug' => 'required',
             'body' => 'required',
-            'image'=>'required',
+            'image'=>'nullable',
             'visit_count' => 'nullable',
             ]);
         if ($request->hasFile('image')) {
