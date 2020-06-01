@@ -38,4 +38,9 @@ class HomeController extends Controller
         }
     	return view('home',compact('posts'));
     }
+
+    public function categories(category $category) {
+        $categories = Category::all();
+        return view('user.blog',compact('categories'));
+     }
 }

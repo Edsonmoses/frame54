@@ -18,19 +18,31 @@ use ZipArchive;
 
 class PostController extends Controller
 {
+
     public function post(post $post)
     {
+        $Key = 'blog' . $post->id;
+        if (\Session::has($Key)) {
+    
+        \DB::table('posts')
+           ->where('id', $post->id)
+           ->increment('visit_count', 1);
+         \Session::put($Key, 1);
+       }
     	return view('user.post',compact('post'));
     }
 
     public function getAllPosts()
     {
-		$postKey = 'blog' . $post->id;
-        if(!Session::has($postKey)){
-            $post->increment('visit_count');
-            Session::put($postKey,1);
-        }
-    	return $posts = post::with('likes')->where('status',1)->orderBy('created_at','DESC')->paginate(2000000);
+        $Key = 'blog' . $post->id;
+        if (\Session::has($Key)) {
+    
+        \DB::table('posts')
+           ->where('id', $post->id)
+           ->increment('visit_count', 1);
+         \Session::put($Key, 1);
+       }
+    	return $posts = post::with('likes')->where('status',1)->orderBy('created_at','DESC')->paginate(6);
     }
 
     public function saveLike(request $request)
@@ -46,6 +58,10 @@ class PostController extends Controller
 	    	$like->save();
     	}
 	}
-
+	public function category(category $category)
+    {
+        $posts = $category->posts();
+        return view('user.blog',compact('posts'));
+    }
 
 }

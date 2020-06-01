@@ -24,11 +24,14 @@ class PhotoController extends Controller
     	
 	public function submitPhoto(Request $request)
     {
-        	$postKey = 'blog' . $post->id;
-        if(!Session::has($postKey)){
-            $post->increment('visit_count');
-            Session::put($postKey,1);
-        }
+        $Key = 'blog' . $post->id;
+        if (\Session::has($Key)) {
+    
+        \DB::table('posts')
+           ->where('id', $post->id)
+           ->increment('visit_count', 1);
+         \Session::put($Key, 1);
+       }
 		$tags =tag::all();
         $categories =category::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(6);

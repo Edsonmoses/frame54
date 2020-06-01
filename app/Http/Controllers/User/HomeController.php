@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
        
-        $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(9);
+        $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(6);
         if ($request->ajax()) {
 
     		$view = view('user.data',compact('posts'))->render();
@@ -37,4 +37,10 @@ class HomeController extends Controller
         $posts = $category->posts();
         return view('user.blog',compact('posts'));
     }
+
+    public function categories(category $category) {
+        $categories = Category::all();
+        return view('user.blog',compact('categories'));
+     }
+
 }

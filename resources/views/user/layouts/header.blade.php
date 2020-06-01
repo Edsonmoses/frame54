@@ -13,7 +13,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-left">
                 <li>
                     <div class="search-container">
                         <form action="{{ route('search') }}" method="GET" role="search">
@@ -22,25 +22,49 @@
                         <input class="form-control" placeholder="Search . . ." name="term" id="ed-srch-term" type="text">
                         <div class="input-group-btn">
                         <button type="submit" id="searchbtn">
-                        search</button>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
                         </div>
                         </div>
                         </form>
                    </div>
                 </li>
-
+            </ul>
+                <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ url('/') }}">Home</a>
+                    <a href="#">Topics</a>
                 </li>
                 <li>
-                    <a href="profile">About</a>
+                    <a href="#">Explore</a>
                 </li>
-                <li>
+                <li class="dropdown">
+                    <a href="#" onclick="myFunction()" class="dropbtn">....</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <i class="fa fa-caret-up"></i>
+                        <p></p>
+                        <a href="about">About</a>
+                        <a href="wallpapers">Wallpapers</a>
+                        <a href="blog">Blog</a>
+                        <a href="collections">Collections</a>
+                        <a href="community">Community</a>
+                        <a href="history">History</a>
+                        <a href="blog">Made with Frame54</a>
+                        <a href="#" class="twitter"><i class="fa fa-twitter-square " aria-hidden="true"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook-square " aria-hidden="true"></i></a>
+                        <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <hr/>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">License</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Join the team</a></li>
+                        </ul>
+                      </div>
+                </li>
+                <li class="submitPhoto">
                     <a href="{{ route('submitPhoto') }}">Submit Photo</a>
                 </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
+                <li><div class="divider"></div></li>
                 <li>
                     @if (Auth::guest())
                         <a href="{{ route('login') }}">Login</a>
@@ -66,7 +90,7 @@
                      </a>
                     @endif
                 </li>
-                <li>
+                <li class="joinUs">
                     @if (Auth::guest())
                      <a href="{{ route('register') }}" style="margin-left:-40px">Join Us</a>
                      @endif
@@ -77,86 +101,35 @@
             </ul>
         </div>
         <!-- /.navbar-collapse -->
-        <ul class="nav navbar-nav pull-sm-left menu2">
-            <li>
-                <a href="a">A</a>
-            </li>
-            <li>
-                <a href="b">B</a>
-            </li>
-            <li>
-                <a href="c">C</a>
-            </li>
-            <li>
-                <a href="d">D</a>
-            </li>
-            <li>
-                <a href="e">E</a>
-            </li>
-            <li>
-                <a href="f">F</a>
-            </li>
-            <li>
-                <a href="g">G</a>
-            </li>
-            <li>
-                <a href="d">H</a>
-            </li>
-            <li>
-                <a href="i">I</a>
-            </li>
-            <li>
-                <a href="j">J</a>
-            </li>
-            <li>
-                <a href="k">K</a>
-            </li>
-            <li>
-                <a href="l">L</a>
-            </li>
-            <li>
-                <a href="m">M</a>
-            </li>
-            <li>
-                <a href="n">N</a>
-            </li>
-            <li>
-                <a href="o">O</a>
-            </li>
-            <li>
-                <a href="p">P</a>
-            </li>
-            <li>
-                <a href="q">Q</a>
-            </li>
-            <li>
-                <a href="r">R</a>
-            </li>
-            <li>
-                <a href="s">S</a>
-            </li>
-            <li>
-                <a href="t">T</a>
-            </li>
-            <li>
-                <a href="u">U</a>
-            </li>
-            <li>
-                <a href="v">V</a>
-            </li>
-            <li>
-                <a href="w">W</a>
-            </li>
-            <li>
-                <a href="x">X</a>
-            </li>
-            <li>
-                <a href="y">Y</a>
-            </li>
-            <li>
-                <a href="z">Z</a>
-            </li>
-        </ul>
+        <!--/.scrollmenu-->
+        <div class="scrollmenus">
+            <a href="#Editorial" class="active-scroll">Editorial<span class="first-child"></span></a>
+         <div class="scrollmenu">
+            <a href="animals">Animals</a>
+            <a href="athletics">Athletics</a>
+            <a href="arts-&-culture">Arts & Culture</a>
+            <a href="business-&-work">Business & Work</a>
+            <a href="current-events">Current Events</a>
+            <a href="fashion">Fashion</a>
+            <a href="travel">Travel</a>
+            <a href="history">History</a>
+            <a href="film">Film</a>
+            <a href="technology">Technology</a>
+            <a href="health-&-wellness">Health & Wellness</a>
+            <a href="nature">Nature</a>
+            <a href="spirituality">Spirituality</a>
+            <a href="food-&-drink">Food & Drink</a>
+            <a href="people">People</a>
+            <a href="textures-&-patterns">Textures & Patterns</a>
+            <a href="experimental">Experimental</a>
+            <a href="wallpapers">Wallpapers</a>
+            <a href="interiors">Interiors</a>
+            <a href="editorial">Editorial</a>
+            <a href="family">Family</a>
+            <a href="athletics">Athletics</a>
+          </div>
+          <a class="scroll-right" href="#View all">View all</a>
+        </div>
     </div>
     <!-- /.container -->
 </nav>
@@ -176,7 +149,7 @@
                         <input class="form-control" placeholder="Search . . ." name="term" id="ed-srch-term" type="text">
                         <div class="input-group-btn">
                         <button type="submit" id="searchbtn">
-                        search</button>
+                        <i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                         </div>
                         </form>
