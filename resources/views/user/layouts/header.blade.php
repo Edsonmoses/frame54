@@ -7,7 +7,7 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src= "{{ public_path('user/img/Frame54-G.svg')}}" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -137,7 +137,7 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 
-<header class="intro-header" style="background-image: url(@yield('bg-img'))">
+<header class="intro-header" style="background-image: url( @yield('bg-img'))">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
