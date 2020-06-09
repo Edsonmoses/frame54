@@ -52,6 +52,17 @@
         $('#myModal').modal('show');
             }); 
 
+            $(".gal").masonry();
+
+            $('.post').hover( 
+                function(){
+                    $('#content').masonry('reload');
+                },
+                function(){
+                    $('#content').masonry('reload');
+                }                     
+            );
+
     </script>
 
    <!-- //infinty loading -->

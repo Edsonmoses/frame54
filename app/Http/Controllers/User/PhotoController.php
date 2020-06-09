@@ -24,14 +24,6 @@ class PhotoController extends Controller
     	
 	public function submitPhoto(Request $request)
     {
-        $Key = 'blog' . $post->id;
-        if (\Session::has($Key)) {
-    
-        \DB::table('posts')
-           ->where('id', $post->id)
-           ->increment('visit_count', 1);
-         \Session::put($Key, 1);
-       }
 		$tags =tag::all();
         $categories =category::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(6);
@@ -180,5 +172,6 @@ class PhotoController extends Controller
         $pathToFile = storage_path('app\\'. $post->image);
         \Zipper::make(storage_path('app\\'. $post->image.'.zip'))->add($pathToFile)->close();
         return response()->download(storage_path('app\\'. $post->image.'.zip'));
-	 }
+     }
+     
 }

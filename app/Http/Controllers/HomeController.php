@@ -8,6 +8,7 @@ use App\Model\user\post;
 use App\Model\user\tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $categories =category::all();
+        $tags =tag::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(6);
         if ($request->ajax()) {
 
@@ -36,11 +39,8 @@ class HomeController extends Controller
             return response()->json(['html'=>$view]);
 
         }
-    	return view('home',compact('posts'));
+    	return view('home',compact('posts','categories','tags'));
     }
 
-    public function categories(category $category) {
-        $categories = Category::all();
-        return view('user.blog',compact('categories'));
-     }
+   
 }

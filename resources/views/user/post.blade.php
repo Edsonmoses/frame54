@@ -24,40 +24,61 @@
 
 				<img src= "{{ Storage::disk('local')->url($post->image)}}" alt="">
             </div>
-            <div class="col-lg-4 col-md-4">
-                
+            <div class="col-lg-4 col-md-4 download-cont">
+                <img alt="{{ Auth::user()->name }}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image2" class="img-circle img-responsive"> {{Auth::user()->name}}
+                <div class="fbtn donate">DONATE</div><div class="fbtn follow">FOLLOW</div>
+                <div style="clear:both"></div>
+                <hr/>
+                <span class="imgspan">images</span>
                 <hr/>
                 <div class="download">
-                    <a href="{{ route('photo.download', $post->id) }}" target="_blank"><small class="btns"><i class="fa fa-download" aria-hidden="true"></i> Free Download </small></a><br/>
+                    <a href="{{ route('photo.download', $post->id) }}" target="_blank"><small class="btns">FREE DOWNLOAD <small class="minus">|</small><i class="fa fa-arrow-down" aria-hidden="true"></i></small></a><br/>
                 </div>
                 <div class="license">
                     <a href="#"><small>Frame54 License</small></a><br/>
                     <small>Free for commercial use </small><br/>
                     <small>No attribution required </small><br/>
                 </div>
-                <div class="like-us">
-                    <small>Like Frame54 on Facebook</small><br/>
-                </div>
-                <div class="related-images">
-                <small>Related Images</small><br/>
-                </div>
                 <div class="item-deitals">
-                    <small>Image type  <span class="pull-right">{{substr ($post->image, -4)}}</span></small><br/>
-                    <small>Resolution  <span class="pull-right"></span></small><br/>
-                    <small>Created       <span class="pull-right">{{ \Carbon\Carbon::parse($post->created_at)->format('d/M/Y') }}<span></small><br/>
-                    <small>Uploaded      <span class="pull-right">{{ \Carbon\Carbon::parse($post->updated_at)->format('d/M/Y') }}<span></small><br/>
+                    <hr/>
+                    <small>Image type  <span class="pull-right">{{substr ($post->image, -4)}}</span></small>
+                    <hr/>
+                    <small>Resolution  <span class="pull-right"></span></small>
+                    <hr/>
+                    <small>Created       <span class="pull-right">{{ \Carbon\Carbon::parse($post->created_at)->format('d/M/Y') }}<span></small>
+                    <hr/>
+                    <small>Uploaded      <span class="pull-right">{{ \Carbon\Carbon::parse($post->updated_at)->format('d/M/Y') }}<span></small>
+                    <hr/>
                     <small>Category  
                          @foreach ($post->categories as $category)
                          <span class="pull-right"> 
                             <a href="{{ route('category',$category->slug) }}">{{ $category->name }}</a>
                         </span>
                         @endforeach
-                    </small><br/>
-                    <small>Views <span class="pull-right">{{$post->visit_count}}</span></small><br/>
-                    <small>Downloads <span class="pull-right">{{$post->downloads}}</span></small><br/>
+                    </small>
+                    <hr/>
+                    <small>Views <span class="pull-right">{{$post->visit_count}}</span></small>
+                    <hr/>
+                    <small>Downloads <span class="pull-right">{{$post->downloads}}</span></small>
+                    <hr/>
+                    <small>TAGS
+                        @foreach ($post->tags as $tag)
+                        {{ $tag->name }}
+                        @endforeach
+                    </small>
                 </div>
             </div>
         </div>
+        <p>Sponsored Images/Content</p>
+       <p> SIMILAR PHOTOS</p>
+       @if($related->isEmpty())
+   No Related Frame54 Images
+@else
+<div class="gal" id="post-data">
+    @include('user/data')
+    </div>
+</div>
+@endif
     </div>
 </article>
 

@@ -14,7 +14,8 @@ class post extends Model
 
     public function categories()
     {
-    	return $this->belongsToMany('App\Model\user\category','category_posts')->withTimestamps();;
+        return $this->belongsToMany('App\Model\user\category','category_posts')->withTimestamps();
+        
     }
 
     public function getRouteKeyName()
@@ -35,5 +36,9 @@ class post extends Model
     public function getSlugAttribute($value)
     {
         return route('post',$value);
+    }
+
+    public function posts(){
+        return $this->hasMany('App\Post');
     }
 }

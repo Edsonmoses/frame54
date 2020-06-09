@@ -4,13 +4,20 @@
 @section('head')
 
 @endsection
-@section('title','Welcome to Home')
-@section('sub-heading','')
+@section('title','FREE Afrocentric stock photos & videos shared by creators everywhere.')
+@section('sub-heading','Trending: ')
 
 @section('main-content')
 	<!-- Main Content -->
 	<div class="container">
+		<!--/.scrollmenu-->
+		<div class="scrollmenu">
+			@foreach ($categories as $category) 
+				<a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
+		   @endforeach
+		  </div><br/><br/>
 	    <div class="row" id="app">
+			<h3>Free PanAfrican Stock Photos</h3>
 		<div class="gal" id="post-data">
             @include('user/data')
             </div>

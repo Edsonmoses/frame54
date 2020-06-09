@@ -1,8 +1,8 @@
 @extends('user/layouts/app')
 
 @section('bg-img',asset('user/img/home-bg.jpg'))
-@section('title','Share Creativity & Imagination')
-@section('sub-heading','Find your place among the world’s best photographers.')
+@section('title','FREE Afrocentric stock photos & videos shared by creators everywhere.')
+@section('sub-heading','Trending: ')
 @section('head')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 	<style>
@@ -14,6 +14,13 @@
 @section('main-content')
 	<!-- Main Content -->
 	<div class="container">
+		 <!--/.scrollmenu-->
+		 <div class="scrollmenu">
+			@foreach ($categories as $category) 
+				<a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
+		   @endforeach
+		  </div><br/>
+		 
 	    <div class="row" id="app">
 		<div class="gal" id="post-data">
             @include('user/data')
