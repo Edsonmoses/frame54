@@ -42,8 +42,11 @@
                 </li>
                 <li class="joinUs">
                     @if (Auth::guest())
-                     <a href="{{ route('login') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                     <a href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
                         UPLOAD</a>
+                    @else
+                        <a href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                            UPLOAD</a>
                      @endif
                 </li>
             </ul>

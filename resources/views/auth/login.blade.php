@@ -17,6 +17,16 @@
       
           <!-- Icon -->
           <div class="fadeIn first"  style="padding-top:10px;">
+            @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if (session('warning'))
+            <div class="alert alert-warning">
+                {{ session('warning') }}
+            </div>
+        @endif
             <img  style="display:none" src="/uploads/avatars/{{Auth::user()->avatar}}" id="icon" alt="User Icon" />
           </div>
       

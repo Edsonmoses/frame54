@@ -31,10 +31,13 @@ class HomeController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
-        $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(6);
+        $posts = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')
+        ->paginate(6);
         if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts'))->render();
+    		$view = view('user.data',compact('posts','categories','tags'))->render();
 
             return response()->json(['html'=>$view]);
 

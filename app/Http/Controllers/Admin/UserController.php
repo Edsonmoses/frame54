@@ -116,6 +116,7 @@ class UserController extends Controller
         return redirect(route('user.index'))->with('message','User updated successfully');
     }
 
+
     /**
      * Remove the specified resource from storage.
      *

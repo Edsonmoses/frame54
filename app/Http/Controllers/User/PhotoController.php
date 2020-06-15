@@ -26,15 +26,22 @@ class PhotoController extends Controller
     {
 		$tags =tag::all();
         $categories =category::all();
-        $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(6);
+        $posts = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id','users.name','users.avatar','users.terms','users.termsimg'])
+        ->join('users','users.id','=','posts.posted_by')
+        ->paginate(6);
         if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts'))->render();
+    		$view = view('user.data',compact('posts','categories'))->render();
 
             return response()->json(['html'=>$view]);
 
         }
-		return view('user.submitPhoto',compact('posts', 'tags','categories'));
+        if (!empty($posts->terms) && !empty($posts->termsimg)){
+          return view('user.terms',compact('posts', 'tags','categories'));
+        }else{
+        return view('user.submitPhoto',compact('posts', 'tags','categories'));
+        }
 	}
 	
     /**
@@ -113,6 +120,7 @@ class PhotoController extends Controller
             $post = post::with('tags','categories')->where('id',$id)->first();
             $tags =tag::all();
             $categories =category::all();
+          
             return view('user.submitPhotoedit',compact('tags','categories','post'));
         }
         return redirect(route('submitPhoto'));
@@ -146,9 +154,21 @@ class PhotoController extends Controller
         $post->body = $request->body;
         $post->status = $request->status;
         $post->visit_count = $request->visit_count;
+        $post->terms = $request->terms;
+        $post->termsimg = $request->termsimg;
         $post->tags()->sync($request->tags);
         $post->categories()->sync($request->categories);
         $post->save();
+
+        return redirect(route('submitPhoto'));
+    }
+
+    public function termsUpdate(Request $request)
+    {
+        $user = Auth::user();
+        $user->terms = $request->terms;
+        $user->termsimg = $request->termsimg;
+        $user->save();
 
         return redirect(route('submitPhoto'));
     }

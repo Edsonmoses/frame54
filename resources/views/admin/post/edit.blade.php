@@ -55,15 +55,35 @@
               <div class="col-lg-6">
                 <br>
                 <div class="form-group">
+                  <div class="checkbox pull-left">
+                  <label style="margin-right:70px;">
+                      <input type="checkbox" name="status" value="1" @if ($post->status == 1)
+                        {{'checked'}}
+                      @endif> Publish
+                    </label>
+                    <label style="margin-right:70px;">
+                      <input type="checkbox" name="ads" value="1" @if ($post->ads == 1)
+                        {{'checked'}}
+                      @endif> ADs
+                    </label>
+                    <label>
+                      <input type="checkbox" name="sponsored_images" value="1" @if ($post->sponsored_images == 1)
+                        {{'checked'}}
+                      @endif> Sponsored image
+                    </label>
+                  </div>
+                </div>
+                <br><br>
+                <div class="form-group">
                   <div class="pull-right">
                     <label for="image">File input</label>
                     <input type="file" name="image" id="image">
                   </div>
                   <div class="checkbox pull-left">
                     <label>
-                      <input type="checkbox" name="status" value="1" @if ($post->status == 1)
+                      <input type="checkbox" name="featured" value="1" @if ($post->featured == 1)
                         {{'checked'}}
-                      @endif> Publish
+                      @endif> Featured image
                     </label>
                   </div>
                 </div>

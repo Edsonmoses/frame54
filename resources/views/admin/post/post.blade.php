@@ -52,7 +52,19 @@
                 
               </div>
               <div class="col-lg-6">
-                            <br>
+                            <div class="checkbox pull-left">
+                              <label style="margin-right:70px;">
+                                  <input type="checkbox" name="status" value="1"> Publish
+                                </label>
+                                <label style="margin-right:70px;">
+                                  <input type="checkbox" name="ads" value="1"> ADs
+                                </label>
+                                <label>
+                                  <input type="checkbox" name="sponsored_image" value="1" > Sponsored image
+                                </label>
+                              </div>
+                            </div>
+                            <br><br>
                               <div class="form-group">
                                 <div class="pull-right">
                                   <label for="image">File input</label>
@@ -60,7 +72,7 @@
                                 </div>
                                 <div class="checkbox pull-left">
                                   <label>
-                                    <input type="checkbox" name="status" value="1"> Publish
+                                    <input type="checkbox" name="featured" value="1"> Featured image
                                   </label>
                                 </div>
                               </div>

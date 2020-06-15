@@ -431,9 +431,14 @@ class ComposerStaticInit756d3c1cf35e7f21cecae0c619329a1f
     );
 
     public static $classMap = array (
+        'AddAdsToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2020_06_11_183159_add_ads_to_posts_table.php',
         'AddAvatarToAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2020_04_15_120443_add_avatar_to_admins_table.php',
         'AddAvatarToUserTable' => __DIR__ . '/../..' . '/database/migrations/2020_04_10_144640_add_avatar_to_user_table.php',
         'AddDownloadsToPosts' => __DIR__ . '/../..' . '/database/migrations/2020_04_18_090322_add_downloads_to_posts.php',
+        'AddFeaturedToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2020_06_11_183809_add_featured_to_posts_table.php',
+        'AddSponsoredImagesToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2020_06_11_183935_add_sponsored_images_to_posts_table.php',
+        'AddTermsToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2020_06_12_122622_add_terms_to_users_table.php',
+        'AddTermsimgToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2020_06_12_122915_add_termsimg_to_users_table.php',
         'AddVisitCountToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2020_04_10_114350_add_visit_count_to_posts_table.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -484,6 +489,7 @@ class ComposerStaticInit756d3c1cf35e7f21cecae0c619329a1f
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Providers\\TelescopeServiceProvider' => __DIR__ . '/../..' . '/app/Providers/TelescopeServiceProvider.php',
+        'App\\VerifyUser' => __DIR__ . '/../..' . '/app/VerifyUser.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -570,6 +576,7 @@ class ComposerStaticInit756d3c1cf35e7f21cecae0c619329a1f
         'CreateRolesTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_19_071103_create_roles_table.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_19_070731_create_tags_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'CreateVerifyUsersTable' => __DIR__ . '/../..' . '/database/migrations/2020_06_14_145639_create_verify_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

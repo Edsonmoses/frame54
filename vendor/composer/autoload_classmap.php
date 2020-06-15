@@ -6,9 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddAdsToPostsTable' => $baseDir . '/database/migrations/2020_06_11_183159_add_ads_to_posts_table.php',
     'AddAvatarToAdminsTable' => $baseDir . '/database/migrations/2020_04_15_120443_add_avatar_to_admins_table.php',
     'AddAvatarToUserTable' => $baseDir . '/database/migrations/2020_04_10_144640_add_avatar_to_user_table.php',
     'AddDownloadsToPosts' => $baseDir . '/database/migrations/2020_04_18_090322_add_downloads_to_posts.php',
+    'AddFeaturedToPostsTable' => $baseDir . '/database/migrations/2020_06_11_183809_add_featured_to_posts_table.php',
+    'AddSponsoredImagesToPostsTable' => $baseDir . '/database/migrations/2020_06_11_183935_add_sponsored_images_to_posts_table.php',
+    'AddTermsToUsersTable' => $baseDir . '/database/migrations/2020_06_12_122622_add_terms_to_users_table.php',
+    'AddTermsimgToUsersTable' => $baseDir . '/database/migrations/2020_06_12_122915_add_termsimg_to_users_table.php',
     'AddVisitCountToPostsTable' => $baseDir . '/database/migrations/2020_04_10_114350_add_visit_count_to_posts_table.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -59,6 +64,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Providers\\TelescopeServiceProvider' => $baseDir . '/app/Providers/TelescopeServiceProvider.php',
+    'App\\VerifyUser' => $baseDir . '/app/VerifyUser.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
     'Carbon\\CarbonInterface' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -145,6 +151,7 @@ return array(
     'CreateRolesTable' => $baseDir . '/database/migrations/2017_06_19_071103_create_roles_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2017_06_19_070731_create_tags_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreateVerifyUsersTable' => $baseDir . '/database/migrations/2020_06_14_145639_create_verify_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
     'Cron\\DayOfMonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

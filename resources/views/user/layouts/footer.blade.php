@@ -50,6 +50,7 @@
     <script type="text/javascript">
         $(window).load(function(){        
         $('#myModal').modal('show');
+        $('#termsPopup').modal('show');
             }); 
 
             $(".gal").masonry();

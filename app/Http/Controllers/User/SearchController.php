@@ -20,11 +20,12 @@ class SearchController extends Controller
         $term = $term ? $term : '';
 
         $posts = DB::table('posts')
-             ->select(['posts.id','posts.title','posts.subtitle','posts.image','categories.name'])
+             ->select(['posts.id','posts.title','posts.subtitle','posts.image','categories.name','users.id','users.name','users.avatar'])
              ->where('title' ,'LIKE' ,"%{$term}%")
              ->orWhere('subtitle' ,'LIKE' ,"%{$term}%")
              ->join('category_posts','posts.id','=','category_posts.post_id')
              ->join('categories','category_posts.category_id','=','categories.id')
+             ->join('users','users.id','=','posts.posted_by')
              ->orWhere('categories.name','LIKE',"%{$term}%")
              ->get();
 

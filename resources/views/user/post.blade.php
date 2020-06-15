@@ -25,11 +25,11 @@
 				<img src= "{{ Storage::disk('local')->url($post->image)}}" alt="">
             </div>
             <div class="col-lg-4 col-md-4 download-cont">
-                <img alt="{{ Auth::user()->name }}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image2" class="img-circle img-responsive"> {{Auth::user()->name}}
-                <div class="fbtn donate">DONATE</div><div class="fbtn follow">FOLLOW</div>
+                <img alt="{{ $post->name }}" src="/uploads/avatars/{{$post->avatar}}" id="profile-image2d" class="img-circle img-responsive"><span id="profile-name">{{$post->name? $post->name : 'Frame54'}}</span> 
+                <span id="profile-imageb"><div class="fbtn donate">DONATE</div><div class="fbtn follow">FOLLOW</div></span>
                 <div style="clear:both"></div>
                 <hr/>
-                <span class="imgspan">images</span>
+                <span class="imgspan">{{ $post->id }} images</span>
                 <hr/>
                 <div class="download">
                     <a href="{{ route('photo.download', $post->id) }}" target="_blank"><small class="btns">FREE DOWNLOAD <small class="minus">|</small><i class="fa fa-arrow-down" aria-hidden="true"></i></small></a><br/>
@@ -61,24 +61,23 @@
                     <hr/>
                     <small>Downloads <span class="pull-right">{{$post->downloads}}</span></small>
                     <hr/>
-                    <small>TAGS
+                    <small>TAGS<br/>
                         @foreach ($post->tags as $tag)
-                        {{ $tag->name }}
+                        <a href="{{ route('tag',$tag->slug) }}">
+                            {{ $tag->name }}</a>
                         @endforeach
                     </small>
                 </div>
             </div>
         </div>
         <p>Sponsored Images/Content</p>
+        <div class="single-featured">
+            @if($post->featured == 1)
+            <img src= "{{ Storage::disk('local')->url($post->image)}}" alt="">
+            @endif
+       </div>
        <p> SIMILAR PHOTOS</p>
-       @if($related->isEmpty())
-   No Related Frame54 Images
-@else
-<div class="gal" id="post-data">
-    @include('user/data')
-    </div>
-</div>
-@endif
+    
     </div>
 </article>
 

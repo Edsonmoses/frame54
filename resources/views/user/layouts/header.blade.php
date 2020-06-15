@@ -7,7 +7,7 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}"><img class="frame-logo"src="user/img/Frame54-G.svg" alt="Frame54-G" /></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img class="frame-logo"src="/user/img/Frame54-G.svg" alt="Frame54-G" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +42,10 @@
                 </li>
                 <li class="joinUs">
                     @if (Auth::guest())
-                     <a href="{{ route('login') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                     <a href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                        UPLOAD</a>
+                     @else
+                     <a href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
                         UPLOAD</a>
                      @endif
                 </li>
@@ -55,7 +58,38 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-
+@foreach($posts as $posts)
+@if($posts->featured == 1)
+@if ($loop->first)
+<header class="intro-header" style="background-image: url( {{ Storage::url($posts->image)}})">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2 style="text-align: left !important">@yield('title')</h3>
+                        <form action="{{ route('search') }}" method="GET" role="search">
+                            
+                        <div class="input-group">
+                        <input class="form-control" placeholder="Search Free hi-resolution Afrocentric images" name="term" id="ed-srch-term" type="text">
+                        <div class="input-group-btn">
+                        <button type="submit" id="searchbtn">
+                        <small>|</small><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+                        <div style="clear: both"></div>
+                    <span class="subheading" style="text-align: left !important; padding-left:78px;">@yield('sub-heading')</span>
+                    <span class="subheading"><p class="photoby">Photo by : {{ $posts->name}} </p></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+@endif
+@else
+@if ($loop->first)
 <header class="intro-header" style="background-image: url( @yield('bg-img'))">
     <div class="container">
         <div class="row">
@@ -76,8 +110,12 @@
                         </div>
                         <div style="clear: both"></div>
                     <span class="subheading" style="text-align: left !important; padding-left:78px;">@yield('sub-heading')</span>
+                    <span class="subheading"><p class="photoby">Photo by : {{ $posts->name}} </p></span>
                 </div>
             </div>
         </div>
     </div>
 </header>
+@endif
+@endif
+@endforeach

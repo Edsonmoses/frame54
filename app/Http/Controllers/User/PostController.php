@@ -24,20 +24,16 @@ class PostController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
-         /* dd($post->category->id);
-        $related= DB::table('category_posts')
-        ->where('category_id', '=', $post->category->id)
-            ->where('post_id', '!=', $post->id)
-            ->join('posts','posts.id','=','category_posts.post_id')
-            ->join('categories','category_posts.category_id','=','category_posts.post_id')
-            
-            ->get();
-            dd($related);*/
-            $related = Post::whereHas('categories', function ($q) use ($categories) {
-                $q->whereIn('categories.id', $categories);
-            })->where('id', '<>', $post->id)->get();
-            //dd($related);
-        //return view('user.post',compact('post','categories', 'tags','related'));
+        $blogKey = 'blog_' . $post->id;
+
+        if (!Session::has($blogKey)) {
+            $post->increment('visit_count');
+            Session::put($blogKey,1);
+        }
+        $related = Post::whereHas('categories', function ($q) use ($categories) {
+           $q->whereIn('categories.id', $categories);
+        })->where('id', '<>', $post->id)->get();
+        //dd($related);
         return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withRelated($related);
     }
 

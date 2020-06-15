@@ -15,6 +15,7 @@ Route::group(['namespace' => 'User'],function(){
     //Photo Routes
 	Route::get('submitPhoto','PhotoController@submitPhoto')->name('submitPhoto');
 	Route::post('store','PhotoController@store')->name('photo.store');
+	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
 	Route::get('photo/{id}/download','PhotoController@download')->name('photo.download');
     //Profile Routegit add .s
 	Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
@@ -26,6 +27,8 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('changePassworded','ProfileController@changePassword')->name('changePassword');
 	//Search Routes
 	Route::get('/search', 'SearchController@index')->name('search');
+
+	Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 	
 
 	//vue routes

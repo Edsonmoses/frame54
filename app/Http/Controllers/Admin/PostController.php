@@ -80,6 +80,9 @@ class PostController extends Controller
         $post->status = $request->status;
         $post->posted_by = Auth::user()->id;
         $post->visit_count = $request->visit_count;
+        $post->ads = $request->ads;
+        $post->featured = $request->featured;
+        $post->sponsored_images = $request->sponsored_images;
         $post->save();
         $post->tags()->sync($request->tags);
         $post->categories()->sync($request->categories);
@@ -143,6 +146,9 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->status = $request->status;
         $post->visit_count = $request->visit_count;
+        $post->ads = $request->ads;
+        $post->featured = $request->featured;
+        $post->sponsored_images = $request->sponsored_images;
         $post->tags()->sync($request->tags);
         $post->categories()->sync($request->categories);
         $post->save();
