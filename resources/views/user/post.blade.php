@@ -22,10 +22,10 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 download-image">
 
-				<img src= "{{ Storage::disk('local')->url($post->image)}}" alt="">
+				<img src= "{{ Storage::disk('local')->url($post->image)}}" alt="{{ $post->title }}">
             </div>
             <div class="col-lg-4 col-md-4 download-cont">
-                <img alt="{{ $post->name }}" src="/uploads/avatars/{{$post->avatar}}" id="profile-image2d" class="img-circle img-responsive"><span id="profile-name">{{$post->name? $post->name : 'Frame54'}}</span> 
+                <img alt="{{ $post->name }}" src="/uploads/avatars/{{$post->avatar}}" id="profile-image2d" class="img-circle img-responsive"><span id="profile-name">{{$posts['name']? $posts['name'] : 'Frame54'}}</span> 
                 <span id="profile-imageb"><div class="fbtn donate">DONATE</div><div class="fbtn follow">FOLLOW</div></span>
                 <div style="clear:both"></div>
                 <hr/>
