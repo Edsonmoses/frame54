@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 }
@@ -28,9 +29,6 @@ Route::group(['namespace' => 'User'],function(){
 	//Search Routes
 	Route::get('/search', 'SearchController@index')->name('search');
 
-	Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-	
-
 	//vue routes
 	Route::post('getPosts','PostController@getAllPosts');
 	Route::post('saveLike','PostController@saveLike');
@@ -54,9 +52,11 @@ Route::group(['namespace' => 'Admin'],function(){
 	// Admin Auth Routes
 	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 	Route::post('admin-login', 'Auth\LoginController@login');
+	
 });
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');

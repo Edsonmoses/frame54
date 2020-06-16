@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     public function index(Request $request)
     {
         $categories =category::all();
         $tags =tag::all();
+        $featured = Post::with('featured')->orderBy('created_at','DESC');
         //$posts = DB::table('posts')
        // ->select(['posts.*','users.id','users.name','users.avatar'])
       // ->join('users','users.id','=','posts.posted_by')

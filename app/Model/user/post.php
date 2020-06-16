@@ -37,9 +37,5 @@ class post extends Model
     {
         return route('post',$value);
     }
-
-    public function posts(){
-        return $this->hasMany('App\Post');
-    }
-    
+   
 }
