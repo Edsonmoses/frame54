@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Model\user\category;
+use App\Model\user\post;
+use App\Model\user\tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -21,8 +27,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $categories =category::all();
+        $tags =tag::all();
+        $posts = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')
+        ->paginate(6);
+        if ($request->ajax()) {
+
+    		$view = view('user.data',compact('posts','categories','tags'))->render();
+
+            return response()->json(['html'=>$view]);
+
+        }
+        return view('home',compact('posts','categories','tags'));
     }
 }
