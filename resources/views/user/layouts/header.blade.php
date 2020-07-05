@@ -29,26 +29,45 @@
                        UPLOAD</a>
                    </li>
                @else
-                   <li class="nav-item dropdown  header2">
+                   <li class="nav-item dropdown">
                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                           {{ Auth::user()->name }} <span class="caret"></span>
+                        <img alt="{{ Auth::user()->name }}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image2" class="img-circle img-responsive"> <!--<span class="caret"></span>-->
                        </a>
 
                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                           <a class="dropdown-item" href="{{ route('logout') }}"
+                        <i class="fa fa-sort-asc" aria-hidden="true"></i>
+                           <ul id="profile">
+                               <li></li>
+                               <li><a href="{{ route('profile.profile', Auth::user()->id) }}"> View Profile</a></li>
+                               <li></li>
+                               <li><a href="{{ route('profile.analytics', Auth::user()->id) }}"> Analytics</a></li>
+                               <li></li>
+                               <li><a href="{{ route('profile.settings', Auth::user()->id) }}"> Account Settings</a></li>
+                               <li></li>
+                               <li><a href="{{ route('profile.following', Auth::user()->id) }}">Following</a></li>
+                        </ul>
+                        <div style="border-top: 1px solid #fff; margin: 10px 0 10px 0 !important;"></div>
+                        <div class="footer-out">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                {{ __('Logout') }}
                            </a>
+                           <a class="artname" href="#"><b>@</b>{{Auth::user()->name }}</a>
 
                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                @csrf
                            </form>
+                        </div>
                        </div>
                    </li>
                    <li class="nav-item joinUs">
                     <a class="nav-link" href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
                        UPLOAD</a>
+                   </li>
+                   <li class="nav-item moons">
+                    <a class="nav-link" href="#"><i class="fa fa-moon" aria-hidden="true"></i>
+                    </a>
                    </li>
                @endguest
 

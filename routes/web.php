@@ -34,7 +34,10 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
 	Route::get('photo/{id}/download','PhotoController@download')->name('photo.download');
     //Profile Routegit add .s
-	Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
+    Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
+    Route::get('analytics/{id}','ProfileController@analytics')->name('profile.analytics');
+    Route::get('settings/{id}','ProfileController@settings')->name('profile.settings');
+    Route::get('following/{id}','ProfileController@following')->name('profile.following');
 	Route::get('profileEdit/{id}','ProfileController@profileEdit')->name('profile.profileEdit');
 	Route::post('update/{id}','ProfileController@update')->name('profile.update');
 	Route::post('updateAvatar','ProfileController@updateAvatar')->name('profile.updateAvatar');

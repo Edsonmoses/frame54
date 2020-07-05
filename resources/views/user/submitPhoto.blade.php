@@ -1,4 +1,4 @@
-@extends('user/layouts/app')
+@extends('user/app')
 
 @section('bg-img',asset('user/img/home-bg.jpg'))
 @section('title','Bitfumes Blog')
@@ -12,27 +12,25 @@
 	</style>
 @endsection
 @section('main-content')
-  <!-- Main Content -->
-	<div class="container">
-        <!--/.scrollmenu-->
-        <div class="scrollmenu">
-           @foreach ($categories as $category)
-               <a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
-          @endforeach
-         </div><br/>
-       <div class="row" id="app">
-           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-               <div class="gal" id="post-data">
-                   @include('user/data')
-                   </div>
-           </div>
-       </div>
-       <div class="ajax-load text-center" style="display:none">
+	<!-- Main Content -->
+  <div class="container">
+    <!--/.scrollmenu-->
+		 <div class="scrollmenu">
+			@foreach ($categories as $category)
+				<a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
+		   @endforeach
+		  </div><br/>
+    <div class="row">
+  <div class="gal" id="post-data">
+          @include('user/data')
+          </div>
+    </div>
+</div>
+<div class="ajax-load text-center" style="display:none">
 
-           <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
+  <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
 
-       </div>
-   </div>
+</div>
 
 	<hr>
     <!-- The Modal -->

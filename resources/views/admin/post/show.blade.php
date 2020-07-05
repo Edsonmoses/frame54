@@ -51,12 +51,8 @@
                           <th>Sub Title</th>
                           <th>Slug</th>
                           <th>Creatd At</th>
-                          @can('posts.update',Auth::user())
                           <th>Edit</th>
-                          @endcan
-                           @can('posts.delete', Auth::user())
                           <th>Delete</th>
-                          @endcan
                         </tr>
                         </thead>
                         <tbody>
@@ -68,11 +64,8 @@
                             <td>{{ $post->slug }}</td>
                             <td>{{ $post->created_at }}</td>
 
-                            @can('posts.update',Auth::user())
                               <td><a href="{{ route('post.edit',$post->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                            @endcan
 
-                            @can('posts.delete', Auth::user())
                             <td>
                               <form id="delete-form-{{ $post->id }}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
                                 {{ csrf_field() }}
@@ -88,7 +81,6 @@
                                     event.preventDefault();
                                   }" ><span class="glyphicon glyphicon-trash"></span></a>
                             </td>
-                          @endcan
                           </tr>
                         @endforeach
                         </tbody>
@@ -99,12 +91,8 @@
                           <th>Sub Title</th>
                           <th>Slug</th>
                           <th>Creatd At</th>
-                          @can('posts.update',Auth::user())
                           <th>Edit</th>
-                          @endcan
-                           @can('posts.delete', Auth::user())
-                          <th>Delete</th>
-                          @endcan
+                          <th>Delete</th>n
                         </tr>
                         </tfoot>
                       </table>

@@ -11,7 +11,6 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-
 class ProfileController extends Controller
 {
     public function __construct()
@@ -150,6 +149,42 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->back()->with("success","Password changed successfully !");
+
+    }
+    public function analytics($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.analytics')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function settings($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.settings')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function following($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.following')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
 
     }
 }

@@ -40,12 +40,12 @@ class PostController extends Controller
      */
     public function create()
     {
-        if (Auth::user()->can('posts.create')) {
+        //if (Auth::user()->can('posts.create')) {
            $tags =tag::all();
             $categories =category::all();
             return view('admin.post.post',compact('tags','categories'));
-        }
-        return redirect(route('admin.home'));
+        //}
+        //return redirect(route('admin.home'));
 
     }
 
@@ -108,13 +108,13 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        if (Auth::user()->can('posts.update')) {
+        //if (Auth::user()->can('posts.update')) {
             $post = post::with('tags','categories')->where('id',$id)->first();
             $tags =tag::all();
             $categories =category::all();
             return view('admin.post.edit',compact('tags','categories','post'));
-        }
-        return redirect(route('admin.home'));
+        //}
+        //return redirect(route('admin.home'));
     }
 
     /**

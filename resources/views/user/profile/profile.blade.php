@@ -17,45 +17,33 @@
     <!--Main row-->
     <div class="row">
     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-      <ul class="list-group">
-        <li class="list-group-item"><a href="{{ route('profile.profile', Auth::user()->id) }}"><i class="fa fa-eye" aria-hidden="true"></i>
-          View Profile</a></li>
-        <li class="list-group-item"><a href="{{ route('profile.profileEdit',$user->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-           Edit Profile</a></li>
-        <li class="list-group-item"><a href="/changePassword"><i class="fa fa-key" aria-hidden="true"></i>
-          Change Password</a></li>
-      </ul>
+        <img alt="User Pic" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
     </div>
     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-      <!--inner row-->
-    <div class="row">
-      <div class="panel panel-default">
-      <div class="panel-heading">  <h4 >User Profile</h4></div>
-      <div class="panel-body">
-      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-      <img alt="User Pic" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive"> 
-      </div>
-      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-          <div class="container" >
-            <h2>{{$user['name']}}</h2>
-            <p>an   <b> Employee</b></p>
-          </div>
-          <hr>
-          <ul class="container details" >
-            <li><p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>{{$user['name']}}</p></li>
-            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{$user['email']}}</p></li>
-          </ul>
-          <hr>
-          <div class="col-sm-8 col-xs-8 tital " >Date Of Joining: {{$user['created_at']->format('d M Y')}}</div>
-      </div>
+        <div class="download">
+            <h2 style="float: left; padding-right: 35px; margin-top: -7px;">{{$user['name']}}</h2><a href="{{ route('profile.profileEdit', Auth::user()->id) }}"> <small class="btns">Edit Profile</small></a>
+        </div>
+        <p>{{ $post->id }} images</p>
+        <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2" >
+            <i class="fa fa-picture-o" aria-hidden="true"></i> Photos
+        </div>
+        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2" >
+            <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
+        </div>
+        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-3" >
+            <i class="fa fa-plus" aria-hidden="true"></i> Collections
+        </div>
+        </div>
   </div>
+  <!--top row end-->
   </div>
-  <!--inner row-->
+   <hr>
+   <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+        <p class="text-center">Wow, that’s a very clean portfolio!</p>
     </div>
-  </div>
-  <!--Main row end-->
-  </div>
-
+    </div>
 	<hr>
 @endsection
 @section('footer')
