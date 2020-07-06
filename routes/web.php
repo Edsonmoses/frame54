@@ -75,6 +75,6 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::post('admin-login', 'Auth\LoginController@login');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

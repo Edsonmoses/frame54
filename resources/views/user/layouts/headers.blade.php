@@ -16,12 +16,12 @@
                    <!-- Authentication Links -->
                    @guest
                    <li class="nav-item">
-                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                       <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg">{{ __('Login') }}</a>
                    </li>
                    <li><div class="divider"></div></li>
                    @if (Route::has('register'))
                        <li class="nav-item">
-                           <a class="nav-link" href="{{ route('register') }}">{{ __('Join') }}</a>
+                           <a class="nav-link" type="button" data-toggle="modal" data-target=".register-modal-lg">{{ __('Join') }}</a>
                        </li>
                    @endif
                    <li class="nav-item joinUs">

@@ -75,7 +75,31 @@
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+<div class="modal fade bd-example-modal-lgs" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
 
+                    </li>
+                    <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
+
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
+                    <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- jQuery -->
     <script src="{{ asset('user/vendor/jquery/jquery.min.js') }}"></script>
 
@@ -108,70 +132,71 @@
     </script>
 
    <!-- //infinty loading -->
-    <script type="text/javascript">
-var page = 1;
+   <script type="text/javascript">
+    var page = 1;
 
-	$(window).scroll(function() {
+        $(window).scroll(function() {
 
-		if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+            if($(window).scrollTop() + $(window).height() >= $(document).height()) {
 
-			page++;
+                page++;
 
-			loadMoreData(page);
+                loadMoreData(page);
 
-		}
+            }
 
-	});
+        });
 
 
-	function loadMoreData(page){
+        function loadMoreData(page){
 
-	  $.ajax(
+          $.ajax(
 
-			{
+                {
 
-				url: '?page=' + page,
+                    url: '?page=' + page,
 
-				type: "get",
+                    type: "get",
 
-				beforeSend: function()
+                    beforeSend: function()
 
-				{
+                    {
 
-					$('.ajax-load').show();
+                        $('.ajax-load').show();
 
-				}
+                    }
 
-			})
+                })
 
-			.done(function(data)
+                .done(function(data)
 
-			{
+                {
 
-				if(data.html == " "){
+                    if(data.html == " "){
 
-					$('.ajax-load').html("No more records found");
+                        $('.ajax-load').html("No more records found");
 
-					return;
+                        return;
 
-				}
+                    }
 
-				$('.ajax-load').hide();
+                    $('.ajax-load').hide();
 
-				$("#post-data").append(data.html);
+                    $("#post-data").append(data.html);
 
-			})
+                })
 
-			.fail(function(jqXHR, ajaxOptions, thrownError)
+                .fail(function(jqXHR, ajaxOptions, thrownError)
 
-			{
+                {
 
-				  alert('server not responding...');
+                      alert('server not responding...');
 
-			});
+                });
 
-	}
-
+        }
+            </script>
+<script type="text/javascript">
     $(function() {
 
 $('#login-form-link').click(function(e) {
@@ -188,8 +213,8 @@ $('#register-form-link').click(function(e) {
     $(this).addClass('active');
     e.preventDefault();
 });
+    });
 
-});
 		</script>
     @section('footer')
         @show
