@@ -75,31 +75,50 @@
             </div>
         </div>
     </footer>
-    <!-- Modal -->
-<div class="modal fade bd-example-modal-lgs" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-body">
-            <div role="tabpanel">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
 
-                    </li>
-                    <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
-
-                    </li>
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
-                    <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
+  <!-- Collection modal -->
+    <div class="modal fade bd-collection-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg collection">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-5 col-xs-12 col-sm-5 col-lg-5">
+                    <img src="/user/img/holder.jpeg" alt="holder" />
+                </div>
+                <div class="col-md-7 col-xs-12 col-sm-7 col-lg-7">
+                    <h2>Add to Collection</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                <input type="text" class="form-control input" id="subject" placeholder="Create a new collection">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                <input type="text" class="form-control input" id="subject" readonly>
+                                <span>0 Photos <br><i class='fa fa-lock' aria-hidden='true'></i> My first collection</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                <input type="text" class="form-control input" id="subject" readonly>
+                                <span>0 Photos <br><i class='fa fa-lock' aria-hidden='true'></i> My first collection</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                <input type="text" class="form-control input" id="subject" readonly>
+                                <span>0 Photos <br><i class='fa fa-lock' aria-hidden='true'></i> My first collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
+<!-- Collection modal end -->
     <!-- jQuery -->
     <script src="{{ asset('user/vendor/jquery/jquery.min.js') }}"></script>
 
@@ -113,9 +132,15 @@
     <!-- Theme JavaScript -->
     <script src="{{ asset('user/js/clean-blog.min.js') }}"></script>
     <script type="text/javascript">
+     $("a#darktheme").click(function()
+        {
+        $("#submit_this").submit();
+        return false;
+        });
         $(window).load(function(){
         $('#myModal').modal('show');
         $('#termsPopup').modal('show');
+
             });
 
             $(".gal").masonry();
@@ -214,7 +239,6 @@ $('#register-form-link').click(function(e) {
     e.preventDefault();
 });
     });
-
-		</script>
+</script>
     @section('footer')
         @show

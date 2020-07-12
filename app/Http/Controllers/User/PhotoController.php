@@ -7,6 +7,7 @@ use App\Model\user\User;
 use App\Model\user\like;
 use App\Model\user\post;
 use App\Model\user\tag;
+use App\Model\user\theme;
 use App\Model\user\category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -37,9 +38,9 @@ class PhotoController extends Controller
 
         }
         if (!empty($posts->terms) && !empty($posts->termsimg)){
-          return view('user.terms',compact('posts', 'tags','categories'));
+          return view('user.terms',compact('posts', 'tags','categories', 'theme'));
         }else{
-        return view('user.submitPhoto',compact('posts', 'tags','categories'));
+        return view('user.submitPhoto',compact('posts', 'tags','categories', 'theme'));
         }
 	}
 
@@ -51,9 +52,10 @@ class PhotoController extends Controller
     public function create()
     {
 
-           $tags =tag::all();
+            $tags =tag::all();
+            $theme =theme::all();
             $categories =category::all();
-            return view('user.submitPhoto',compact('tags','categories'));
+            return view('user.submitPhoto',compact('tags','categories', 'theme'));
 
     }
  /**
@@ -116,8 +118,9 @@ class PhotoController extends Controller
             $post = post::with('tags','categories')->where('id',$id)->first();
             $tags =tag::all();
             $categories =category::all();
+            $theme =theme::all();
 
-            return view('user.submitPhotoedit',compact('tags','categories','post'));
+            return view('user.submitPhotoedit',compact('tags','categories','post', 'theme'));
     }
 
     /**
@@ -187,6 +190,8 @@ class PhotoController extends Controller
         \Zipper::make(storage_path('app\\'. $post->image.'.zip'))->add($pathToFile)->close();
         return response()->download(storage_path('app\\'. $post->image.'.zip'));
      }
-
+     public function uguideline(){
+        return view('user.uploadGuideline',compact('posts', 'tags','categories', 'theme'));
+     }
 
 }

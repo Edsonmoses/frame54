@@ -17,7 +17,7 @@
     <!--Main row-->
     <div class="row">
     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-        <img alt="User Pic" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
+        <img alt="{{Auth::user()->name}}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
     </div>
     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
         <div class="download">

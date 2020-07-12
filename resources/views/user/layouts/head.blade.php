@@ -10,6 +10,13 @@
     <link href="{{ asset('user/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Theme CSS -->
+    @foreach ($theme as $theme)
+       @if($theme->status === 1)
+       <link href="{{ asset('user/css/clean-dark.min.css') }}" rel="stylesheet">
+        @else
+        <link href="{{ asset('user/css/clean-blog.min.css') }}" rel="stylesheet">
+        @endif
+    @endforeach
     <link href="{{ asset('user/css/clean-blog.min.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->

@@ -1,4 +1,4 @@
-@extends('user/layouts/app')
+@extends('user/app')
 
 @section('bg-img',asset('user/img/home-bg.jpg'))
 @section('title','FREE Afrocentric stock photos & videos shared by creators everywhere.')
@@ -13,26 +13,47 @@
 @endsection
 @section('main-content')
 	<!-- Main Content -->
-	<div class="container">
-		 <!--/.scrollmenu-->
-		 <div class="scrollmenu">
-			@foreach ($categories as $category)
-				<a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
-		   @endforeach
-		  </div><br/>
-
+	<div class="container license-section">
 	    <div class="row" id="app">
-            <h3>Free PanAfrican Stock Photos</h3>
-		<div class="gal" id="post-data">
-            @include('user/data')
+            <h1>License</h1>
+            <hr>
+            <p><strong> Content type</strong></p>
+            <p>Frame 54 photos are made to be used freely. Our license reflects that.</p>
+            <p><i class="fa fa-check" aria-hidden="true"></i>All photos can be <strong>downloaded</strong> and used for <strong>free</strong></p>
+            <p><i class="fa fa-check" aria-hidden="true"></i><strong>Commercial</strong> and <strong>non-commercial</strong> purposes</p>
+            <p><i class="fa fa-check" aria-hidden="true"></i> <strong>No permission needed</strong> (though attribution is appreciated!)</p>
+            <p><strong>What is not permitted</strong></p>
+            <p>Photos cannot be sold or redistributed without significant modification.</p>
+            <p>Compiling photos from Frame 54 to replicate a similar or competing service</p>
+            <p><strong>Longform</strong></p>
+            <p>Frame 54 grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and
+             use photos from Frame 54 for free, including for commercial purposes, without permission from or attributing the photographer or
+             Frame 54. This license does not include the right to compile photos from Frame 54 to replicate a similar or competing service.</p>
+             <h3>Questions? <span>Read our FAQ</span></h3>
+             <div class="p">
+               <h3> TIP : How to give attribution</h3>
+               <p> Even though attribution isn’t required, Frame 54 photographers appreciate it as it provides exposure to their work and encourages
+                them to continue sharing</p>
+             </div>
+        </div>
+    </div>
+    <hr class="license-hr">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-3 col-sm-4 col-lg-3">
+                <ul class="footer-menu">
+                    <li><a class="active" href="#">License</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </div>
-	    </div>
-	</div>
-	<div class="ajax-load text-center" style="display:none">
-
-		<p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
-
-	</div>
+            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                <ul class="footer-menu">
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">API Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <hr>
 
 <!-- login Modal -->
@@ -42,7 +63,7 @@
             <div class="modal-header popup-hd">
                 <div class="popup-logo">
                     <img src="/user/img/Frame54-W.svg" alt="Frame54-W" />
-                    <p>FREE Afrocentric stock photos & videos shared by creators everywhere.1</p>
+                    <p>FREE Afrocentric stock photos & videos shared by creators everywhere.</p>
                 </div>
                 <div class="popclose">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

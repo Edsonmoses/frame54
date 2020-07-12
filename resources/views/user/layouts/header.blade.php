@@ -28,6 +28,23 @@
                     <a class="nav-link" href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
                        UPLOAD</a>
                    </li>
+                   <li class="nav-item header-moon">
+                    @foreach ($theme as $theme)
+                    @if($theme->stat === 1)
+                    <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                     <input type="text" name="status" hidden value="1">
+                    </form>
+                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                     @else
+                     <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                     <input type="text" name="status" hidden value="0">
+                    </form>
+                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                     @endif
+                   @endforeach
+                   </li>
                @else
                    <li class="nav-item dropdown">
                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -65,9 +82,22 @@
                     <a class="nav-link" href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
                        UPLOAD</a>
                    </li>
-                   <li class="nav-item moons">
-                    <a class="nav-link" href="#"><i class="fa fa-moon" aria-hidden="true"></i>
-                    </a>
+                   <li class="nav-item header-moon">
+                    @foreach ($theme as $theme)
+                    @if($theme->status === 1)
+                    <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                     <input type="text" name="status" hidden value="1">
+                    </form>
+                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                     @else
+                     <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                     <input type="text" name="status" hidden value="0">
+                    </form>
+                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                     @endif
+                   @endforeach
                    </li>
                @endguest
 

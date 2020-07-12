@@ -17,7 +17,7 @@
     <!--Main row-->
     <div class="row">
     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-        <img alt="User Pic" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
+        <img alt="{{Auth::user()->name}}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
     </div>
     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
         <div class="row profile-follow">
@@ -27,8 +27,8 @@
             </div>
             <div class="col-md- col-xs-12 col-sm-4 col-lg-4">
                 <div class="download">
-                    <a href="{{ route('profile.profileEdit', $user->id) }}"> <small class="btns" style="background: #ddd !important; border:1px solid #ddd !important; margin-right:10px !important;">Follow</small></a>
-                    <a href="{{ route('profile.profileEdit', $user->id) }}"> <small class="btns">Message</small></a>
+                    <a href="{{ route('profile.profileEdit', $user->id) }}"> <small class="btns" style="background: #ddd !important; border:1px solid #ddd !important; margin-right:10px !important;"><i class="fa fa-user-plus" aria-hidden="true"></i>  Follow</small></a>
+                    <a type="button" data-toggle="modal" data-target=".bd-message-modal-lg"> <small class="btns"><i class="fa fa-envelope-o" aria-hidden="true"></i> Message</small></a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
         </div>
         <div class="col-md-2 col-xs-2 col-sm-2 col-lg-3" >
-            <i class="fa fa-plus" aria-hidden="true"></i> Collections
+            <i class="fa fa-plus" aria-hidden="true"></i> <a type="button" data-toggle="modal" data-target=".bd-collection-modal-lg">Collections</a>
         </div>
         </div>
   </div>
@@ -83,10 +83,60 @@
           </div>
     </div>
     </div>
-	<hr>
+    <hr>
+    <div class="modal fade bd-message-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-contents message-section">
+            <div class="modal-header popup-hd">
+                <div class="popclose">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            </div>
+            <div class="modal-body" style="background: #fff">
+                <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12">
+                        <h2>Message</h2>
+                        <p class="p1">Send a message to <span>Awesome Dude</span> and receive a reply through
+                            your email.</p>
+                        <p class="p2"><i class="fa fa-check" aria-hidden="true"></i> Follow <span>message guidelines.</span></p>
+                        <p class="p2"><i class="fa fa-check" aria-hidden="true"></i> No Spam</p>
+                        <p class="p2"><i class="fa fa-check" aria-hidden="true"></i> For legal questions, see <span>the license</span></p>
+                        <form>
+                                <div class="row">
+                                    <div class="col-9 col-sm-9">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="subject" style="width: 94%; height: 50px; font-size: 24px; line-height: 18px; border: 1px solid #dddddd; padding:10px;" placeholder="Subject">
+                                        </div>
+                                    </div>
+                                    <div class="col-9 col-sm-9">
+                                        <div class="form-group">
+                                        <textarea class="form-control" id="message" rows="3" style="width: 94%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 55% 10px 10px 10px; text-align: right !important;" placeholder="1200"></textarea>
+                                        </div><br>
+                                        <div class="pull-right">
+                                            <a href="#"> <small class="sends">Send Message</small></a>
+                                        </div>
+                                        <br><br>
+                                   </div>
+                                </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
 @endsection
 @section('footer')
 <script type="text/javascript">
   document.title =`{{$user['name']}}'s Frame54 Profile`;
 </script>
+<style>
+    .modal-lg {
+    width: 64% !important;
+}
+</style>
 @endsection

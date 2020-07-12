@@ -37,4 +37,5 @@ class post extends Model
     {
         return route('post',$value);
     }
+
 }

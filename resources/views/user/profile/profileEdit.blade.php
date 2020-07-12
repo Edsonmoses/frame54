@@ -144,7 +144,7 @@
       <h2>Account Settings</h2>
     <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
         <ul class="footer-menu">
-            <li><a href="#">Edit Profile</a></li>
+            <li><a class="active" href="#">Edit Profile</a></li>
             <li><a href="#">Email settingsr</a></li>
         </ul>
     </div>

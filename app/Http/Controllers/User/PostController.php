@@ -8,6 +8,7 @@ use App\Model\user\like;
 use App\Model\user\post;
 use App\Model\user\tag;
 use App\Model\user\category;
+use App\Model\user\theme;
 use App\Model\user\category_post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,10 +19,10 @@ use ZipArchive;
 
 class PostController extends Controller
 {
-    public $posts;
     public function post(post $post)
     {
     	$categories =category::all();
+        $theme =theme::all();
         $tags =tag::all();
         $blogKey = 'blog_' . $post->id;
 
@@ -33,7 +34,7 @@ class PostController extends Controller
            $q->whereIn('categories.id', $categories);
         })->where('id', '<>', $post->id)->get();
         //dd($related);
-        return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withRelated($related);
+        return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withRelated($theme);
     }
 
     public function getAllPosts()
@@ -58,27 +59,30 @@ class PostController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
+        $theme =theme::all();
         $posts = $tag->posts();
-        return view('user.blog',compact('posts','categories', 'tags'));
+        return view('user.blog',compact('posts','categories', 'tags', 'theme'));
     }
 	public function category(category $category)
     {
         $categories =category::all();
         $tags =tag::all();
+        $theme =theme::all();
         $posts = $category->posts();
-        return view('user.blog',compact('posts','categories', 'tags'));
+        return view('user.blog',compact('posts','categories', 'tags','theme'));
     }
     public function posts(Request $request)
     {
         $categories =category::all();
         $tags =tag::all();
+        $theme =theme::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
         if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts','categories','tags'))->render();
+    		$view = view('user.data',compact('posts','categories','tags','theme'))->render();
 
 		}
 
