@@ -175,6 +175,82 @@ class ProfileController extends Controller
         }
 
     }
+    public function emailSetting($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.emailSetting')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function updateEmail(Request $request)
+    {
+
+    }
+    public function connect($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.connect')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function applications($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.applications')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function close($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.profile.close')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function collections($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.collections')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
+    public function community($id)
+    {
+        $user = User::find($id);
+
+        if($user){
+
+            return view('user.community')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+
+    }
     public function following($id)
     {
         $user = User::find($id);

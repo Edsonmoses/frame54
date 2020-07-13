@@ -7,20 +7,20 @@
                     <div class="row">
                         <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
                             <ul class="footer-menu">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="{{ route('home.about') }}">About</a></li>
+                                <li><a href="{{ route('home.blog') }}">Blog</a></li>
                             </ul>
                         </div>
                         <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2">
                             <ul class="footer-menu">
-                                <li><a href="#">Join the team</a></li>
-                                <li><a href="#">Developers/API</a></li>
+                                <li><a href="{{ route('home.team') }}">Join the team</a></li>
+                                <li><a href="{{ route('home.developers') }}">Developers/API</a></li>
                             </ul>
                         </div>
                         <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2">
                             <ul class="footer-menu">
-                                <li><a href="#">Press</a></li>
-                                <li><a href="#">Help Center</a></li>
+                                <li><a href="{{ route('home.press') }}">Press</a></li>
+                                <li><a href="{{ route('home.help') }}">Help Center</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
@@ -65,9 +65,9 @@
                 <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8"></div>
                 <div class="col-md-4 col-xs-4 col-sm-6 col-lg-4">
                     <ul class="list-inline">
-                        <li>Privacy Policy</li>
-                        <li>Terms</li>
-                        <li>Security</li>
+                        <li><a href="{{ route('home.framePolicy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ route('home.conditions') }}">Terms</a></li>
+                        <li><a href="{{ route('home.security') }}">Security</a></li>
                     </ul>
                 </div>
                 </div>

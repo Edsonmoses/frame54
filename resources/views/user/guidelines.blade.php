@@ -60,7 +60,7 @@
                 <h4>Photos are original.</h4>
                 <p>We do not accept composite images on Frame54. A composite is an image that has been created using multiple photos. Here are examples
                 of composite or remixed photos : Frame 54 </p>
-                <img style="height: 200px" src= "{{ Storage::disk('local')->url('SGdoLs1m5ngqEBkXbWDD8OQZuJDGeImshYY9pknG.jpeg')}}" alt="{{ $post->title }}">
+                <img style="height: 200px" src= "{{ Storage::disk('local')->url('b9yYOzmFjYFgHJyb7i9yj3S2Axd4uvlqKccMv6j8.jpeg')}}" alt="{{ $post->title }}">
                 <h4>Photos are not over edited.</h4>
                 <p>Our interpretation of over-editing includes:</p>
                 <ul>
@@ -71,7 +71,7 @@
                 </ul>
                 <p>Frame 54 is a place to experiment with styles and people shouldn’t be afraid to try things that challenge traditional editing.
                 Here are some examples of how people are expressing themselves creatively within our Guidelines</p>
-                <img style="height: 350px" src= "{{ Storage::disk('local')->url('SGdoLs1m5ngqEBkXbWDD8OQZuJDGeImshYY9pknG.jpeg')}}" alt="{{ $post->title }}">
+                <img style="height: 350px" src= "{{ Storage::disk('local')->url('b9yYOzmFjYFgHJyb7i9yj3S2Axd4uvlqKccMv6j8.jpeg')}}" alt="{{ $post->title }}">
             <p>Photos by Awesome Dude, John Doe, Jane Doe, Awesome Chic</p>
             <h4>Photos do not contain nudity.</h4>
             <p>While we appreciate the beauty of nude portraiture, Frame 54 is for people of all ages and therefore we do not accept photos

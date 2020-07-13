@@ -46,6 +46,44 @@
                    @endforeach
                    </li>
                @else
+               <li class="nav-item header-bell hbell">
+                <a class="nav-link" href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>
+                </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle page-dots" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                     ...
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                     <i class="fa fa-sort-asc" aria-hidden="true"></i>
+                        <ul id="profile">
+                            <li></li>
+                            <li><a href="{{ route('home.blog') }}"> Blog</a></li>
+                            <li></li>
+                            <li><a href="{{ route('profile.collections', Auth::user()->id) }}"> Collections</a></li>
+                            <li></li>
+                            <li><a href="{{ route('profile.community', Auth::user()->id) }}"> Community</a></li>
+                            <li></li>
+                            <li><a href="{{ route('home.about') }}">About</a></li>
+                            <li><a href="{{ route('home.press') }}">Press</a></li>
+                            <li><a href="{{ route('home.developers') }}">API/Developer</a></li>
+                     </ul>
+                     <ul class="login-social">
+                         <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                         <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                         <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                     </ul>
+                     <div style="border-top: 1px solid #fff; margin: 0px 0 10px 0 !important;"></div>
+                     <div class="footer-out">
+                        <a class="a" href="{{ route('home.help') }}">Help •</a>
+                        <a class="artnames" href="{{ route('home.framelicense') }}"> License •</a>
+                        <a class="artnames" href="{{ route('home.press') }}"> Press •</a>
+                        <a class="artnames" href="{{ route('home.team') }}">Join the Team</a>
+                     </div>
+                    </div>
+                </li>
                    <li class="nav-item dropdown">
                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <img alt="{{ Auth::user()->name }}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image2" class="img-circle img-responsive"> <!--<span class="caret"></span>-->

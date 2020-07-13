@@ -142,22 +142,22 @@
   <hr>
   <div class="row">
       <h2>Account Settings</h2>
-    <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+      <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
         <ul class="footer-menu">
-            <li><a class="active" href="#">Edit Profile</a></li>
-            <li><a href="#">Email settingsr</a></li>
+            <li><a class="active" href="{{ route('profile.profile', Auth::user()->id) }}">Edit Profile</a></li>
+            <li><a href="{{ route('profile.emailSetting', Auth::user()->id) }}">Email setting</a></li>
         </ul>
     </div>
     <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
         <ul class="footer-menu">
-            <li><a href="#">Change password</a></li>
-            <li><a href="#">Connect accounts</a></li>
+            <li><a href="/changePassword">Change password</a></li>
+            <li><a href="{{ route('profile.connect', Auth::user()->id) }}">Connect accounts</a></li>
         </ul>
     </div>
     <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
         <ul class="footer-menu">
-            <li><a href="#">Applications</a></li>
-            <li><a href="#">Close account</a></li>
+            <li><a href="{{ route('profile.applications', Auth::user()->id) }}">Applications</a></li>
+            <li><a href="{{ route('profile.close', Auth::user()->id) }}">Close account</a></li>
         </ul>
     </div>
 </div>

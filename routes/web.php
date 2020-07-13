@@ -25,9 +25,18 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('/','HomeController@index')->name('post');
     Route::get('frame','HomeController@home')->name('post');
     Route::get('post/{post}','PostController@post')->name('post');
-    Route::get('guidelines','HomeController@guidelines');
-    Route::get('license','HomeController@license');
-    Route::get('policy','HomeController@policy');
+    Route::get('guidelines','HomeController@guidelines')->name('home.guidelines');
+    Route::get('license','HomeController@framelicense')->name('home.framelicense');
+    Route::get('policy','HomeController@framePolicy')->name('home.framePolicy');
+    Route::get('conditions','HomeController@conditions')->name('home.conditions');
+    Route::get('about','HomeController@about')->name('home.about');
+    Route::get('blog','HomeController@blog')->name('home.blog');
+    Route::get('team','HomeController@team')->name('home.team');
+    Route::get('developers','HomeController@developers')->name('home.developers');
+    Route::get('press','HomeController@press')->name('home.press');
+    Route::get('help','HomeController@help')->name('home.help');
+    Route::get('security','HomeController@security')->name('home.security');
+
 
 	Route::get('post/tag/{tag}','HomeController@tag')->name('tag');
 	Route::get('post/category/{category}','HomeController@category')->name('category');
@@ -41,10 +50,18 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
     Route::get('analytics/{id}','ProfileController@analytics')->name('profile.analytics');
     Route::get('settings/{id}','ProfileController@settings')->name('profile.settings');
+    Route::get('emailSetting/{id}','ProfileController@emailSetting')->name('profile.emailSetting');
+    Route::get('connect/{id}','ProfileController@connect')->name('profile.connect');
+    Route::get('applications/{id}','ProfileController@applications')->name('profile.applications');
+    Route::get('close/{id}','ProfileController@close')->name('profile.close');
     Route::get('following/{id}','ProfileController@following')->name('profile.following');
 	Route::get('profileEdit/{id}','ProfileController@profileEdit')->name('profile.profileEdit');
 	Route::post('update/{id}','ProfileController@update')->name('profile.update');
-	Route::post('updateAvatar','ProfileController@updateAvatar')->name('profile.updateAvatar');
+    Route::post('updateAvatar','ProfileController@updateAvatar')->name('profile.updateAvatar');
+    Route::post('updateEmail','ProfileController@updateEmail')->name('profile.updateEmail');
+     //Collections
+    Route::get('collections/{id}','ProfileController@collections')->name('profile.collections');
+    Route::get('community/{id}','ProfileController@community')->name('profile.community');
 	//PasswordChange Routes
 	Route::get('changePassword','ProfileController@showChangePasswordForm');
 	Route::post('changePassworded','ProfileController@changePassword')->name('changePassword');

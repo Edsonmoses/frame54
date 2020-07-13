@@ -63,15 +63,56 @@ class HomeController extends Controller
     	return view('user.guidelines');
     }
 
-    public function License(Request $request)
+    public function frameLicense()
     {
 
     	return view('user.license');
     }
-    public function Policy(Request $request)
+    public function framePolicy()
     {
 
     	return view('user.policy');
+    }
+
+    public function Conditions()
+    {
+
+    	return view('user.conditions');
+    }
+    public function developers()
+    {
+
+    	return view('user.developers');
+    }
+    public function about()
+    {
+
+    	return view('user.about');
+    }
+    public function blog()
+    {
+
+    	return view('user.blogs');
+    }
+    public function team()
+    {
+
+    	return view('user.team');
+    }
+    public function press()
+    {
+
+    	return view('user.press');
+    }
+    public function help()
+    {
+
+    	return view('user.help');
+    }
+    public function security()
+    {
+
+    	return view('user.security');
     }
 
 }

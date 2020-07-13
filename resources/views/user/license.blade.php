@@ -35,26 +35,27 @@
                <p> Even though attribution isn’t required, Frame 54 photographers appreciate it as it provides exposure to their work and encourages
                 them to continue sharing</p>
              </div>
+             <hr class="license-hr">
         </div>
     </div>
-    <hr class="license-hr">
+
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-xs-3 col-sm-4 col-lg-3">
                 <ul class="footer-menu">
-                    <li><a class="active" href="#">License</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a class="active" href="{{ route('home.framelicense') }}">License</a></li>
+                    <li><a href="{{ route('home.framePolicy') }}">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
                 <ul class="footer-menu">
-                    <li><a href="#">Terms & conditions</a></li>
-                    <li><a href="#">API Terms</a></li>
+                    <li><a href="{{ route('home.conditions') }}">Terms & conditions</a></li>
+                    <li><a href="{{ route('home.developers') }}">API Terms</a></li>
                 </ul>
             </div>
         </div>
+        <hr>
     </div>
-    <hr>
 
 <!-- login Modal -->
 <div class="modal fade login-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

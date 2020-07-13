@@ -1156,7 +1156,13 @@ object-fit: cover;
     margin-top: -10%;
     height: 300px;
 }
-
+.team .page-title h3{
+    color: #666;
+}
+.team .p{
+    color: #666;
+    margin-left: -1px;
+}
 .page-title h1{
     color: #666;
 }
