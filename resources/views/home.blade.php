@@ -22,9 +22,6 @@
 		  </div><br/>
 
 	    <div class="row" id="app">
-            @foreach ($theme as $theme)
-            {{$theme->status}}
-            @endforeach
             <h3>Free PanAfrican Stock Photos</h3>
 		<div class="gal" id="post-data">
             @include('user/data')

@@ -17,6 +17,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 use File;
 use ZipArchive;
 
+
 class PostController extends Controller
 {
     public function post(post $post)
@@ -24,6 +25,10 @@ class PostController extends Controller
     	$categories =category::all();
         $theme =theme::all();
         $tags =tag::all();
+        $post = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')->first();
+
         $blogKey = 'blog_' . $post->id;
 
         if (!Session::has($blogKey)) {
@@ -71,21 +76,6 @@ class PostController extends Controller
         $posts = $category->posts();
         return view('user.blog',compact('posts','categories', 'tags','theme'));
     }
-    public function posts(Request $request)
-    {
-        $categories =category::all();
-        $tags =tag::all();
-        $theme =theme::all();
-        $posts = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
-        ->join('users','users.id','=','posts.posted_by')
-        ->paginate(6);
-        if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts','categories','tags','theme'))->render();
-
-		}
-
-}
 
 }
