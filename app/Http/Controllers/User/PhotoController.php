@@ -187,8 +187,9 @@ class PhotoController extends Controller
         $post->downloads = $post->downloads + 1;
         $post->save();
         $pathToFile = storage_path('app\\'. $post->image);
-        \Zipper::make(storage_path('app\\'. $post->image.'.zip'))->add($pathToFile)->close();
-        return response()->download(storage_path('app\\'. $post->image.'.zip'));
+        //\Zipper::make(storage_path('app\\'. $post->image.'.zip'))->add($pathToFile)->close();
+       // return response()->download(storage_path('app\\'. $post->image.'.zip'));
+        return response()->download(storage_path('app\\'. $post->image));
      }
      public function uguideline(){
         return view('user.uploadGuideline',compact('posts', 'tags','categories', 'theme'));
