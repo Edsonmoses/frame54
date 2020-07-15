@@ -7,6 +7,7 @@ use App\Model\user\category;
 use App\Model\user\post;
 use App\Model\user\tag;
 use App\Model\user\theme;
+use App\Model\user\photo;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;

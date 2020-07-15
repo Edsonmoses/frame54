@@ -7,7 +7,7 @@
         @if($posts->ads === 1)
         <div class="fdetails"><span class="ads">AD</span></div>
         @else
-        <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('photo.download', $post->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
+        <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('photo.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
         @endif
     </a>
     </div>
