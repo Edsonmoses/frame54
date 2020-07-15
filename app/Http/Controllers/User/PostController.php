@@ -72,9 +72,11 @@ class PostController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
-        $theme =theme::all();
+        $post = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')->first();
         $posts = $category->posts();
-        return view('user.blog',compact('posts','categories', 'tags','theme'));
+        return view('user.category',compact('posts','categories', 'tags','post'));
     }
 
 
