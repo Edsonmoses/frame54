@@ -10,6 +10,13 @@
  .sheight{
     height: 600px;
 }
+.navbar-trans{
+    background: transparent;
+    border: transparent !important;
+}
+.navbar-trans .navbar-toggle{
+    color: #fff !important;
+}
  .dropdown-menu{
     background-color:#ddd !important;
     border-top-left-radius: 6px !important;
@@ -316,7 +323,7 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
     column-count: 3;
 	}
   .gal .img{
-     width: 380px !important;
+     width: 100% !important;
      object-fit: scale-down !important;
      padding: 7px 0;
   }
@@ -377,7 +384,8 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
 	  -webkit-column-count: 1; /* Chrome, Safari, Opera */
     -moz-column-count: 1; /* Firefox */
     column-count: 1;
-	}
+    }
+
     }
     @media (min-width:992px) {
         .modal-lg {
@@ -632,7 +640,60 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
         width: 100%;
         object-fit: cover;
       }
+      .site-heading #searchbtn small {
+        font-size: 30px !important;
+    }
+    .site-heading #searchbtn {
+        padding: 0px 7px !important;
+    }
+    .site-heading #searchbtn {
+        border: 1px solid rgba(85, 85, 85, 0.58);
+    }
+    .download-image img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: 15px 0 15px 0 !important;
+    }
+    .divider {
+        margin: 2px 0px 0px 0px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(255, 255, 255);
+        height: 20px;
+        border-left: none;
+        border-bottom: none;
+        border-right: none;
+    }
+    .navbar-trans .joinUs {
+        margin: 0 25px 0 23px;
+        width: 117px !important;
+    }
+    .navbar-trans .joinUs i {
+        color: #fff !important;
+        padding: 21px 0 0 0;
+        font-size: 18px;
+        margin-left: 66px;
+    }
+    .navbar-trans .header-bell i{
+        color: #000 !important;
+        margin: 4px 0px 0px 0px !important;
+        font-size: 33px !important;
+    }
+    .navbar-trans .header-bell{
+        padding-bottom: 21px;
+    }
+    .navbar-trans .header-moon i{
+        padding: 17px 0 0 31px !important;
+        color: #000 !important;
+    }
 
+}
+.ml-5-c{
+    color: #ccc;
+}
+.ml-5{
+    padding: 15px;
 }
 
 .topnav .form-group {
@@ -720,7 +781,7 @@ border-radius: 0 50px 50px 0 !important;
   background:#fff;
   font-size: 27px;
   font-weight: 500;
-    border: 1px solid #555;
+    border: 1px solid rgba(85, 85, 85, 0.58);
     border-left: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -770,12 +831,12 @@ border-radius: 0 5px 5px 0 !important;
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
+  padding: 0px;
 }
 
 .login-section #formContent {
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
   background: #fff;
   padding: 30px;
   width: 90%;
@@ -805,15 +866,16 @@ border-radius: 0 5px 5px 0 !important;
 .login-color a{
     color: #222;
 }
-.loginTabs{
-    width: 68.%;
-    margin: -35px 0 0 14.1%;
+
+.login-section .nav-tabs {
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    border-bottom: none;
+    margin: 0 auto;
     background: #fff;
-    height: 64px;
-    position: absolute;
     z-index: 3;
-    border-radius: 10px 10px 0 0 !important;
-}
+    }
 
 .login-section #formFooter {
   background-color: #f6f6f6;
@@ -824,8 +886,10 @@ border-radius: 0 5px 5px 0 !important;
   border-radius: 0 0 10px 10px;
 }
 .networks-social{
-    font-size: 30px !important;
-    padding: 20px;
+    font-size: 9vh !important;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    color: #ccc;
 }
 .login-section .popup-hd{
     width: 75% !important;
@@ -855,18 +919,19 @@ border-radius: 0 5px 5px 0 !important;
     margin-top: -5px;
 }
 /* TABS */
+.login-section .nav-tabs > li{
+   width: 50%;
+}
 .login-section .nav-tabs > li > a {
     margin-right: 2px;
     line-height: 1.42857143;
     border: 1px solid transparent;
-    width: 448px;
     text-align: center;
     color: #222 !important;
 }
 .login-section .nav-tabs > li.active > a, .login-section .nav-tabs > li.active > a:focus, .login-section .nav-tabs > li.active > a:hover{
     background: #ddd;
     height: 63px;
-    width: 448px;
     text-align: center;
 }
 .login-section .nav-tabs > li > a:hover{

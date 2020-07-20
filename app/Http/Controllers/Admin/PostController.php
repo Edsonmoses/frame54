@@ -66,12 +66,14 @@ class PostController extends Controller
             'visit_count' => 'nullable',
             ]);
         if ($request->hasFile('image')) {
-            $imageName = $request->image->store('public');
+            $imageName = $request->file('image');
+            $filename = time() . '.' . $imageName->getClientOriginalExtension();
+            Image::make($imageName)->save(public_path('/uploads/frme54Img/'.$filename));
         }else{
             return 'No';
         }
         $post = new post;
-        $post->image = $imageName;
+        $post->imageName = $filename;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;
@@ -135,7 +137,7 @@ class PostController extends Controller
             'visit_count' => 'nullable',
             ]);
         if ($request->hasFile('image')) {
-            $imageName = $request->image->store('public');
+            $imageName = $request->image->public_path('/uploads/frame54Img/');
         }
         $post = post::find($id);
         $post->image = $imageName;

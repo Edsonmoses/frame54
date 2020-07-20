@@ -1,5 +1,5 @@
  <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-trans navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -21,7 +21,7 @@
                    <li><div class="divider"></div></li>
                    @if (Route::has('register'))
                        <li class="nav-item">
-                           <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg">{{ __('Join') }}</a>
+                           <a class="nav-link" type="button" data-toggle="modal" data-target=".register-modal-lg">{{ __('Join') }}</a>
                        </li>
                    @endif
                    <li class="nav-item joinUs">
@@ -121,21 +121,7 @@
                        UPLOAD</a>
                    </li>
                    <li class="nav-item header-moon">
-                    @foreach ($theme as $theme)
-                    @if($theme->stat === 1)
-                    <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                     <input type="text" name="status" hidden value="1">
-                    </form>
-                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
-                     @else
-                     <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                     <input type="text" name="status" hidden value="0">
-                    </form>
-                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
-                     @endif
-                   @endforeach
+                     <a class="nav-link" href="#"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
                    </li>
                @endguest
 
@@ -151,9 +137,9 @@
     <header class="intro-header" style="background-image: url(@yield('bg-img'))">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="col-lg-11 col-lg-offset-1 col-md-11 col-md-offset-1">
                     <div class="site-heading">
-                        <div class="col-xs-10 col-xs-offset-1">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h2 style="text-align: left !important">@yield('title')</h3>
                             <form action="{{ route('search') }}" method="GET" role="search">
 

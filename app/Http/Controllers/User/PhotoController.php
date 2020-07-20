@@ -76,7 +76,7 @@ class PhotoController extends Controller
             ]);
         if ($request->hasFile('image')) {
 
-           $imageName = $request->image->store('public');
+           $imageName = $request->image->store(public_path('/uploads/frame54Img/'));
         }else{
             return 'No';
         }
@@ -141,7 +141,7 @@ class PhotoController extends Controller
             'visit_count' => 'nullable',
             ]);
         if ($request->hasFile('image')) {
-            $imageName = $request->image->store('public');
+            $imageName = $request->image->store(public_path('/uploads/frame54Img/'));
         }
         $post = post::find($id);
         $post->image = $imageName;
@@ -186,10 +186,10 @@ class PhotoController extends Controller
         $post = post::find($id);
         $post->downloads = $post->downloads + 1;
         $post->save();
-        $pathToFile = storage_path('app\\'. $post->image);
+        $pathToFile = public_path('/uploads/frame54Img/'. $post->image);
         //\Zipper::make(storage_path('app\\'. $post->image.'.zip'))->add($pathToFile)->close();
        // return response()->download(storage_path('app\\'. $post->image.'.zip'));
-        return response()->download(storage_path('app\\'. $post->image));
+        return response()->download(public_path('/uploads/frame54Img/'.$post->image));
      }
      public function uguideline(){
         return view('user.uploadGuideline',compact('posts', 'tags','categories', 'theme'));
