@@ -29,22 +29,8 @@
                        UPLOAD</a>
                    </li>
                    <li class="nav-item header-moon">
-                    @foreach ($theme as $theme)
-                    @if($theme->status === 1)
-                    <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                     <input type="text" name="status" hidden value="1">
-                    </form>
-                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
-                     @else
-                     <form id="submit_this" role="form" action="{{ route('theme.update') }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                     <input type="text" name="status" hidden value="0">
-                    </form>
-                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
-                     @endif
-                   @endforeach
-                   </li>
+                    <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                  </li>
                @else
                <li class="nav-item header-bell hbell">
                 <a class="nav-link" href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>
