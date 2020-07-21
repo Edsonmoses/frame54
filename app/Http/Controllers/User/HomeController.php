@@ -25,7 +25,6 @@ class HomeController extends Controller
         $categories =category::all();
         $tags =tag::all();
         $theme =theme::all();
-        $featured = Post::with('featured')->orderBy('created_at','DESC');
         $posts = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')

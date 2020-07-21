@@ -25,6 +25,8 @@ class PostController extends Controller
     	$categories =category::all();
         $theme =theme::all();
         $tags =tag::all();
+        $featured =post::all();
+        $featured = post::where('featured',1)->orderBy('created_at','DESC')->first();
         $post = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
@@ -35,11 +37,8 @@ class PostController extends Controller
             $post->increment('visit_count');
             Session::put($blogKey,1);
         }
-        $related = Post::whereHas('categories', function ($q) use ($categories) {
-           $q->whereIn('categories.id', $categories);
-        })->where('id', '<>', $post->id)->get();
-        //dd($related);
-        return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withRelated($theme);
+        //dd($featured);
+        return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withTheme($theme)->withFeatured($featured);
     }
 
     public function getAllPosts()

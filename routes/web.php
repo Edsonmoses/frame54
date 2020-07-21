@@ -44,7 +44,7 @@ Route::group(['namespace' => 'User'],function(){
 	Route::get('submitPhoto','PhotoController@submitPhoto')->name('submitPhoto');
 	Route::post('store','PhotoController@store')->name('photo.store');
 	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
-    Route::get('photo/{id}/download','PhotoController@download')->name('photo.download');
+    Route::get('photo/download/{image}','PhotoController@download')->name('photo.download');
     Route::get('uguideline','PhotoController@uguideline')->name('photo.uguideline');
     //Profile Routegit add .s
     Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
