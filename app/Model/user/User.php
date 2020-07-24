@@ -6,11 +6,14 @@ namespace App\Model\user;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Overtrue\LaravelFollow\Traits\CanBeFollowed;
+use Overtrue\LaravelFollow\Traits\CanFollow;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
+    //use CanFollow, CanBeFollowed;
 
     /**
      * The attributes that are mass assignable.

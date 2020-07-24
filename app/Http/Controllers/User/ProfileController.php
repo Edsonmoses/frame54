@@ -107,11 +107,11 @@ class ProfileController extends Controller
     {
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(200, 200)->save(public_path('/uploads/avatars/'.$filename));
+            $avatar = time().'.'.$request->image->extension();
+            $request->image->move(public_path('/uploads/avatars'), $avatar);
         }
         $user = Auth::user();
-        $user->avatar = $filename;
+        $user->avatar = $avatar;
         $user->save();
 
         return view('user.profile.profile')->withUser($user);

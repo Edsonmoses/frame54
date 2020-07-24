@@ -356,7 +356,7 @@
             <div class="modal-header popup-hd">
                 <div class="popup-logo">
                     <img src="/user/img/Frame54-W.svg" alt="Frame54-W" />
-                    <p>FREE Afrocentric stock photos & videos shared by creators everywhere.1</p>
+                    <p>FREE Afrocentric stock photos & videos shared by creators everywhere.</p>
                 </div>
                 <div class="popclose">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

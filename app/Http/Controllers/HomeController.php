@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Model\user\category;
 use App\Model\user\post;
+use App\Model\user\User;
 use App\Model\user\tag;
 use App\Model\user\theme;
 use Illuminate\Http\Request;
@@ -46,4 +47,59 @@ class HomeController extends Controller
         }
         return view('home',compact('posts','categories','tags', 'theme'));
     }
+
+    public function users()
+
+    {
+
+        $users = User::get();
+
+        return view('users', compact('users'));
+
+    }
+
+
+    /**
+
+     * Show the application of itsolutionstuff.com.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function user($id)
+
+    {
+
+        $user = User::find($id);
+
+        return view('usersView', compact('user'));
+
+    }
+
+
+    /**
+
+     * Show the application of itsolutionstuff.com.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function ajaxRequest(Request $request){
+
+
+        $user = User::find($request->user_id);
+
+        //$response = auth()->user()->toggleFollow($user);
+
+
+        //return response()->json(['success'=>$response]);
+
+    }
 }
+
