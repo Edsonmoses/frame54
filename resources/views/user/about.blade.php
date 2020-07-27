@@ -13,50 +13,106 @@
 @endsection
 @section('main-content')
 	<!-- Main Content -->
-	<div class="container license-section sheight">
+	<div class="container about-section">
 	    <div class="row" id="app">
-            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                <div class="test-div">
-                    <h2>left text</h2>
+            <div class="col-md-12 col-xs-12 col-sm-5 col-lg-5">
+                <h1>About</h1>
+                <p>Free high-resolution panafrican images brought to you by the world’s most generous community of photographers.</p>
+                <div class="links">
+                <a href="#">Start browsing</a><a href="#">Contribute</a>
                 </div>
-                @foreach ($posts as $posts)
-    <div class="frame">
-        <a href="{{ $posts->slug }}">
-            <div class="ftitle"><img alt="{{ $posts->name ? $posts->name : $posts->title }}" src="/uploads/avatars/{{$posts->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$posts->name? $posts->name : 'Frame54'}}</span></div>
-            <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img">
-            @if($posts->ads === 1)
-            <div class="fdetails"><span class="ads">AD</span></div>
-            @else
-            <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('photo.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
-            @endif
-        </a>
-   </div>
-@endforeach
             </div>
-            <hr>
-
-             </div>
-        </div>
-    <div class="container">
-        <hr class="license-hr">
+            <div class="col-md-12 col-xs-12 col-sm-7 col-lg-7">
+                     <div class="half-img">
+                        <img src= "{{ Storage::disk('local')->url('1595337324.jpeg')}}" alt="{{ $post->title }}">
+                    </div>
+                    <div class="qt-img">
+                        <img class="pb-5" src= "{{ Storage::disk('local')->url('1595337324.jpeg')}}" alt="{{ $post->title }}">
+                        <img class="pt-5" src= "{{ Storage::disk('local')->url('1595337324.jpeg')}}" alt="{{ $post->title }}">
+                    </div>
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 bt-img">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+            </div>
+        </div><!--row-->
         <div class="row">
-            <div class="col-md-3 col-xs-3 col-sm-4 col-lg-3">
-                <ul class="footer-menu">
-                    <li><a href="{{ route('home.framelicense') }}">License</a></li>
-                    <li><a href="{{ route('home.framePolicy') }}" class="active">Privacy Policy</a></li>
-                </ul>
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                <h3>Frame 54 is internet’s source of free to use panafrican images.</h3>
             </div>
-            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
-                <ul class="footer-menu">
-                    <li><a href="{{ route('home.conditions') }}">Terms & conditions</a></li>
-                    <li><a href="{{ route('home.developers') }}">API Terms</a></li>
-                </ul>
-            </div>
-        </div>
+            <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4">
+              <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+              <h4>Over one million curated photos</h4>
+              <p>We hand-select every photo and accept only the best, so that no matter what you need—you’ll find exactly what you’re looking for on Frame 54.</p>
+           </div>
+           <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4">
+            <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+            <h4>A community of 157,866 photographers</h4>
+            <p>Frame 54 is home to a growing commu-nity of photographers—from hobbyists, professionals, emerging brands and everyone in between.</p>
+          </div>
+          <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4">
+            <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+            <h4>Fuelling your favourite platforms</h4>
+            <p>With partners like BuzzFeed, Squarespace and Trello being powered by our API, the Frame 54 library is more widely accessible than ever.</p>
+          </div>
+        </div><!--row-->
+        <div class="row spaced">
+            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
+                <img class="left" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="right" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+              </div>
+              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6">
+                <h3>Make something awesome</h3>
+                <p>Frame 54 was born from the pain we had in finding great, usable imagery. And we weren’t alone. Which is why, today many creators from around the world have downloaded Frame 54 images to create presentations, artwork, mockups and more.</p>
+                <div class="links">
+                    <a href="#">Find the Perfect Image</a>
+                    </div>
+              </div>
+        </div><!--row-->
+        <div class="row spaced">
+            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
+                <h3>Is it really free?</h3>
+                <p>YES its free. Frame 54 is a platform powered by an amazing community that has gifted hundreds of thousands of their own photos to fuel creativity around the world. So sign up for free and you’ve got access to over a million photos under the Frame 54 license—which makes them free to do-whatever-you-want with.</p>
+                <div class="links">
+                    <a href="#">Frame 54 License</a>
+                    </div>
+              </div>
+              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
+                <img class="full" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+              </div>
+        </div><!--row-->
+        <div class="row spaced">
+            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
+                Anyone can join the Frame 54 community
+                <img class="left" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="right" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+              </div>
+              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6">
+                <h3>Anyone can join the Frame 54 community</h3>
+                <p>Frame 54 was born from the pain we had in finding great, usable imagery. And we weren’t alone. Which is why, today many creators from around the world have downloaded Frame 54 images to create presentations, artwork, mockups and more.</p>
+                <div class="links">
+                    <a href="#">Join the community</a>
+                    </div>
+              </div>
+              <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                <img class="left" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="right" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+              </div>
+        </div><!--row-->
+        <div class="row spaced">
+            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
+                <h3>Powering the internet’s visuals</h3>
+                <p>YES its free. Frame 54 is a platform powered by an amazing community that has gifted hundreds of thousands of their own photos to fuel creativity around the world. So sign up for free and you’ve got access to over a million photos under the Frame 54 license—which makes them free to do-whatever-you-want with.</p>
+                <div class="links">
+                    <a href="#">Sign up now</a>
+                    </div>
+              </div>
+              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
+                <img class="full" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+              </div>
+        </div><!--row-->
+
         <hr>
     </div>
-
-
 @endsection
 @section('footer')
 	<script src="{{ asset('js/app.js') }}"></script>

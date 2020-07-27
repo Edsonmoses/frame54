@@ -88,10 +88,21 @@ class HomeController extends Controller
 
     	return view('user.developers');
     }
-    public function about()
+    public function about(Request $request)
     {
+        $categories =category::all();
+        $tags =tag::all();
+        $posts = post::all();
+        //dd($theme);
+        if ($request->ajax()) {
 
-    	return view('user.about');
+    		$view = view('user.data',compact('posts','categories','tags'))->render();
+
+            return response()->json(['html'=>$view]);
+
+        }
+
+    	return view('user.about',compact('posts','categories','tags', 'theme'));
     }
     public function blog()
     {
@@ -118,5 +129,11 @@ class HomeController extends Controller
 
     	return view('user.security');
     }
-
+    public function download($image){
+        $post = post::where('image', $image)->firstOrFail();
+        $post->downloads = $post->downloads + 1;
+        $post->save();
+        $path = public_path(). '/storage/'. $post->image;
+        return response()->download($path, $post->original_filename, ['Content-Type' => $post->mime]);
+     }
 }

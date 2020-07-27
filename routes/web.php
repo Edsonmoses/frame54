@@ -36,6 +36,7 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('press','HomeController@press')->name('home.press');
     Route::get('help','HomeController@help')->name('home.help');
     Route::get('security','HomeController@security')->name('home.security');
+    Route::get('home/download/{image}','HomeController@download')->name('home.download');
 
 
 	Route::get('post/tag/{tag}','HomeController@tag')->name('tag');

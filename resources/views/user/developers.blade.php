@@ -13,7 +13,7 @@
 @endsection
 @section('main-content')
 	<!-- Main Content -->
-	<div class="container license-section">
+	<div class="container api-section">
 	    <div class="row" id="app">
             <h1>API Terms</h1>
             <hr>

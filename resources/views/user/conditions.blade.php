@@ -13,7 +13,7 @@
 @endsection
 @section('main-content')
 	<!-- Main Content -->
-	<div class="container license-section">
+	<div class="container conditions-section">
 	    <div class="row" id="app">
             <h1>Terms & Conditions</h1>
             <hr>

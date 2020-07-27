@@ -26,7 +26,7 @@
                    @endif
                    <li class="nav-item joinUs">
                     <a class="nav-link" href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                       UPLOAD</a>
+                        SUBMIT PHOTO</a>
                    </li>
                    <li class="nav-item header-moon">
                     <a class="nav-link" href="#" id="darktheme"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
@@ -104,7 +104,7 @@
                    </li>
                    <li class="nav-item joinUs">
                     <a class="nav-link header2" href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                       UPLOAD</a>
+                        SUBMIT PHOTO</a>
                    </li>
                    <li class="nav-item header-moon">
                      <a class="nav-link" href="#"><i class="fa fa-moon-o" aria-hidden="true"></i></a>

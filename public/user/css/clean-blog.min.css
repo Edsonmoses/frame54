@@ -490,10 +490,10 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
     list-style: none;
     color: #666 !important;
 }
-.footer-menu a{
+.footer-menu li a{
     color: #666 !important;
 }
-.footer-menu a:hover{
+.footer-menu li a:hover{
     color: #000 !important;
     text-decoration: none;
 }
@@ -1358,3 +1358,157 @@ object-fit: cover;
 .collections a{
     margin: 0 31px 0 0;
 }
+
+/**policy-section***/
+.policy-section h1,h2,h3,h4{
+  color: #666;
+}
+.policy-section strong{
+    color: #666;
+  }
+  .policy-section p{
+    color: #ccc;
+  }
+  .policy-section .hp{
+    color: #666;
+  }
+/**conditions-section***/
+.conditions-section h1,h2,h3,h4{
+    color: #666;
+  }
+  .conditions-section strong{
+      color: #666;
+    }
+    .conditions-section p{
+      color: #ccc;
+    }
+    .conditions-section .hp{
+      color: #666;
+    }
+    /**api-section***/
+.api-section h1,h2,h3,h4{
+    color: #666;
+  }
+  .api-section strong{
+      color: #666;
+    }
+    .api-section p{
+      color: #ccc;
+    }
+    .api-section .hp{
+      color: #666;
+    }
+    /**about-section*/
+    .about-section p{
+        color: #ccc;
+    }
+    .about-section .half-img img{
+        float: left;
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        object-position: center;
+    }
+    .about-section .qt-img img{
+        float: right;
+        width: 320px;
+        height: 160px;
+        object-fit: cover;
+        object-position: center;
+    }
+    .about-section .pb-5{
+        padding: 0 0 5px 0;
+    }
+    .about-section .pt-5{
+        padding: 5px 0 0 0;
+    }
+    .about-section .bt-img img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        padding: 10px 0 10px 0;
+    }
+    .about-section .links a{
+        border-radius: 5px;
+        background: #99d608;
+        border: 1px solid #99d608;
+        padding: 5px 15px 5px 15px !important;
+        margin: 16px 0 0 15px !important;
+        color: #fff !important;
+      }
+      .about-section .links a:hover{
+        border-radius: 5px;
+        background: #83a928 !important;
+        border: 1px solid #83a928 !important;
+        padding: 5px 15px 5px 15px !important;
+        margin-top: 9px;
+        color: #fff !important;
+        text-decoration: none;
+      }
+      .about-section .img-4 img{
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        padding: 10px 10px 10px 10px;
+    }
+    .about-section .img-4 h1, .img-4 h2, .img-4 h3, .img-4 h4, .img-4 h5{
+        padding: 0 10px 0px 10px;
+        margin: 0 0px -24px 0px !important;
+    }
+    .about-section .img-4 p{
+        padding: 0 10px 0 10px;
+        color: #ccc;
+    }
+    .about-section .img-6 h1,.img-6 h2, .img-6 h3, .img-6 h4, .img-6 h5{
+        margin: 0 0px -24px -13px !important;
+    }
+    .about-section .img-6 .left{
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        padding: 10px 10px 10px 10px;
+    }
+    .about-section .img-6 .right{
+        width: 148px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        padding: 10px 5px 10px 0px;
+    }
+    .about-section .img-6 .full{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        padding: 10px 10px 10px 10px;
+    }
+    .spaced{
+        padding: 50px 0 0 0;
+    }
+/*** ***/
+.row-img {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  /* Create four equal columns that sits next to each other */
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }

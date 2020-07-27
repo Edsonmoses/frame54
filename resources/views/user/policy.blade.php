@@ -13,14 +13,14 @@
 @endsection
 @section('main-content')
 	<!-- Main Content -->
-	<div class="container license-section">
+	<div class="container policy-section">
 	    <div class="row" id="app">
-            <h1>License</h1>
+            <h1>Privacy Policy</h1>
             <hr>
-            <p>Frame 54 and its affiliates and subsidiaries (“Frame 54”, “we” or “us”) are committed to protecting your privacy and safeguarding
+            <p class="hp">Frame 54 and its affiliates and subsidiaries (“Frame 54”, “we” or “us”) are committed to protecting your privacy and safeguarding
                 your personal information. The purpose of this privacy policy (the “Privacy Policy”) is to inform you about our privacy practices,
                 including how we collect, use and disclose your personal information.</p>
-                <p>This Privacy Policy applies to our website, mobile applications and related services (collectively, the “Frame 54 Services”).
+                <p class="hp">This Privacy Policy applies to our website, mobile applications and related services (collectively, the “Frame 54 Services”).
                     By visiting, accessing, or using the Frame 54 Services, you consent to the policies and practices of this Privacy Policy so please read
                     them carefully. If any policies or practices of this Privacy Policy are unacceptable to you, please do not visit, access, or use the
                     Frame 54 Services.</p>

@@ -19,7 +19,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10">
                 <div class="site-heading">
                     <div class="col-xs-10">
-                        <h3 style="text-align: left !important; margin-top:-20px;">@yield('title')</h3>
+                        <h3 style="text-align: left !important; margin-top:-20px; color:#fff !important;">@yield('title')</h3>
                         <form action="{{ route('search') }}" method="GET" role="search">
 
                         <div class="input-group">
@@ -39,8 +39,8 @@
     </div>
 </header>
 	<!-- Main Content -->
-	<div class="container">
-	    <div class="row team" id="app">
+	<div class="container team">
+	    <div class="row" id="app">
             <br>
             <div class="page-title">
                 <h3>Managing your Frame 54 account</h3>
