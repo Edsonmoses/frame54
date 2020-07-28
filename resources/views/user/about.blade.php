@@ -94,8 +94,12 @@
                     </div>
               </div>
               <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                <img class="left" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="right" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="left" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="right" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="left" style="width: 113px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="right" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="left" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <img class="right" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
               </div>
         </div><!--row-->
         <div class="row spaced">
