@@ -39,17 +39,83 @@
 </header>
 	<!-- Main Content -->
 	<div class="container about-section blog-s">
-        <div class="scrollmenu">
-                <a href="#">ARTICLES</a> |
-                <a href="#">LAUNCHES</a> |
-                <a href="#">PARTNERS</a> |
-                <a href="#">MEDIA</a> |
-                <a href="#">EVENTS</a> |
-                <a href="#">HOSTS</a> |
-                <a href="#">HELP</a>
-          </div><br/>
 	    <div class="row spaced-b100" id="app">
-            <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 blog-s">
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely.<br> Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that<br/>Read more....</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="fp">May 7 • 3 min read</p>
+                <p class="fp">May 7 • 3 min read</p>
+                <p class="fp">May 7 • 3 min read</p>
+             </div>
+             <div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
+                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+                <h4>Content type</h4>
+                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
+                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
+                <h5>Awesome Dude</h5>
+                <p class="p">May 7 • 3 min read</p>
+             </div><div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
                 <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
                 <h4>Content type</h4>
                 <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
@@ -57,78 +123,7 @@
                 <h5>Awesome Dude</h5>
                 <p class="p">May 7 • 3 min read</p>
              </div>
-             <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div><div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <h4>Content type</h4>
-                <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>
-                <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
-                <h5>Awesome Dude</h5>
-                <p class="p">May 7 • 3 min read</p>
-             </div>
-             <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4 blog-s">
+             <div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
                 <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
                 <h4>Content type</h4>
                 <p>Frame 54 photos are made to be used freely. Our license reflects that. Frame 54 photos are made to be used freely. Our license reflects that</p>

@@ -95,7 +95,7 @@
                 <p class="p">Information for brand accounts to submit or download photos on Frame 54</p>
                 <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
                 <p><strong>12 articles in this collection</strong></p>
-                <p>Written by <strong>John Doe</></p>
+                <p>Written by <strong>John Doe</strong></p>
                 <hr>
              </div>
              <div class="page-title">
