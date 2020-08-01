@@ -49,8 +49,10 @@
                 <img alt="{{Auth::user()->name}}" src="/uploads/avatars/default.jpg" id="guideline-image" class="img-circle img-responsive">
                 <h5>Awesome Dude</h5>
                 <p class="fp">May 7 • 3 min read</p>
-                <p class="fp">May 7 • 3 min read</p>
-                <p class="fp">May 7 • 3 min read</p>
+                <p class=" "><i class="fa fa-heart-o" aria-hidden="true"></i>
+                </p>
+                <p class="fplus">  <i class="fa fa-plus" aria-hidden="true"></i>
+                </p>
              </div>
              <div class="col-md-12 col-xs-12 col-sm-11 col-lg-11 img-full blog-s">
                 <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">

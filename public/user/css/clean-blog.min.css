@@ -1517,6 +1517,12 @@ object-fit: cover;
     font-size: 14px !important;
     margin-top: -5px;
 }
+.blog-s .flike{
+    float: right;
+}
+.blog-s .fplus{
+    float: right;
+}
 .blog-s .scrollmenu{
     margin: 10px;
 }
@@ -1545,4 +1551,86 @@ object-fit: cover;
     margin-top: 9px;
     color: #fff !important;
     text-decoration: none;
+  }
+/*.dropzone**/
+.dropzone {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 200px;
+    border-width: 2px;
+    margin-bottom: 20px;
+    color: #646c7f !important;
+    border-style: dashed !important;
+    border-color: #0087f7 !important;
+    border-radius: 5px;
+    line-height: 200px;
+    cursor: pointer;
+  }
+  .dropzone.is-dragover {
+    color: #999;
+    border-style: solid;
+  }
+  .dropzone.has-images {
+    justify-content: flex-start;
+  }
+  .dropzone.has-images .msg {
+    display: none;
+  }
+  .dropzone div.has-image {
+    opacity: 1;
+    width: 0px;
+    height: 0px;
+  }
+ /*.dropzone div#my-awesome-dropzone{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }*/
+  .dropzone .preview,.dropzone .dz-message {
+    display: flex;
+    align-items: left !important;
+    position: relative;
+    cursor: default;
+    margin: 0 5px;
+    height: 120px;
+    border-radius: 5px;
+  }
+  .dropzone .preview:hover .details {
+    display: flex;
+  }
+  .dropzone .preview img {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 5px;
+  }
+  .dropzone .preview .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropzone .preview .remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #e40000;
+    cursor: pointer;
+  }
+  .dropzone .preview .remove .fa {
+    font-size: 20px;
+    color: white;
   }

@@ -107,7 +107,7 @@ class HomeController extends Controller
     public function blog()
     {
 
-    	return view('user.blogs');
+    	return view('user.blogs_full');
     }
     public function team()
     {
