@@ -1669,3 +1669,6 @@ object-fit: cover;
     font-size: 20px;
     color: white;
   }
+.btn-like{
+    background: transparent !important;
+}

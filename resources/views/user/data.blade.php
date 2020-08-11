@@ -7,7 +7,13 @@
             @if($posts->ads === 1)
             <div class="fdetails"><span class="ads">AD</span></div>
             @else
-            <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
+            <div class="fdetails">
+                @if($posts->like === 1)
+                <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                @else
+                <i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                @endif
+            </div>
             @endif
         </a>
    </div>

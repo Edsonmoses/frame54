@@ -28,7 +28,16 @@
             @endif
             <img src="/user/img/Frame54-G.svg" id="icon" alt="Frame54 Logo" style="padding: 15px;" />
           </div>
-
+          @foreach(['facebook', 'twitter', 'google', 'linkedin'] as $provider)
+          <a class="btn btn-link" href="{{ route('social.login', ['provider' => $provider]) }}">Login with {{ ucwords($provider) }}</a>
+      @endforeach
+      @if ($errors->any())
+          <div class="alert alert-danger">
+              @foreach ($errors->all() as $error)
+                  <div>{{ $error }}</div>
+              @endforeach
+          </div>
+      @endif
            <!-- Login Form -->
            <form id="login-form" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}

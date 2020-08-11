@@ -47,6 +47,8 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
     Route::get('photo/download/{image}','PhotoController@download')->name('photo.download');
     Route::get('uguideline','PhotoController@uguideline')->name('photo.uguideline');
+
+    Route::post('likeStore','HomeController@likeStore')->name('home.likeStore');
     //Profile Routegit add .s
     Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
     Route::get('analytics/{id}','ProfileController@analytics')->name('profile.analytics');
@@ -75,7 +77,10 @@ Route::group(['namespace' => 'User'],function(){
 
 	//vue routes
 	Route::post('getPosts','PostController@getAllPosts');
-	Route::post('saveLike','PostController@saveLike');
+    Route::post('saveLike','PostController@saveLike');
+
+    Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.login');
+    Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
 });
 
 //Admin Routes

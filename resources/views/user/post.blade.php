@@ -21,7 +21,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 download-image">
-				<img id="images" src= "{{ Storage::disk('local')->url($post->image)}}" alt="{{ $post->title }}">
+                <div class="frame">
+                <div class="ftitle"><img alt="{{ $post->name ? $post->name : $post->title }}" src="/uploads/avatars/{{$post->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$post->name? $post->name : 'Frame54'}}</span></div>
+                <img id="images" src= "{{ Storage::disk('local')->url($post->image)}}" alt="{{ $post->title }}">
+                @if($post->ads === 1)
+                <div class="fdetails"><span class="ads">AD</span></div>
+                @else
+                <div class="fdetails">
+                    @if($post->like = 1)
+                    <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                    @else
+                    <i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                    @endif
+                </div>
+                @endif
+              </div>
             </div>
             <div class="col-lg-4 col-md-4 download-cont">
                 <img alt="{{ $post->name }}" src="/uploads/avatars/{{$post->avatar}}" id="profile-image2d" class="img-circle img-responsive"><span id="profile-name">{{$post['name']? $post['name'] : 'Frame54'}}</span>
@@ -87,7 +101,13 @@
             @if($post->ads === 1)
             <div class="fdetails"><span class="ads">AD</span></div>
             @else
-            <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
+            <div class="fdetails">
+                @if($post->like = 1)
+                <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                @else
+                <i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                @endif
+            </div>
             @endif
         </a>
    </div>

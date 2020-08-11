@@ -101,5 +101,17 @@ class HomeController extends Controller
         //return response()->json(['success'=>$response]);
 
     }
+    public function likeStore(Request $request,$id)
+    {
+       /* $this->validate($request,[
+
+            'like' => 'nullable',
+            ]);
+        $post = post::find($id);
+        $post->llke = $post->like + 1;
+        $post->save();*/
+
+        return redirect(route('submitPhoto'));
+    }
 }
 

@@ -44,10 +44,10 @@ class User extends Authenticatable
     ];
 
     // BTW: in most of case you should keep email in lowercase
-  public function setEmailAttribute($value)
-  {
-      $this->attributes['email'] = strtolower($value);
-  }
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
 
     public function verifyUser()
     {
