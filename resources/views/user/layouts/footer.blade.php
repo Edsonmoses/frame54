@@ -121,12 +121,12 @@
 <!-- Collection modal end -->
 <!-- login Modal -->
 <div class="modal fade login-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-">
       <div class="modal-contents  login-section fadeInDown">
             <div class="modal-header popup-hd">
                 <div class="popup-logo">
                     <img src="/user/img/Frame54-W.svg" alt="Frame54-W" />
-                    <p>FREE Afrocentric stock photos & videos shared by creators everywhere.</p>
+                    <p>FREE Afrocentric stock photos shared by creators everywhere.</p>
                 </div>
                 <div class="popclose">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -135,9 +135,9 @@
             </div>
             </div>
         <div class="modal-body">
-          <div class="container">
+          <div class="containers">
             <div role="tabpanel">
-                <div class="container">
+                <div class="containers">
                 <div class="row ">
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
@@ -155,7 +155,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="loginTab">
-                        <div class="container">
+                        <div class="containers">
                             <div class="wrapper">
                               <div id="formContent">
                                 <!-- Tabs Titles -->
@@ -180,13 +180,13 @@
                                                     <div class="networks-social">with your social network</div>
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                <a href="#" class="fa fa-google">  google</a>
+                                                <a href="#" class="fa fa-google"></a>
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                <a href="#" class="fa fa-facebook"> facebook</a>
+                                                <a href="#" class="fa fa-facebook"></a>
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                <a href="#" class="fa fa-twitter">  twitter</a>
+                                                <a href="#" class="fa fa-twitter"></a>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                                 <div class="networks-social" style="font-size: 30px !important">or</div>
@@ -221,15 +221,15 @@
                                   @enderror
                                   </div>
                                   <div class="form-group row mb-0">
-                                      <div class="form-check" style="float: left; padding-left: 87px; font-size: 17px; color: #666;">
+                                      <div class="form-check" style="float: left; padding-left: 52px; font-size: 17px; color: #666;">
                                           <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                          <label class="form-check-label" for="remember" style="font-weight: 200 !important">
+                                          <label class="form-check-label" for="remember" style="font-weight: 200 !important;">
                                               {{ __('Keep me signed in') }}
                                           </label>
                                       </div>
                                       @if (Route::has('password.request'))
-                                      <a class="btn btn-link underlineHover" href="{{ route('password.request') }}" style="text-transform: none; float: right; padding-right: 81px; font-size: 17px; color: #666;">
+                                      <a class="btn btn-link underlineHover" href="{{ route('password.request') }}" style=" margin-top:-15px !important; text-transform: none; float: right; padding-right: 81px; font-size: 17px; color: #666;">
                                           {{ __('Forgot your password?') }}
                                       </a>
                                      @endif
@@ -248,7 +248,7 @@
                         <!--loginTab-->
                     </div>
                     <div role="tabpanel" class="tab-pane" id="registerTab">
-                        <div class="container">
+                        <div class="containers">
                             <div class="wrapper">
                               <div id="formContent">
                                 <!-- Tabs Titles -->
@@ -263,13 +263,13 @@
                                                         <div class="networks-social">with your social network</div>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                    <a href="#" class="fa fa-google">  google</a>
+                                                    <a href="#" class="fa fa-google"></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                    <a href="#" class="fa fa-facebook"> facebook</a>
+                                                    <a href="#" class="fa fa-facebook"></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                    <a href="#" class="fa fa-twitter">  twitter</a>
+                                                    <a href="#" class="fa fa-twitter"></a>
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                                     <div class="networks-social" style="font-size: 30px !important">or</div>
@@ -323,11 +323,11 @@
                                                 numbers & special characters. Cannot contain whitespace</div>
                                             <div class="checkbox login-colors ml-5 ">
                                                 <label>
-                                                <input type="checkbox" name="promotions" value="1">I wish to receive news, promotions & the best photos from Frame 54 by email.
+                                                <input type="checkbox" name="promotions" value="1" checked>I wish to receive news, promotions & the best photos from Frame 54 by email.
                                                 </label>
                                             </div>
                                                 <div class="text-center">
-                                                    <input type="submit" class="fadeIn fourth" style="font-size: 3vw; padding:10px 7% 10px 7% !important;" value="{{ __('Create your Frame 54 Account') }}">
+                                                    <input type="submit" class="fadeIn fourth" style="font-size: 1em; padding:10px 7% 10px 7% !important;" value="{{ __('Create your Frame 54 Account') }}">
                                                 </div>
                                                 <div class="login-color">By joining Frame 54, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></div>
                                             </div>
@@ -351,7 +351,7 @@
   <!--end login Model-->
   <!-- Register Modal -->
 <div class="modal fade register-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-contents  login-section fadeInDown">
             <div class="modal-header popup-hd">
                 <div class="popup-logo">
@@ -365,9 +365,9 @@
             </div>
             </div>
         <div class="modal-body">
-          <div class="container">
+          <div class="containers">
             <div role="tabpanel">
-                <div class="container">
+                <div class="containers">
                 <div class="row ">
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
@@ -385,7 +385,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane" id="loginTabs">
-                        <div class="container">
+                        <div class="containers">
                             <div class="wrapper">
                               <div id="formContent">
                                 <!-- Tabs Titles -->
@@ -451,7 +451,7 @@
                                   @enderror
                                   </div>
                                   <div class="form-group row mb-0">
-                                      <div class="form-check" style="float: left; padding-left: 87px; font-size: 17px; color: #666;">
+                                      <div class="form-check" style="float: left; padding-left: 52px; font-size: 17px; color: #666;">
                                           <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                           <label class="form-check-label" for="remember" style="font-weight: 200 !important">
@@ -459,7 +459,7 @@
                                           </label>
                                       </div>
                                       @if (Route::has('password.request'))
-                                      <a class="btn btn-link underlineHover" href="{{ route('password.request') }}" style="text-transform: none; float: right; padding-right: 81px; font-size: 17px; color: #666;">
+                                      <a class="btn btn-link underlineHover" href="{{ route('password.request') }}" style="text-transform: none; margin-top:-15px; float: right; padding-right: 81px; font-size: 17px; color: #666;">
                                           {{ __('Forgot your password?') }}
                                       </a>
                                      @endif
@@ -478,7 +478,7 @@
                         <!--loginTab-->
                     </div>
                     <div role="tabpanel" class="tab-pane  active" id="registerTabs">
-                        <div class="container">
+                        <div class="containers">
                             <div class="wrapper">
                               <div id="formContent">
                                 <!-- Tabs Titles -->
@@ -493,13 +493,13 @@
                                                         <div class="networks-social">with your social network</div>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                    <a href="#" class="fa fa-google">  google</a>
+                                                    <a href="#" class="fa fa-google"> </a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                    <a href="#" class="fa fa-facebook"> facebook</a>
+                                                    <a href="#" class="fa fa-facebook"></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                    <a href="#" class="fa fa-twitter">  twitter</a>
+                                                    <a href="#" class="fa fa-twitter"></a>
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                                     <div class="networks-social" style="font-size: 30px !important">or</div>
@@ -553,11 +553,11 @@
                                                 numbers & special characters. Cannot contain whitespace</div>
                                             <div class="checkbox login-colors ml-5 ">
                                                 <label>
-                                                <input type="checkbox" name="promotions" value="1">I wish to receive news, promotions & the best photos from Frame 54 by email.
+                                                <input type="checkbox" name="promotions" value="1" checked>I wish to receive news, promotions & the best photos from Frame 54 by email.
                                                 </label>
                                             </div>
                                                 <div class="text-center">
-                                                    <input type="submit" class="fadeIn fourth" style="font-size: 3vw; padding:10px 7% 10px 7% !important;" value="{{ __('Create your Frame 54 Account') }}">
+                                                    <input type="submit" class="fadeIn fourth" style="font-size: 1em; padding:10px 7% 10px 7% !important;" value="{{ __('Create your Frame 54 Account') }}">
                                                 </div>
                                                 <div class="login-color">By joining Frame 54, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></div>
                                             </div>

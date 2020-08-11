@@ -25,20 +25,19 @@ class PostController extends Controller
     	$categories =category::all();
         $theme =theme::all();
         $tags =tag::all();
-        $featured =post::all();
-        $featured = post::where('featured',1)->orderBy('created_at','DESC')->first();
-        $post = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
-        ->join('users','users.id','=','posts.posted_by')->first();
-
         $blogKey = 'blog_' . $post->id;
 
         if (!Session::has($blogKey)) {
             $post->increment('visit_count');
             Session::put($blogKey,1);
         }
-        //dd($featured);
-        return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withTheme($theme)->withFeatured($featured);
+
+        $post = post::where('status',1)->orderBy('created_at')
+        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')->first();
+        //dd($post);
+
+        return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withTheme($theme);
     }
 
     public function getAllPosts()

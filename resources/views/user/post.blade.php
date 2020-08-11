@@ -72,11 +72,28 @@
         </div>
         <p>Sponsored Images/Content</p>
         <div class="single-featured">
-            @if($post->featured == 1)
-            <img src= "{{ Storage::disk('local')->url($post->image)}}" alt="">
+            @if ($post->sponsored_images = 1)
+            <img id="images" src= "{{ Storage::disk('local')->url($post->image)}}" alt="{{ $post->title }}">
             @endif
-       </div>
+       </div><!--sponsored Images-->
        <p> SIMILAR PHOTOS</p>
+       <div class="row">
+		<div class="similar">
+       @foreach ($post->categories as $category)
+         <div class="frame">
+        <a href="{{ $post->slug }}">
+            <div class="ftitle"><img alt="{{ $post->name ? $post->name : $post->title }}" src="/uploads/avatars/{{$post->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$post->name? $post->name : 'Frame54'}}</span></div>
+            <img src= "{{ Storage::url($post->image)}}" alt="{{$post->title}}" class="img">
+            @if($post->ads === 1)
+            <div class="fdetails"><span class="ads">AD</span></div>
+            @else
+            <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
+            @endif
+        </a>
+   </div>
+       @endforeach
+        </div>
+       </div><!--simila photos-->
 
     </div>
 </article>

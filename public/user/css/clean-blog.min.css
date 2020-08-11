@@ -102,7 +102,7 @@
 }
  .subheading .photoby{
     text-align: left !important;
-    margin: 106px 0 0 -70px !important;
+    margin: 106px 0 0 -8px !important;
     z-index: 999;
     position: absolute;
     font-size: 12px !important;
@@ -327,6 +327,12 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
      object-fit: scale-down !important;
      padding: 7px 0;
   }
+  .similar img{
+    width: 300px !important;
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+  }
   .frame {
     z-index: 1;
   }
@@ -342,11 +348,20 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
     margin: 16px;
     position: absolute;
   }
+  .similar .ftitle-img{
+    border-radius: 50%!important;
+    float: left;
+    border: #fff 2px solid;
+    width:40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
   .ftitle-img{
     border-radius: 50%!important;
     float: left;
     border: #fff 2px solid;
     width:40px !important;
+    height: 40px !important;
     padding: 0 !important;
   }
   .ftitle span{
@@ -854,12 +869,12 @@ border-radius: 0 5px 5px 0 !important;
     margin: 0 auto;
 }
 .login-colors{
-    font-size: 18px;
+    font-size: 13px;
     padding-bottom: 24px;
 }
 .login-color{
     color: #ccc !important;
-    font-size: 18px !important;
+    font-size: 13px !important;
     padding: 25px 0 32px 0 !important;
 }
 
@@ -886,7 +901,7 @@ border-radius: 0 5px 5px 0 !important;
   border-radius: 0 0 10px 10px;
 }
 .networks-social{
-    font-size: 9vh !important;
+    font-size: 2em !important;
     text-align: center;
     padding: 20px 0 20px 0;
     color: #ccc;
@@ -900,7 +915,7 @@ border-radius: 0 5px 5px 0 !important;
 }
 .login-section .popup-hd p{
     color: #fff;
-    font-size: 41px;
+    font-size: 20px;
 }
 .popup-logo img{
     width: 50%;
@@ -1552,8 +1567,28 @@ object-fit: cover;
     color: #fff !important;
     text-decoration: none;
   }
-/*.dropzone**/
+/*.drop-zone**/
 .dropzone {
+    border-width: 2px;
+    color: #646c7f !important;
+    border-style: dashed !important;
+    border-color: #0087f7 !important;
+    border-radius: 5px;
+}
+.dropzone .dz-default.dz-message {
+    height: 171px;
+    background-size: 132px 132px;
+    margin-top: -101.5px;
+    background-position-x:center;
+
+}
+.dropzone .dz-default.dz-message span {
+    display: block;
+    margin-top: 145px;
+    font-size: 20px;
+    text-align: center;
+}
+.drop-zone {
     position: relative;
     display: flex;
     justify-content: center;
@@ -1569,22 +1604,22 @@ object-fit: cover;
     line-height: 200px;
     cursor: pointer;
   }
-  .dropzone.is-dragover {
+  .drop-zone.is-dragover {
     color: #999;
     border-style: solid;
   }
-  .dropzone.has-images {
+  .drop-zone.has-images {
     justify-content: flex-start;
   }
-  .dropzone.has-images .msg {
+  .drop-zone.has-images .msg {
     display: none;
   }
-  .dropzone div.has-image {
+  .drop-zone div.has-image {
     opacity: 1;
     width: 0px;
     height: 0px;
   }
- /*.dropzone div#my-awesome-dropzone{
+ /*.drop-zone div#my-awesome-drop-zone{
     position: absolute;
     top: 0;
     left: 0;
@@ -1593,7 +1628,7 @@ object-fit: cover;
     opacity: 0;
     cursor: pointer;
   }*/
-  .dropzone .preview,.dropzone .dz-message {
+  .drop-zone .preview,.drop-zone .dz-message {
     display: flex;
     align-items: left !important;
     position: relative;
@@ -1602,15 +1637,15 @@ object-fit: cover;
     height: 120px;
     border-radius: 5px;
   }
-  .dropzone .preview:hover .details {
+  .drop-zone .preview:hover .details {
     display: flex;
   }
-  .dropzone .preview img {
+  .drop-zone .preview img {
     max-width: 120px;
     max-height: 120px;
     border-radius: 5px;
   }
-  .dropzone .preview .details {
+  .drop-zone .preview .details {
     position: absolute;
     top: 0;
     left: 0;
@@ -1620,7 +1655,7 @@ object-fit: cover;
     align-items: center;
     justify-content: center;
   }
-  .dropzone .preview .remove {
+  .drop-zone .preview .remove {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1630,7 +1665,7 @@ object-fit: cover;
     background-color: #e40000;
     cursor: pointer;
   }
-  .dropzone .preview .remove .fa {
+  .drop-zone .preview .remove .fa {
     font-size: 20px;
     color: white;
   }
