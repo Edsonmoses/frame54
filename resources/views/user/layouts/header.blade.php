@@ -1,5 +1,5 @@
  <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+    <nav class="navbar navbar-default  navbar-fixed-top navbar-custom">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -130,7 +130,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
                         <div class="col-xs-10 col-xs-offset-1">
-                            <h2 style="text-align: left !important">@yield('title')</h3>
+                            <h2 style="text-align: left !important; color:#fff !important">@yield('title')</h3>
                             <form action="{{ route('search') }}" method="GET" role="search">
 
                             <div class="input-group">

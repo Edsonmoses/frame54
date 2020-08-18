@@ -37,5 +37,8 @@ class post extends Model
     {
         return route('post',$value);
     }
+    public function user(){
+        return $this->belongsTo(App\Model\user\User::class);
+    }
 
 }

@@ -53,4 +53,10 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Model\user\VerifyUser');
     }
+    public function posts(){
+        return $this->hasMany(App\Model\user\Post::class);
+    }
+    public function getPostsCountAttribute(){
+        return $this->posts()->count();
+    }
 }

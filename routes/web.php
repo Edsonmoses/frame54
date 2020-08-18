@@ -37,6 +37,7 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('help','HomeController@help')->name('home.help');
     Route::get('security','HomeController@security')->name('home.security');
     Route::get('home/download/{image}','HomeController@download')->name('home.download');
+    Route::get('home/likes/{like}','HomeController@likes')->name('home.likes');
 
 
 	Route::get('post/tag/{tag}','HomeController@tag')->name('tag');
@@ -47,8 +48,8 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
     Route::get('photo/download/{image}','PhotoController@download')->name('photo.download');
     Route::get('uguideline','PhotoController@uguideline')->name('photo.uguideline');
+    Route::get('post/likes/{like}','PostController@likes')->name('post.likes');
 
-    Route::post('likeStore','HomeController@likeStore')->name('home.likeStore');
     //Profile Routegit add .s
     Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
     Route::get('analytics/{id}','ProfileController@analytics')->name('profile.analytics');
@@ -58,8 +59,9 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('applications/{id}','ProfileController@applications')->name('profile.applications');
     Route::get('close/{id}','ProfileController@close')->name('profile.close');
     Route::get('following/{id}','ProfileController@following')->name('profile.following');
-	Route::get('profileEdit/{id}','ProfileController@profileEdit')->name('profile.profileEdit');
-	Route::post('update/{id}','ProfileController@update')->name('profile.update');
+	Route::get('edit/{id}','ProfileController@edit')->name('profile.edit');
+    Route::post('updated/{id}','ProfileController@updated')->name('profile.updated');
+    Route::post('update','ProfileController@updated')->name('profile.update');
     Route::post('updateAvatar','ProfileController@updateAvatar')->name('profile.updateAvatar');
     Route::post('updateEmail','ProfileController@updateEmail')->name('profile.updateEmail');
      //Collections
@@ -67,7 +69,8 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('community/{id}','ProfileController@community')->name('profile.community');
 	//PasswordChange Routes
 	Route::get('changePassword','ProfileController@showChangePasswordForm');
-	Route::post('changePassworded','ProfileController@changePassword')->name('changePassword');
+    Route::post('changePassworded','ProfileController@changePassword')->name('changePassword');
+    Route::post('close/{id}','ProfileController@closed')->name('closed');
 	//Search Routes
 	Route::get('/search', 'SearchController@index')->name('search');
     Route::get('user/verify/{token}', 'Auth\RegisterController@verifyUser');
@@ -79,9 +82,13 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('getPosts','PostController@getAllPosts');
     Route::post('saveLike','PostController@saveLike');
 
-    Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.login');
-    Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
+
 });
+
+ //Socialite
+ Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 
 //Admin Routes
 Route::group(['namespace' => 'Admin'],function(){

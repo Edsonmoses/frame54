@@ -129,6 +129,11 @@ class HomeController extends Controller
 
     	return view('user.security');
     }
+    public function likes($like){
+        $post = post::where('like', $like)->firstOrFail();
+        $post->downloads = $post->downloads + 1;
+        $post->save();
+     }
     public function download($image){
         $post = post::where('image', $image)->firstOrFail();
         $post->downloads = $post->downloads + 1;

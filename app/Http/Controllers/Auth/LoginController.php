@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Model\user\User;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -49,7 +49,7 @@ class LoginController extends Controller
         return redirect()->intended($this->redirectPath());
     }
 
-    public function redirectToProvider(string $provider)
+    /*public function redirectToProvider(string $provider)
     {
         try {
             $scopes = config("services.$provider.scopes") ?? [];
@@ -110,5 +110,25 @@ class LoginController extends Controller
     }public function socialLogin(User $user)
     {
         auth()->loginUsingId($user->id);return redirect($this->redirectTo);
+    }*/
+     /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+     public function redirectToProvider()
+     {
+         return Socialite::driver('facebook')->redirect();
+     }
+      /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback()
+    {
+        $user = Socialite::driver('facebook')->user();
+
+        // $user->token;
     }
 }

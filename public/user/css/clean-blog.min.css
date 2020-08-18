@@ -144,12 +144,15 @@
   padding: 8px !important;
   margin-top: 9px;
 }
-
+div.scrollmenu::-webkit-scrollbar {
+    display: none;
+  }
 div.scrollmenu {
   white-space: nowrap; /* [1] */
   overflow-x: auto; /* [2] */
   -webkit-overflow-scrolling: touch; /* [3] */
   -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
+  overflow: -autohiding-scrollbar;
 }
 div.scrollmenu {
   scrollbar-width: none; /* Firefox */
@@ -159,13 +162,16 @@ div.scrollmenu {
 margin-left: -26px;
 }
 div.scrollmen::-webkit-scrollbar {
-  display: none; }
+  display: none !important; }
 div.scrollmenu a{
   display: inline-block;
   color: #777;
   text-align: center;
   padding: 12px;
   text-decoration: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  overflow: hidden;
 }
 div.scrollmenus a {
   display: inline-block;
@@ -173,6 +179,9 @@ div.scrollmenus a {
   text-align: center;
   padding: 12px;
   text-decoration: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  overflow: hidden;
 }
 div.scrollmenus .scroll-right{
   float: right;
@@ -901,7 +910,7 @@ border-radius: 0 5px 5px 0 !important;
   border-radius: 0 0 10px 10px;
 }
 .networks-social{
-    font-size: 2em !important;
+    font-size: 18px !important;
     text-align: center;
     padding: 20px 0 20px 0;
     color: #ccc;
@@ -1673,3 +1682,41 @@ object-fit: cover;
     background: transparent !important;
 }
 */
+/****login-social button***/
+.login-social{
+    margin-left: -25px;
+}
+.login-social a {
+    font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) !important;
+    ;
+    padding: calc(6px + 5 * ((100vw - 320px) / 780)) !important;
+    color: #000 !important
+}
+
+.login-social a:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.login-social .btn-icon {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-radius: 0;
+    letter-spacing: 1px;
+    padding: 15px 15px;
+    font-size: 15px;
+    width: 100%;
+    min-width: 136px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.login-social .btn-icon:hover {
+    /*background-color: #99d608;*/
+    color: #99d608 !important;
+    border: 1px solid #99d608;
+}
+

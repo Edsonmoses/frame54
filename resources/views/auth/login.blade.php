@@ -28,9 +28,15 @@
             @endif
             <img src="/user/img/Frame54-G.svg" id="icon" alt="Frame54 Logo" style="padding: 15px;" />
           </div>
-          @foreach(['facebook', 'twitter', 'google', 'linkedin'] as $provider)
-          <a class="btn btn-link" href="{{ route('social.login', ['provider' => $provider]) }}">Login with {{ ucwords($provider) }}</a>
-      @endforeach
+       <a class="btn btn-link" href="{{ url('login/facebook') }}">Login with</a>
+       <div class="container">
+       <div class="row justify-content-center login-social">
+        <div class="col-sm-3 mt-5">
+            <a class="btn btn-icon btn-block text-left " href="{{ url('login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Login with Google</a></div>
+        <div class="col-sm-3 mt-2"><a class="btn btn-icon btn-block text-left " href="{{ url('login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Login with Facebook</a> </div>
+        <div class="col-sm-3 mt-2"><a class="btn btn-icon btn-block text-left " href="{{ url('login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Login with Twitter</a> </div>
+    </div>
+       </div>
       @if ($errors->any())
           <div class="alert alert-danger">
               @foreach ($errors->all() as $error)

@@ -22,15 +22,56 @@
          <p>Closing your account is irreversible. It deletes all of your photos, collections and stats.</p>
          <p>This actions takes 2 weeks to delete all your data.</p>
           <div class="container" >
-                    <form class="form-horizontal" method="POST" action="{{ route('changePassword') }}">
-                        {{ csrf_field() }}
+            @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <form class="form-horizontal" method="POST" action="{{ route('closed', Auth::user()->id )}}">
+                {{ csrf_field() }}
 
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                <label for="new-password" class="control-label">Current Password</label>
-                                <input id="application" type="text" class="form-control" name="application">
-                            </div>
-                        </div>
+                <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
+
+                <div class="col-md-5">
+                    <label for="new-password" class="control-label">Current Password</label>
+                    <input id="current-password" type="password" class="form-control" name="current-password" required>
+
+                    @if ($errors->has('current-password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('current-password') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('new-password') ? ' has-error' : '' }}"  style="display: none;">
+
+                <div class="col-md-5">
+                    <input id="email" hidden type="text" class="form-control" name="email" value="closed@frame54.com">
+                    <input id="verified" hidden type="text" class="form-control" name="verified" value="0">
+                    <label for="new-password" class="control-label">New Password</label>
+                    <input id="new-password" type="password" class="form-control" name="new-password" required value="123456789">
+
+                    @if ($errors->has('new-password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('new-password') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group" style="display: none;">
+
+                <div class="col-md-5">
+                    <label for="new-password-confirm" class="control-label">Confirm New Password</label>
+                    <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required value="123456789">
+                </div>
+            </div>
                         <div class="row">
                             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                 <div class="download" style="font-size: 25px; margin: 80px 0 30px 0;">

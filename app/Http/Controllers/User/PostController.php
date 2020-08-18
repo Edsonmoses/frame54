@@ -13,6 +13,7 @@ use App\Model\user\category_post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\ImageManagerStatic as Image;
 use File;
 use ZipArchive;
@@ -25,17 +26,26 @@ class PostController extends Controller
     	$categories =category::all();
         $theme =theme::all();
         $tags =tag::all();
-        $blogKey = 'blog_' . $post->id;
+        /*$blogKey = 'blog_' . $post->id;
 
         if (!Session::has($blogKey)) {
             $post->increment('visit_count');
             Session::put($blogKey,1);
-        }
+        }*/
+
 
         $post = post::where('status',1)->orderBy('created_at')
         ->select(['posts.*','users.id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
         //dd($post);
+        $Key = 'blog' . $post->id;
+        if (Session::has($Key)) {
+
+        DB::table('posts')
+           ->where('id', $post->id)
+           ->increment('visit_count', 1);
+         Session::put($Key, 1);
+       }
 
         return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withTheme($theme);
     }
@@ -76,6 +86,11 @@ class PostController extends Controller
         $posts = $category->posts();
         return view('user.category',compact('posts','categories', 'tags','post'));
     }
-
+    public function likes($like){
+        $post = post::where('like', $like)->firstOrFail();
+        $post->downloads = $post->downloads + 1;
+        $post->save();
+        return response()->likes($post->like);
+     }
 
 }

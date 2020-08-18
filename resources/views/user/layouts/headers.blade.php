@@ -126,7 +126,7 @@
                 <div class="col-lg-11 col-lg-offset-1 col-md-11 col-md-offset-1">
                     <div class="site-heading">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h2 style="text-align: left !important">@yield('title')</h3>
+                            <h2 style="text-align: left !important; color:#fff !important;">@yield('title')</h3>
                             <form action="{{ route('search') }}" method="GET" role="search">
 
                             <div class="input-group">

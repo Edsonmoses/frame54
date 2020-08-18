@@ -21,7 +21,7 @@
     </div>
     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
         <div class="download">
-            <h2 style="float: left; padding-right: 35px; margin-top: -7px;">{{$user['name']}}</h2><a href="{{ route('profile.profileEdit', $user->id) }}"> <small class="btns">Edit Profile</small></a>
+            <h2 style="float: left; padding-right: 35px; margin-top: -7px;">{{$user['name']}}</h2><a href="{{ route('profile.edit', $user->id) }}"> <small class="btns">Edit Profile</small></a>
         </div>
         <p>{{ $post->id }} images</p>
         <div class="row">

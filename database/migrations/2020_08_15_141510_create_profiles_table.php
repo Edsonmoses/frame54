@@ -16,16 +16,22 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('last');
             $table->string('avatar')->default('default.jpg');
             $table->string('email')->unique();
-            $table->string('password');
             $table->string('phone');
+            $table->string('city');
+            $table->string('country');
+            $table->string('birth');
+            $table->string('username');
             $table->string('portfolio');
-            $table->string('location');
-            $table->string('instagram');
-            $table->string('twitter');
+            $table->string('interests');
             $table->string('bio');
-            $table->string('status');
+            $table->string('location');
+            $table->string('twitter');
+            $table->string('instagram');
+            $table->string('paypal');
+            $table->string('message');
             $table->timestamps();
         });
     }
