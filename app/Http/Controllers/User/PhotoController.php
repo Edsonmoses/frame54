@@ -87,8 +87,8 @@ class PhotoController extends Controller
         $post = new post;
         $post->image = $imageName;
         $post->title = $request->title;
-        $post->subtitle = $request->subtitle;
-        $post->slug = $request->slug;
+        $post->subtitle = str_slug($request->get('title'), '-');
+        $post->slug = str_slug($request->get('title'), '-');
         $post->body = $request->body;
         $post->status = $request->status;
         $post->posted_by = Auth::user()->id;

@@ -86,11 +86,20 @@ class PostController extends Controller
         $posts = $category->posts();
         return view('user.category',compact('posts','categories', 'tags','post'));
     }
-    public function likes($like){
-        $post = post::where('like', $like)->firstOrFail();
-        $post->downloads = $post->downloads + 1;
+    public function like(Request $request, $id)
+    {
+        $this->validate($request,[
+            'like' => 'required|string|max:255'
+        ]);
+        $post = post::where('id', $id)->firstOrFail();
+        $post->email = $request->enail;
         $post->save();
-        return response()->likes($post->like);
+        return redirect('/home')->with("success","Account has been deactivated successfully !");
+    }
+    public function likes(Request $request, $id){
+        $post = post::find($id);
+        $post->like = $request->like + 1;
+        $post->save();
      }
 
 }

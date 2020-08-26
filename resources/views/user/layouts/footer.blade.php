@@ -5,69 +5,68 @@
                 <div class="col-lg-11 col-md-12">
                     <img class="footer-logo"src="/user/img/Frame54-G.svg" alt="Frame54-G" />
                     <div class="row">
-                        <div class="col-md-12 col-xs-12 col-sm-6 col-lg-4">
+                        <div class="col-md-12 col-xs-12 col-sm-6 col-lg-3">
                             <ul class="footer-menu">
                                 <li><a href="{{ route('home.about') }}">About</a></li>
                                 <li><a href="{{ route('home.blog') }}">Blog</a></li>
                             </ul>
                         </div>
-                        <div class="col-md-12 col-xs-12 col-sm-6 col-lg-2">
+                        <div class="col-md-12 col-xs-12 col-sm-6 col-lg-3">
                             <ul class="footer-menu">
                                 <li><a href="{{ route('home.team') }}">Join the team</a></li>
-                                <li><a href="{{ route('home.developers') }}">Developers/API</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12 col-xs-12 col-sm-6 col-lg-2">
-                            <ul class="footer-menu">
-                                <li><a href="{{ route('home.press') }}">Press</a></li>
                                 <li><a href="{{ route('home.help') }}">Help Center</a></li>
                             </ul>
                         </div>
                         <div class="col-md-12 col-xs-12 col-sm-6 col-lg-3">
-                        <ul class="list-inline footer-socials">
-                            <li>
-                                <a href="#">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+                            <ul class="footer-menu">
+                                <li><a href="{{ route('home.press') }}">Press</a></li>
+                                <li><a href="{{ route('home.framePolicy') }}">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 col-xs-12 col-sm-6 col-lg-3">
+                            <ul class="footer-menu">
+                                <li><a href="{{ route('home.conditions') }}">Terms</a></li>
+                                <li><a href="{{ route('home.security') }}">Security</a></li>
+                            </ul>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                 <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8"></div>
                 <div class="col-md-12 col-xs-12 col-sm-6 col-lg-4">
-                    <ul class="list-inline">
-                        <li><a href="{{ route('home.framePolicy') }}">Privacy Policy</a></li>
-                        <li><a href="{{ route('home.conditions') }}">Terms</a></li>
-                        <li><a href="{{ route('home.security') }}">Security</a></li>
+                    <ul class="list-inline footer-socials">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 </div>
@@ -586,6 +585,22 @@
       </div>
     </div>
   </div>
+  <!--like section-->
+  <form class="form-horizontal" id="liked-form" method="POST" action="{{ route('post.like'), Auth::user()->id}}" style="display: none">
+    {{ csrf_field() }}
+
+    <div class="col-md-5">
+        <input id="like" hidden type="text" class="form-control" name="like" value="1">
+</div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <div class="download" style="font-size: 25px; margin: 80px 0 30px 0;">
+                        <button type="submit" style="padding: 15px 36px 15px 36px !important; background:#ff0000;">Delete account</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
   <!--end login Model-->
     <!-- jQuery -->
     <script src="{{ asset('user/vendor/jquery/jquery.min.js') }}"></script>
@@ -610,7 +625,7 @@
         $(window).load(function(){
         $('#myModal').modal('show');
         $('#termsPopup').modal('show');
-
+        $('#uGuidelines').modal('show');
             });
 
             $(".gal").masonry();

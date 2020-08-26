@@ -48,7 +48,8 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
     Route::get('photo/download/{image}','PhotoController@download')->name('photo.download');
     Route::get('uguideline','PhotoController@uguideline')->name('photo.uguideline');
-    Route::get('post/likes/{like}','PostController@likes')->name('post.likes');
+    Route::post('likes/{id}','PostController@likes')->name('post.likes');
+    Route::post('like','PostController@like')->name('post.like');
 
     //Profile Routegit add .s
     Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');

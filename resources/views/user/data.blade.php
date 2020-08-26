@@ -11,10 +11,13 @@
                 @if($posts->like === 1)
                 <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
                 @else
-                <i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                <a class="dropdown-item" href="{{ route('post.like', Auth::user()->id) }}"
+                              onclick="event.preventDefault();
+                                            document.getElementById('liked-form').submit();"><i class="fa fa-heart-o" aria-hidden="true"></a></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
                 @endif
             </div>
             @endif
         </a>
    </div>
 @endforeach
+

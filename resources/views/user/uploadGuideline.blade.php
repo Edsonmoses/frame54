@@ -41,12 +41,36 @@
             <li><a href="#">Applications</a></li>
             <li><a href="#">Close account</a></li>
         </ul>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#uGuidelines">Open Modal</button>
     </div>
 </div>
   </div>
     <hr>
+     <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
         <!-- Modal -->
-<div class="modal fade" id="uGuideline" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="uGuidelines">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-body uGuideline">
@@ -109,9 +133,11 @@
     }
     </style>
     <script type="text/javascript">
-        $(window).load(function(){
-        $('#uGuideline').modal('show');
+       $(window).load(function()
+{
+    $('#uGuidelines').modal('show');
 
-            });
+    $('#myModal').modal('show');
+});
 </script>
 @endsection

@@ -201,10 +201,12 @@ class ProfileController extends Controller
         $user->email = $request->enail;
         $user->verified = $request->verified;
         $user->save();
+        Auth::logout();
 
-        return redirect('/home')->with("success","Password changed successfully !");
+        return redirect('/home')->with("success","Account has been deactivated successfully !");
 
     }
+
     public function analytics($id)
     {
         $user = User::find($id);
@@ -317,5 +319,21 @@ class ProfileController extends Controller
         }
 
     }
+
+    public function like(Request $request, $id)
+    {
+        $this->validate($request,[
+            'like' => 'required|string|max:255'
+        ]);
+        $post = post::where('id', $id)->firstOrFail();
+        $post->email = $request->enail;
+        $post->save();
+        return redirect('/home')->with("success","Account has been deactivated successfully !");
+    }
+    public function likes(Request $request, $id){
+        $post = post::find($id);
+        $post->like = $request->like + 1;
+        $post->save();
+     }
 
 }
