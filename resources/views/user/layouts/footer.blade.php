@@ -586,7 +586,7 @@
     </div>
   </div>
   <!--like section-->
-  <form class="form-horizontal" id="liked-form" method="POST" action="{{ route('post.like'), Auth::user()->id}}" style="display: none">
+  <form class="form-horizontal" id="liked-form" method="POST" action="{{ route('post.like')}}" style="display: none">
     {{ csrf_field() }}
 
     <div class="col-md-5">

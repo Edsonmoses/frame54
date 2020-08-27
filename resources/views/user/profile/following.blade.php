@@ -16,10 +16,10 @@
 	<div class="container">
     <!--Main row-->
     <div class="row">
-    <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+    <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
         <img alt="{{Auth::user()->name}}" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
     </div>
-    <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+    <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8" >
         <div class="row profile-follow">
             <div class="col-md-8 col-xs-12 col-sm-8 col-lg-8">
                 <h2 style="padding-right: 35px; margin-top: -7px;">{{$user['name']}}</h2>
@@ -27,8 +27,8 @@
             </div>
             <div class="col-md- col-xs-12 col-sm-4 col-lg-4">
                 <div class="download">
-                    <a href="{{ route('profile.profileEdit', $user->id) }}"> <small class="btns" style="background: #ddd !important; border:1px solid #ddd !important; margin-right:10px !important;"><i class="fa fa-user-plus" aria-hidden="true"></i>  Follow</small></a>
-                    <a type="button" data-toggle="modal" data-target=".bd-message-modal-lg"> <small class="btns"><i class="fa fa-envelope-o" aria-hidden="true"></i> Message</small></a>
+                    <a href="{{ route('profile.edit', $user->id) }}"> <small class="btns follow-img" style="background: #ddd !important; border:1px solid #ddd !important; margin-right:10px !important; padding-left:36px !important;"><img alt="{{Auth::user()->name}}" src="/user/img/Frame 54 icons-userplus.svg" id="userplus" class="img-responsive"> Follow</small></a>
+                    <a type="button" data-toggle="modal" data-target=".bd-message-modal-lg" class=" mail-img"> <small class="btns" style="padding-left: 36px !important"><img alt="{{Auth::user()->name}}" src="/user/img/Frame 54 icons-email.svg" id="userplus" class="img-responsive"> Message</small></a>
                 </div>
             </div>
         </div>
@@ -49,14 +49,14 @@
             </div>
         </div>
         <div class="row">
-        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2" >
-            <i class="fa fa-picture-o" aria-hidden="true"></i> Photos
+        <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" >
+            {{count($post->posted_by)}} <i class="fa fa-picture-o" aria-hidden="true"></i> Photos
         </div>
-        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2" >
-            <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
+        <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" >
+            {{$post->like}} <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
         </div>
-        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-3" >
-            <i class="fa fa-plus" aria-hidden="true"></i> <a type="button" data-toggle="modal" data-target=".bd-collection-modal-lg">Collections</a>
+        <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" >
+            <a type="button" data-toggle="modal" data-target=".bd-collection-modal-lg"><i class="fa fa-plus" aria-hidden="true"></i> Collections</a>
         </div>
         </div>
   </div>

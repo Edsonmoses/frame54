@@ -23,7 +23,7 @@ if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
 // User Routes
 Route::group(['namespace' => 'User'],function(){
     Route::get('/','HomeController@index')->name('post');
-    Route::get('frame','HomeController@home')->name('post');
+    Route::get('frame','HomeController@home')->name('post.frame');
     Route::get('post/{post}','PostController@post')->name('post');
     Route::get('guidelines','HomeController@guidelines')->name('home.guidelines');
     Route::get('license','HomeController@framelicense')->name('home.framelicense');
@@ -37,7 +37,7 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('help','HomeController@help')->name('home.help');
     Route::get('security','HomeController@security')->name('home.security');
     Route::get('home/download/{image}','HomeController@download')->name('home.download');
-    Route::get('home/likes/{like}','HomeController@likes')->name('home.likes');
+    //Route::get('home/likes/{like}','HomeController@likes')->name('home.likes');
 
 
 	Route::get('post/tag/{tag}','HomeController@tag')->name('tag');

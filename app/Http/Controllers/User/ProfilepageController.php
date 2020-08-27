@@ -125,7 +125,7 @@ class ProfilepageController extends Controller
             'message' => 'required|string|max:255',
         ]);
         Profile::whereId($id)->update($updateData);
-        return redirect('/students')->with('completed', 'Profile has been updated');
+        return redirect('/profile')->with('completed', 'Profile has been updated');
     }
 
     /**
@@ -139,7 +139,7 @@ class ProfilepageController extends Controller
         $profile = Profile::findOrFail($id);
         $profile->delete();
 
-        return redirect('/students')->with('completed', 'Student has been deleted');
+        return redirect('/profile')->with('completed', 'Student has been deleted');
     }
     public function updateAvatar(Request $request)
     {

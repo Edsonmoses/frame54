@@ -22,10 +22,14 @@
       <div class="col-md-3 col-xs-12 col-sm-6 col-lg-3">
       <img alt="User Pic" src="/uploads/avatars/{{Auth::user()->avatar}}" id="profile-image1" class="img-circle img-responsive">
       <form enctype="multipart/form-data" action="{{route('profile.updateAvatar')}}" method="POST">
+        <div class="form-group">
         <label>Upload Avatar</label>
-        <input type="file" name="avatar">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
+        <input type="file"  class="form-control" name="avatar">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        </div>
+        <div class="download">
         <input type="submit" value="Update Avatar" class="btns">
+        </div>
 
       </form>
       </div>

@@ -29,12 +29,13 @@ class ProfileController extends Controller
         $post =post::all();
 
         if($user){
-            return view('user.profile.profile')->withUser($user)->with($user);
+            return view('user.profile.profile')->withUser($user)->withPost($post);
         }else{
             return redirect()->back();
         }
 
     }
+
      /**
      * Store a newly created resource in storage.
      *
@@ -112,7 +113,7 @@ class ProfileController extends Controller
         ]);
 
         $user = profile::where('id',$id)->update($request->except('_token','_method'));
-        return redirect(route('user.profile.profile'))->with('message','User updated successfully');
+        return redirect(route('profile.profile'))->with('message','User updated successfully');
 
     }
     public function update(Request $request, $id)
@@ -136,7 +137,7 @@ class ProfileController extends Controller
         ]);
 
         $user = profile::where('id',$id)->update($request->except('_token','_method'));
-        return redirect(route('user.profile.profile'))->with('message','User updated successfully');
+        return redirect(route('profile.profile'))->with('message','User updated successfully');
     }
     public function updateAvatar(Request $request)
     {
@@ -210,10 +211,11 @@ class ProfileController extends Controller
     public function analytics($id)
     {
         $user = User::find($id);
+        $post =post::find($id);
 
         if($user){
-
-            return view('user.profile.analytics')->withUser($user);
+           // $posts =post::all();
+            return view('user.profile.analytics')->withUser($user)->withPost($post);
         }else{
             return redirect()->back();
         }
@@ -310,10 +312,11 @@ class ProfileController extends Controller
     public function following($id)
     {
         $user = User::find($id);
+        $post =post::find($id);
 
         if($user){
 
-            return view('user.profile.following')->withUser($user);
+            return view('user.profile.following')->withUser($user)->withPost($post);
         }else{
             return redirect()->back();
         }

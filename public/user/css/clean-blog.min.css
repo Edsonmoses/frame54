@@ -502,6 +502,23 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
     border: 1px solid #ccc;
     padding:5px;
 }
+
+.follow-img img{
+    width: 30px;
+    height: auto;
+    float: left;
+    position: absolute;
+    margin: 0 0 0 -3px;
+}
+.mail-img .btns{
+    width: 100% !important;
+}
+.mail-img img{
+    width: 30px;
+    height: auto;
+    position: absolute;
+    margin: -28px 0 0 105px;
+}
 .footer-socials a{
     padding-left: -10px;
 }
