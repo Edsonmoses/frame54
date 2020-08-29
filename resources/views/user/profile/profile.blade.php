@@ -23,16 +23,16 @@
         <div class="download">
             <h2 style="float: left; padding-right: 35px; margin-top: -7px;">{{$user['name']}}</h2><a href="{{ route('profile.edit',$user->id) }}"> <small class="btns">Edit Profile </small></a>
         </div>
-        <p>{{ $post->id }} images</p>
+        <p>{{count($post->posted_by)}} images</p>
         <div class="row">
-        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2" >
-            <i class="fa fa-picture-o" aria-hidden="true"></i> Photos
+        <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" >
+            {{count($post->posted_by)}} <i class="fa fa-picture-o" aria-hidden="true"></i> Photos
         </div>
-        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2" >
-            <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
+        <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" >
+            {{$post->like}} <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
         </div>
-        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-3" >
-            <i class="fa fa-plus" aria-hidden="true"></i> Collections
+        <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" >
+            <a type="button" data-toggle="modal" data-target=".bd-collection-modal-lg"> <i class="fa fa-plus" aria-hidden="true"></i> Collections</a>
         </div>
         </div>
   </div>

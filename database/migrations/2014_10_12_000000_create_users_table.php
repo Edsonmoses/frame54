@@ -21,8 +21,14 @@ class CreateUsersTable extends Migration
             $table->boolean('verified')->default(false);
             $table->string('password');
             $table->string('avatar')->default('default.jpg');
+
             $table->boolean('terms')->nullable();
             $table->boolean('termsimg')->nullable();
+
+            $table->string('provider', 20)->nullable();
+            $table->string('provider_id')->nullable();
+            $table->string('access_token')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

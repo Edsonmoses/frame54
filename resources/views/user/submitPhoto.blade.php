@@ -36,8 +36,8 @@
     @if($posts->agree = 1)
     <!-- The Modal -->
   <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+    <div class="modal-dialog modal-lg" style="width: 60% !important">
+      <div class="modal-content photocontent">
 
         <!-- Modal Header -->
         <div class="modal-header">
@@ -55,7 +55,8 @@
                     @include('includes.messages')
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form action="{{ route('photo.store') }}" class="dropzone" method="post"  enctype="multipart/form-data">
+                    <form role="form" action="{{ route('photo.store') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-6">
@@ -70,13 +71,26 @@
                         </div>
                         <div class="col-lg-12">
                           <div class="form-group">
-                            <div class="pull-right">
-                              <div type="file" name="image" id="image" id="my-awesome-dropzone"></div>
-                            </div>
+                                <input type="file"  class="dropzone custom-file-input" name="image" id="image" multiple="multiple" title=" ">
                           </div>
                         </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><b>High quality photos</b> (at least <b>5MP</b>)</li>
+                                    <li>Photos are <b>Clear & origina</b></li>
+                                    <li>Only upload photos you <b>own the rights</b> to</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li>Zero tolerance for nudity, violence or hate</li>
+                                    <li>Respect the intellectual property of others</li>
+                                    <li>Read the <b>Frame54 License</b></li>
+                                </ul>
+                            </div>
+                        </div>
 
                     </div>
                     <!-- /.box -->
@@ -92,7 +106,8 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-            <div class="download">
+            <p class="license">Read the Frame54 License</p>
+            <div class="download" style="margin-top:-15px ">
                 <a href='{{ route('submitPhoto') }}' class="btns" style="background: none; color:black !important; margin-right: 25px !important;">Cancel</a>
                 <input type="submit" class="btns" value="Publish">
             </div>

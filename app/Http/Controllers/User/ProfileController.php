@@ -26,7 +26,7 @@ class ProfileController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
-        $post =post::all();
+        $post =post::find($id);
 
         if($user){
             return view('user.profile.profile')->withUser($user)->withPost($post);
@@ -81,8 +81,8 @@ class ProfileController extends Controller
       $user = profile::find($id);
       $profile = profile::all();
       $user = admin::find($id);
-        $roles = role::all();
-      return view('user.profile.profileEdit',compact('user','profile'));
+      $roles = role::all();
+      return view('user.profile.profileEdit',compact('user','profile'))->with('success', 'Your Image has been added successfully. Please wait for the admin to approve.');
 
     }
 
@@ -151,6 +151,7 @@ class ProfileController extends Controller
         $user->save();
 
         return view('user.profile.profile')->withUser($user);
+
     }
 
     public function showChangePasswordForm(){

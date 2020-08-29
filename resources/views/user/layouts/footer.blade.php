@@ -180,13 +180,13 @@
                                                 </div>
                                                 <div class="login-social">
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                     </div>
                                                 </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -265,13 +265,13 @@
                                                     </div>
                                                     <div class="login-social">
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
                                                         </div>
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
                                                         </div>
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                         </div>
                                                     </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -414,13 +414,13 @@
                                                 </div>
                                                 <div class="login-social">
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                     </div>
                                                 </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -499,13 +499,13 @@
                                                     </div>
                                                     <div class="login-social">
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
                                                         </div>
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
                                                         </div>
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ route('social.oauth', 'twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                         </div>
                                                     </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -585,22 +585,6 @@
       </div>
     </div>
   </div>
-  <!--like section-->
-  <form class="form-horizontal" id="liked-form" method="POST" action="{{ route('post.like')}}" style="display: none">
-    {{ csrf_field() }}
-
-    <div class="col-md-5">
-        <input id="like" hidden type="text" class="form-control" name="like" value="1">
-</div>
-            <div class="row">
-                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                    <div class="download" style="font-size: 25px; margin: 80px 0 30px 0;">
-                        <button type="submit" style="padding: 15px 36px 15px 36px !important; background:#ff0000;">Delete account</button>
-
-                    </div>
-                </div>
-            </div>
-        </form>
   <!--end login Model-->
     <!-- jQuery -->
     <script src="{{ asset('user/vendor/jquery/jquery.min.js') }}"></script>

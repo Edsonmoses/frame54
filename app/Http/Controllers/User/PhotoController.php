@@ -71,8 +71,6 @@ class PhotoController extends Controller
     {
         $this->validate($request,[
             'title'=>'required',
-            'subtitle' => 'required',
-            'slug' => 'required',
             'body' => 'required',
             'image' => 'required|min:2560',
             'visit_count' => 'nullable',
@@ -87,8 +85,8 @@ class PhotoController extends Controller
         $post = new post;
         $post->image = $imageName;
         $post->title = $request->title;
-        $post->subtitle = str_slug($request->get('title'), '-');
-        $post->slug = str_slug($request->get('title'), '-');
+        $post->subtitle = $request->get('title');
+        $post->slug = $request->get('title');
         $post->body = $request->body;
         $post->status = $request->status;
         $post->posted_by = Auth::user()->id;

@@ -16,7 +16,7 @@
                    <!-- Authentication Links -->
                    @guest
                    <li class="nav-item header-bell">
-                    <a class="nav-link" href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>
+                    <a class="nav-link" href="#"><img alt="{{ Auth::user()->name }}" src="/user/img/Frame 54 icons-bell.svg" id="profile-bell" class="img-responsive">
                     </a>
                    </li>
                    <li class="nav-item header2">
@@ -37,7 +37,7 @@
                   </li>
                @else
                     <li class="nav-item header-bell">
-                        <a class="nav-link" href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>
+                        <a class="nav-link" href="#"><img alt="{{ Auth::user()->name }}" src="/user/img/Frame 54 icons-bell.svg" id="profile-bell" class="img-responsive">
                         </a>
                     </li>
                     <li class="nav-item dropdown header2">
