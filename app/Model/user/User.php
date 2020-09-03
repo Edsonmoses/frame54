@@ -6,8 +6,8 @@ namespace App\Model\user;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Overtrue\LaravelFollow\Traits\CanBeFollowed;
 use Overtrue\LaravelFollow\Traits\CanFollow;
+use Overtrue\LaravelFollow\Traits\CanBeFollowed;
 
 class User extends Authenticatable
 {
@@ -26,7 +26,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
         'avatar', 'provider_id', 'provider',
-        'access_token'
+        'access_token',
+        'password', 'remember_token',
    ];
 
    //You can also use below statement
@@ -67,4 +68,8 @@ class User extends Authenticatable
     public function getPostsCountAttribute(){
         return $this->posts()->count();
     }
+    public function identities() {
+        return $this->hasMany('App\Model\user\SocialIdentity');
+     }
+
 }

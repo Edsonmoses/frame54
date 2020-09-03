@@ -162,7 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Madnest\Madzipper\MadzipperServiceProvider::class,
-        Overtrue\LaravelFollow\FollowServiceProvider::class,
+
+
 
 
         /*
@@ -178,8 +179,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Overtrue\LaravelFollow\FollowServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Overtrue\LaravelFollow\FollowServiceProvider::class,
 
     ],
 

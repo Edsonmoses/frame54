@@ -45,11 +45,12 @@ Route::group(['namespace' => 'User'],function(){
     //Photo Routes
 	Route::get('submitPhoto','PhotoController@submitPhoto')->name('submitPhoto');
 	Route::post('store','PhotoController@store')->name('photo.store');
-	Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
+    Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
+    Route::post('agree','PhotoController@agreeUpdate')->name('photo.agreeUpdate');
     Route::get('photo/download/{image}','PhotoController@download')->name('photo.download');
     Route::get('uguideline','PhotoController@uguideline')->name('photo.uguideline');
-    Route::post('likes/{id}','PostController@likes')->name('post.likes');
-    Route::post('like','PostController@like')->name('post.like');
+    Route::post('likeUpdate/{image}','PostController@likeUpdate')->name('post.likeUpdate');
+    Route::post('follow', 'PostController@follwUserRequest')->name('follow');
 
     //Profile Routegit add .s
     Route::get('profile/{id}','ProfileController@profile')->name('profile.profile');
@@ -79,6 +80,7 @@ Route::group(['namespace' => 'User'],function(){
     Route::post('update','ThemeController@store')->name('theme.update');
 
 
+
 	//vue routes
 	Route::post('getPosts','PostController@getAllPosts');
     Route::post('saveLike','PostController@saveLike');
@@ -87,12 +89,12 @@ Route::group(['namespace' => 'User'],function(){
 });
 
  //Socialite
- //Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
- //Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+ Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallback');
 
- Route::get('auth/social', 'Auth\LoginController@show')->name('social.login');
- Route::get('oauth/{driver}', 'Auth\LoginController@redirectToProvider')->name('social.oauth');
- Route::get('oauth/{driver}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
+ //Route::get('auth/social', 'Auth\LoginController@show')->name('social.login');
+ //Route::get('oauth/{driver}', 'Auth\LoginController@redirectToProvider')->name('social.oauth');
+ //Route::get('oauth/{driver}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
 
 
 //Admin Routes

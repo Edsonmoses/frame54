@@ -30,7 +30,7 @@ class PhotoController extends Controller
 		$tags =tag::all();
         $categories =category::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar','users.terms','users.termsimg'])
+        ->select(['posts.*','users.id','users.name','users.avatar','users.agree','users.termsimg'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
         if ($request->ajax()) {
@@ -169,6 +169,14 @@ class PhotoController extends Controller
         $user = Auth::user();
         $user->terms = $request->terms;
         $user->termsimg = $request->termsimg;
+        $user->save();
+
+        return redirect(route('submitPhoto'));
+    }
+    public function agreeUpdate(Request $request)
+    {
+        $user = Auth::user();
+        $user->agree = $request->agree;
         $user->save();
 
         return redirect(route('submitPhoto'));

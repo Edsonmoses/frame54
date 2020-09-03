@@ -32,9 +32,9 @@
        <div class="container">
        <div class="row justify-content-center login-social">
         <div class="col-sm-3 mt-5">
-            <a class="btn btn-icon btn-block text-left " href="{{ route('social.oauth', 'google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Login with Google</a></div>
-        <div class="col-sm-3 mt-2"><a class="btn btn-icon btn-block text-left " href="{{ route('social.oauth', 'facebook')}}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Login with Facebook</a> </div>
-        <div class="col-sm-3 mt-2"><a class="btn btn-icon btn-block text-left " href="{{ route('social.oauth', 'twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Login with Twitter</a> </div>
+            <a class="btn btn-icon btn-block text-left " href="{{url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Login with Google</a></div>
+        <div class="col-sm-3 mt-2"><a class="btn btn-icon btn-block text-left " href="{{ url('/login/facebook')}}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Login with Facebook</a> </div>
+        <div class="col-sm-3 mt-2"><a class="btn btn-icon btn-block text-left " href="{{ url('/login/twitter')  }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Login with Twitter</a> </div>
     </div>
        </div>
       @if ($errors->any())

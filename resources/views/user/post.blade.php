@@ -28,10 +28,16 @@
                 <div class="fdetails"><span class="ads">AD</span></div>
                 @else
                 <div class="fdetails">
-                    @if($post->like = 1)
-                    <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                    @if($post->like = 1 && $post->like >= 1)
+                    <a href="" onclick="
+                                    event.preventDefault();
+                                    document.getElementById('like-form-{{ $post->image }}').submit();
+                                 " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $post->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
                     @else
-                    <i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                    <a href="" onclick="
+                                    event.preventDefault();
+                                    document.getElementById('like-form-{{ $post->image }}').submit();
+                                 " ><i class="fa fa-heart-o" aria-hidden="true">{{ $post->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
                     @endif
                 </div>
                 @endif
@@ -43,7 +49,7 @@
 
                 <div style="clear:both"></div>
                 <hr/>
-                <span class="imgspan">{{ $post->id }} images</span>
+                <span class="imgspan">{{ $post->posted_by }} images</span>
                 <hr/>
                 <div class="download">
                     <a href="{{ route('photo.download', $post->image) }}" target="_blank"><small class="btns">FREE DOWNLOAD <small class="minus">|</small><i class="fa fa-arrow-down" aria-hidden="true"></i></small></a><br/>
@@ -102,15 +108,39 @@
             <div class="fdetails"><span class="ads">AD</span></div>
             @else
             <div class="fdetails">
-                @if($post->like = 1)
-                <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                @if($post->like = 1 && $post->like >= 1)
+                <a href="" onclick="
+                                    event.preventDefault();
+                                    document.getElementById('like-form-{{ $post->image }}').submit();
+                                 " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $post->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
                 @else
-                <i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                <a href="" onclick="
+                                    event.preventDefault();
+                                    document.getElementById('like-form-{{ $post->image }}').submit();
+                                 " ><i class="fa fa-heart-o" aria-hidden="true">{{ $post->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $post->image) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
                 @endif
             </div>
             @endif
         </a>
    </div>
+   <form role="form" id="like-form-{{ $post->image }}" action="{{ route('post.likeUpdate',$post->image)}}" method="post" enctype="multipart/form-data" style="display: none">
+    {{ csrf_field() }}
+   <div class="row agree">
+    <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+
+    </div>
+    <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+        <div class="form-group">
+            <input type="text" class="form-control" id="like" name="like" value="1">
+          </div>
+    </div>
+    <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3">
+        <div class="download">
+            <input type="submit" class="btns" value="Start Uploading">
+        </div>
+    </div>
+</div>
+    </form>
        @endforeach
         </div>
        </div><!--simila photos-->

@@ -26,33 +26,27 @@ class PostController extends Controller
     	$categories =category::all();
         $theme =theme::all();
         $tags =tag::all();
-        /*$blogKey = 'blog_' . $post->id;
+        $blogKey = 'blog_' . $post->id;
 
         if (!Session::has($blogKey)) {
             $post->increment('visit_count');
             Session::put($blogKey,1);
-        }*/
-
-
+        }
         $post = post::where('status',1)->orderBy('created_at')
         ->select(['posts.*','users.id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
+
         //dd($post);
-        $Key = 'blog' . $post->id;
-        if (Session::has($Key)) {
-
-        DB::table('posts')
-           ->where('id', $post->id)
-           ->increment('visit_count', 1);
-         Session::put($Key, 1);
-       }
-
         return view('user.post') ->withPost($post)->withTags($tags)->withCategories($categories)->withTheme($theme);
     }
 
     public function getAllPosts()
     {
 		return $posts = post::with('likes')->where('status',1)->orderBy('created_at','DESC')->paginate(6);
+    }
+    public function getSponsored ()
+    {
+        return $sponsored = post::with('sponsored_images')->where('status',1)->orderBy('created_at','DESC')->paginate(1);
     }
 
     public function saveLike(request $request)
@@ -86,16 +80,33 @@ class PostController extends Controller
         $posts = $category->posts();
         return view('user.category',compact('posts','categories', 'tags','post'));
     }
-    public function like(Request $request)
+    public function likeUpdate($image)
     {
-        $post = post::find($request->id);;
-        $post->like = $request->like + 1;
-        $post->save();
+        $posts = post::where('image', $image)->firstOrFail();
+        $posts->like = $posts->like + 1;
+        $posts->save();
+        return redirect(route('home'));
     }
-    public function likes(Request $request, $id){
-        $post = post::find($id);
-        $post->like = $request->like + 1;
-        $post->save();
+
+     public function users()
+     {
+         $users = User::get();
+         return view('user.users', compact('users'));
      }
+
+     public function user($id)
+     {
+         $user = User::find($id);
+         return view('user.usersView', compact('user'));
+     }
+     public function follwUserRequest(Request $request){
+
+
+        $user = User::find($request->user_id);
+        $response = auth()->user()->toggleFollow($user);
+
+
+        return response()->json(['success'=>$response]);
+    }
 
 }

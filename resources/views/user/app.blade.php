@@ -12,7 +12,7 @@
             @show
 
   @include('user/layouts/footer')
-
+  @include('cookieConsent::index')
 </body>
 
 </html>

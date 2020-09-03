@@ -31,21 +31,21 @@ return [
     ],
 
     'facebook' => [
-        'client_id'     => env('FB_ID'),
-        'client_secret' => env('FB_SECRET'),
-        'redirect'      => env('APP_URL') . '/oauth/facebook/callback',
+        'client_id'     => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect'      => env('FACEBOOK_CALLBACK_URL'),
     ],
 
     'twitter' => [
-        'client_id'     => env('TW_ID'),
-        'client_secret' => env('TW_SECRET'),
-        'redirect'      => env('APP_URL') . '/oauth/twitter/callback',
+        'client_id'     => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect'      => env('TWITTER_CALLBACK_URL'),
     ],
 
     'google' => [
-        'client_id'     => env('GL_ID'),
-        'client_secret' => env('GL_SECRET'),
-        'redirect'      => env('APP_URL') . '/oauth/google/callback',
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_CALLBACK_URL'),
     ],
     'linkedin' => [
         'client_id' => env('7713mxonbu6gtl'),
