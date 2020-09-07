@@ -26,14 +26,15 @@
 		<div class="gal" id="post-data">
             @include('user/data')
             </div>
-	    </div>
+        </div>
+        <hr>
 	</div>
 	<div class="ajax-load text-center" style="display:none">
 
 		<p><img src="https://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
 
 	</div>
-	<hr>
+
 @endsection
 @section('footer')
 	<script src="{{ asset('js/app.js') }}"></script>

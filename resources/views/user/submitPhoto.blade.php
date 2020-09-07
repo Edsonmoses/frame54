@@ -25,14 +25,13 @@
           @include('user/data')
           </div>
     </div>
+    <hr>
 </div>
 <div class="ajax-load text-center" style="display:none">
 
   <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
 
 </div>
-
-    <hr>
     @if ($posts->agree == 1)
         <!-- Modal -->
         <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="uGuidelines">

@@ -97,9 +97,9 @@
             <h4>Have questions about the Guidelines?</h4>
             <p>Email us at <span>@frame54.com.</span></p>
 
-	    </div>
+        </div>
+        <hr>
 	</div>
-    <hr>
 
 @endsection
 @section('footer')

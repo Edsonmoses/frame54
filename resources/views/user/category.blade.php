@@ -39,14 +39,15 @@
                 </div>
             @endforeach
             </div>
-	    </div>
+        </div>
+        <hr>
 	</div>
 	<div class="ajax-load text-center" style="display:none">
 
 		<p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
 
 	</div>
-    <hr>
+
 
 <!-- login Modal -->
 <div class="modal fade login-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

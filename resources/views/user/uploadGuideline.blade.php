@@ -44,8 +44,9 @@
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#uGuidelines">Open Modal</button>
     </div>
 </div>
+<hr>
   </div>
-    <hr>
+
      <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 

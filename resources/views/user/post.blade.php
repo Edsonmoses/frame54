@@ -144,11 +144,9 @@
        @endforeach
         </div>
        </div><!--simila photos-->
-
+       <hr>
     </div>
 </article>
-
-<hr>
 @endsection
 @section('footer')
 <script src="{{ asset('user/js/prism.js') }}"></script>
