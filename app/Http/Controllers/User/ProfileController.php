@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Model\user\theme;
 
 use Illuminate\Support\Facades\Validator;
 
@@ -27,9 +28,10 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $post =post::find($id);
+        $theme =theme::all();
 
         if($user){
-            return view('user.profile.profile')->withUser($user)->withPost($post);
+            return view('user.profile.profile')->withUser($user)->withPost($post)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -82,7 +84,8 @@ class ProfileController extends Controller
       $profile = profile::all();
       $user = admin::find($id);
       $roles = role::all();
-      return view('user.profile.profileEdit',compact('user','profile'))->with('success', 'Your Image has been added successfully. Please wait for the admin to approve.');
+      $theme =theme::all();
+      return view('user.profile.profileEdit',compact('user','profile','theme'))->with('success', 'Your Image has been added successfully. Please wait for the admin to approve.');
 
     }
 
@@ -141,6 +144,7 @@ class ProfileController extends Controller
     }
     public function updateAvatar(Request $request)
     {
+        $theme =theme::all();
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
@@ -150,12 +154,13 @@ class ProfileController extends Controller
         $user->avatar = $filename;
         $user->save();
 
-        return view('user.profile.profile')->withUser($user);
+        return view('user.profile.profile')->withUser($user)->withTheme($theme);
 
     }
 
     public function showChangePasswordForm(){
-        return view('user.profile.changepassword');
+        $theme =theme::all();
+        return view('user.profile.changepassword')->withTheme($theme);
     }
 
     public function changePassword(Request $request){
@@ -213,10 +218,11 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $post =post::find($id);
+        $theme =theme::all();
 
         if($user){
            // $posts =post::all();
-            return view('user.profile.analytics')->withUser($user)->withPost($post);
+            return view('user.profile.analytics')->withUser($user)->withPost($post)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -225,10 +231,11 @@ class ProfileController extends Controller
     public function settings($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.settings')->withUser($user);
+            return view('user.profile.settings')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -237,10 +244,11 @@ class ProfileController extends Controller
     public function emailSetting($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.emailSetting')->withUser($user);
+            return view('user.profile.emailSetting')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -253,10 +261,11 @@ class ProfileController extends Controller
     public function connect($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.connect')->withUser($user);
+            return view('user.profile.connect')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -265,10 +274,11 @@ class ProfileController extends Controller
     public function applications($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.applications')->withUser($user);
+            return view('user.profile.applications')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -277,10 +287,11 @@ class ProfileController extends Controller
     public function close($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.close')->withUser($user);
+            return view('user.profile.close')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -289,10 +300,11 @@ class ProfileController extends Controller
     public function collections($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.collections')->withUser($user);
+            return view('user.collections')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -301,10 +313,11 @@ class ProfileController extends Controller
     public function community($id)
     {
         $user = User::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.community')->withUser($user);
+            return view('user.community')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -314,10 +327,11 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $post =post::find($id);
+        $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.following')->withUser($user)->withPost($post);
+            return view('user.profile.following')->withUser($user)->withPost($post)->withTheme($theme);
         }else{
             return redirect()->back();
         }

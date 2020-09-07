@@ -27,7 +27,8 @@ class PhotoController extends Controller
 	public function submitPhoto(Request $request)
     {
 
-		$tags =tag::all();
+        $tags =tag::all();
+        $theme =theme::all();
         $categories =category::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id','users.name','users.avatar','users.agree','users.termsimg'])
@@ -35,7 +36,7 @@ class PhotoController extends Controller
         ->paginate(6);
         if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts','categories'))->render();
+    		$view = view('user.data',compact('posts','categories', 'theme'))->render();
 
             return response()->json(['html'=>$view]);
 

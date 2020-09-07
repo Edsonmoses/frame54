@@ -53,8 +53,9 @@ class HomeController extends Controller
     {
 
         $users = User::get();
+        $theme =theme::all();
 
-        return view('users', compact('users'));
+        return view('users', compact('users','theme'));
 
     }
 
@@ -74,8 +75,8 @@ class HomeController extends Controller
     {
 
         $user = User::find($id);
-
-        return view('usersView', compact('user'));
+        $theme =theme::all();
+        return view('usersView', compact('user','theme'));
 
     }
 

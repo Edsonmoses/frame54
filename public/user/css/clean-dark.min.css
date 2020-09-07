@@ -34,6 +34,9 @@ a,body{color:#fff}.navbar-custom .nav li a,.navbar-custom .navbar-brand,h1,h2,h3
      margin: -4px 20px 0px -31px;
      font-size: 33px;
  }
+ .header-moon .fa-moon-o{
+     color: #fff !important;
+ }
  .footer-out a{
     color:#fff !important;
     font-size: 12px !important;

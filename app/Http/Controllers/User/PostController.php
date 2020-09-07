@@ -42,6 +42,7 @@ class PostController extends Controller
 
     public function getAllPosts()
     {
+        $theme =theme::all();
 		return $posts = post::with('likes')->where('status',1)->orderBy('created_at','DESC')->paginate(6);
     }
     public function getSponsored ()
@@ -74,11 +75,12 @@ class PostController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
+        $theme =theme::all();
         $post = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
         $posts = $category->posts();
-        return view('user.category',compact('posts','categories', 'tags','post'));
+        return view('user.category',compact('posts','categories', 'tags','post','theme'));
     }
     public function likeUpdate($image)
     {
@@ -91,13 +93,15 @@ class PostController extends Controller
      public function users()
      {
          $users = User::get();
-         return view('user.users', compact('users'));
+         $theme =theme::all();
+         return view('user.users', compact('users','theme'));
      }
 
      public function user($id)
      {
          $user = User::find($id);
-         return view('user.usersView', compact('user'));
+         $theme =theme::all();
+         return view('user.usersView', compact('user','theme'));
      }
      public function follwUserRequest(Request $request){
 

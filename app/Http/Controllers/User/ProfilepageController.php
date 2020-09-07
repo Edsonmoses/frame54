@@ -8,6 +8,7 @@ use App\Model\user\User;
 use App\Model\admin\profile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Model\user\theme;
 
 class ProfilepageController extends Controller
 {
@@ -24,10 +25,11 @@ class ProfilepageController extends Controller
     public function index()
     {
          $user = User::find();
+         $theme =theme::all();
 
         if($user){
 
-            return view('user.profile.profile')->withUser($user);
+            return view('user.profile.profile')->withUser($user)->withTheme($theme);
         }else{
             return redirect()->back();
         }
@@ -94,7 +96,8 @@ class ProfilepageController extends Controller
     public function edit($id)
     {
         $profile = Profile::findOrFail($id);
-        return view('user.profile.profileEdit', compact('profile'));
+        $theme =theme::all();
+        return view('user.profile.profileEdit', compact('profile','theme'));
     }
 
     /**
@@ -143,6 +146,7 @@ class ProfilepageController extends Controller
     }
     public function updateAvatar(Request $request)
     {
+        $theme =theme::all();
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $avatar = time().'.'.$request->image->extension();
@@ -152,11 +156,12 @@ class ProfilepageController extends Controller
         $user->avatar = $avatar;
         $user->save();
 
-        return view('user.profile.profile')->withUser($user);
+        return view('user.profile.profile')->withUser($user)->withTheme($theme);
     }
 
     public function showChangePasswordForm(){
-        return view('user.profile.changepassword');
+        $theme =theme::all();
+        return view('user.profile.changepassword')->withTheme($theme);
     }
 
     public function changePassword(Request $request){

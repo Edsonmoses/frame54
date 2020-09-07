@@ -59,44 +59,46 @@ class HomeController extends Controller
         ->join('users','users.id','=','posts.posted_by')->first();
         $posts = $category->posts();
         //dd($post);
-        return view('user.category',compact('posts','categories','tags','post'));
+        return view('user.category',compact('posts','categories','tags','post', 'theme'));
     }
 
     public function Guidelines(Request $request)
     {
-    	return view('user.guidelines');
+        $theme =theme::all();
+    	return view('user.guidelines',compact('theme'));
     }
 
     public function frameLicense()
     {
-
-    	return view('user.license');
+        $theme =theme::all();
+    	return view('user.license', compact('theme'));
     }
     public function framePolicy()
     {
-
-    	return view('user.policy');
+        $theme =theme::all();
+    	return view('user.policy', compact('theme'));
     }
 
     public function Conditions()
     {
-
-    	return view('user.conditions');
+        $theme =theme::all();
+    	return view('user.conditions', compact('theme'));
     }
     public function developers()
     {
-
-    	return view('user.developers');
+        $theme =theme::all();
+    	return view('user.developers', compact('theme'));
     }
     public function about(Request $request)
     {
         $categories =category::all();
         $tags =tag::all();
         $posts = post::all();
+        $theme =theme::all();
         //dd($theme);
         if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts','categories','tags'))->render();
+    		$view = view('user.data',compact('posts','categories','tags','theme'))->render();
 
             return response()->json(['html'=>$view]);
 
@@ -106,28 +108,28 @@ class HomeController extends Controller
     }
     public function blog()
     {
-
-    	return view('user.blogs_full');
+        $theme =theme::all();
+    	return view('user.blogs_full',compact('theme'));
     }
     public function team()
     {
-
-    	return view('user.team');
+        $theme =theme::all();
+    	return view('user.team', compact('theme'));
     }
     public function press()
     {
-
-    	return view('user.press');
+        $theme =theme::all();
+    	return view('user.press', compact('theme'));
     }
     public function help()
     {
-
-    	return view('user.help');
+        $theme =theme::all();
+    	return view('user.help', compact('theme'));
     }
     public function security()
     {
-
-    	return view('user.security');
+        $theme =theme::all();
+    	return view('user.security', compact('theme'));
     }
     public function likes($like){
         $post = post::where('like', $like)->firstOrFail();

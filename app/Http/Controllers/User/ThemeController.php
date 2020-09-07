@@ -36,15 +36,19 @@ class ThemeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeDark(Request $request, $status)
     {
-        $this->validate($request,[
-
-            ]);
-        $theme = new theme;
-        $theme->status = $request->status;
+        $theme = theme::where('status', $status)->firstOrFail();
+        $theme->status = $theme->status + 1;
         $theme->save();
-        return redirect(route('home'));
+        return redirect()->back();
+    }
+    public function storeLight(Request $request, $status)
+    {
+        $theme = theme::where('status', $status)->firstOrFail();
+        $theme->status = 0;
+        $theme->save();
+        return redirect()->back();
     }
 
     /**

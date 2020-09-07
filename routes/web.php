@@ -76,8 +76,9 @@ Route::group(['namespace' => 'User'],function(){
 	//Search Routes
 	Route::get('/search', 'SearchController@index')->name('search');
     Route::get('user/verify/{token}', 'Auth\RegisterController@verifyUser');
-
-    Route::post('update','ThemeController@store')->name('theme.update');
+     //Dark and light mode
+     Route::post('darktheme/{status}','ThemeController@storeDark')->name('theme.storeDark');
+     Route::post('lighttheme/{status}','ThemeController@storeLight')->name('theme.storeLight');
 
 
 
