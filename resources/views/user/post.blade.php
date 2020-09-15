@@ -52,7 +52,7 @@
                 <span class="imgspan">{{ $post->posted_by }} images</span>
                 <hr/>
                 <div class="download">
-                    <a href="{{ route('photo.download', $post->image) }}" target="_blank"><small class="btns">FREE DOWNLOAD <small class="minus">|</small><i class="fa fa-arrow-down" aria-hidden="true"></i></small></a><br/>
+                    <a href="{{ route('photo.download', $post->id) }}" target="_blank"><small class="btns">FREE DOWNLOAD <small class="minus">|</small><i class="fa fa-arrow-down" aria-hidden="true"></i></small></a><br/>
                 </div>
                 <div class="license">
                     <a href="#"><small>Frame54 License</small></a><br/>

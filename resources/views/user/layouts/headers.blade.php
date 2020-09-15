@@ -95,7 +95,7 @@
                                             document.getElementById('logout-form').submit();">
                                {{ __('Logout') }}
                            </a>
-                           <a class="artname" href="#"><b>@</b>{{Auth::user()->name }}</a>
+                           <a class="artname" href="{{ route('profile.profile', Auth::user()->id) }}"><b>@</b>{{Auth::user()->name }}</a>
 
                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                @csrf
@@ -113,7 +113,7 @@
                     <a class="nav-link" href="" onclick="
                     event.preventDefault();
                     document.getElementById('theme-d-form-{{ $theme->status }}').submit();
-                 "><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                 "><i class="fa fa-moon-o" aria-hidden="true" style="color: #fff !important"></i></a>
 
                  <form role="form" id="theme-d-form-{{ $theme->status }}" action="{{ route('theme.storeLight',$theme->status)}}" method="post" enctype="multipart/form-data" style="display: none">
                     {{ csrf_field() }}

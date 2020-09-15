@@ -35,7 +35,7 @@ class HomeController extends Controller
         $tags =tag::all();
         $theme =theme::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
         if ($request->ajax()) {

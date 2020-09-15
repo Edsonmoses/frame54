@@ -13,7 +13,7 @@
 @endsection
 @section('main-content')
 		<!-- Main Content -->
-	<div class="container">
+	<div class="container profile">
     <!--Main row-->
     <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" >
@@ -116,7 +116,9 @@
                             <div class="form-group">
                                 <div class="checkbox">
                                     <label>
-                                      <input type="checkbox" name="message" value="1"> Display a ‘Message‘ button on your profile
+                                      <input type="checkbox" name="message" value="1" @if ($user->message == 1)
+                                      {{'checked'}}
+                                    @endif> Display a ‘Message‘ button on your profile
                                     </label>
                                   </div>
                             </div>

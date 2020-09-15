@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Model\user\User;
-use App\Model\admin\admin;
 use App\Model\admin\profile;
-use App\Model\admin\role;
 use App\Model\user\post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,6 +11,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Model\user\theme;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 use Illuminate\Support\Facades\Validator;
 
@@ -27,6 +26,8 @@ class ProfileController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
+        $user = profile::all();
+        $user = profile::find($id);
         $post =post::find($id);
         $theme =theme::all();
 
@@ -65,10 +66,9 @@ class ProfileController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
         $request['password'] = bcrypt($request->password);
-        $user = admin::create($request->all());
-        $user = profile::create($request->all());
+        $user = user::create($request->all());
         $user->roles()->sync($request->role);
-        return redirect(route('user.submitPhoto'));
+        return redirect()->back()->with('message','User created successfully');
     }
 
       /**
@@ -79,11 +79,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-      $user = User::find($id);
-      $user = profile::find($id);
-      $profile = profile::all();
-      $user = admin::find($id);
-      $roles = role::all();
+     $user = profile::find($id);
       $theme =theme::all();
       return view('user.profile.profileEdit',compact('user','profile','theme'))->with('success', 'Your Image has been added successfully. Please wait for the admin to approve.');
 
@@ -112,11 +108,13 @@ class ProfileController extends Controller
             'twitter' => 'required|string|max:255',
             'instagram' => 'required|string',
             'paypal' => 'required|string',
-            'message' => 'required|string',
+            //'message' => 'required|string',
         ]);
 
+        $request->message? : $request['message']=0;
         $user = profile::where('id',$id)->update($request->except('_token','_method'));
-        return redirect(route('profile.profile'))->with('message','User updated successfully');
+
+        return redirect()->back()->with('message','User updated successfully');
 
     }
     public function update(Request $request, $id)

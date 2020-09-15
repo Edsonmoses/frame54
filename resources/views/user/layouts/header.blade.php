@@ -40,8 +40,8 @@
                         <a class="nav-link" href="#"><img alt="{{ Auth::user()->name }}" src="/user/img/Frame 54 icons-bell.svg" id="profile-bell" class="img-responsive">
                         </a>
                     </li>
-                    <li class="nav-item dropdown header2">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle page-dots" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle page-dots dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                          ...
                         </a>
 
@@ -98,7 +98,7 @@
                                             document.getElementById('logout-form').submit();">
                                {{ __('Logout') }}
                            </a>
-                           <a class="artname" href="#"><b>@</b>{{Auth::user()->name }}</a>
+                           <a class="artname" href="{{ route('profile.profile', Auth::user()->id) }}"><b>@</b>{{Auth::user()->name }}</a>
 
                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                @csrf
@@ -116,7 +116,7 @@
                     <a class="nav-link" href="" onclick="
                     event.preventDefault();
                     document.getElementById('theme-d-form-{{ $theme->status }}').submit();
-                 "><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                 "><i class="fa fa-moon-o" aria-hidden="true" style="color: #fff !important"></i></a>
 
                  <form role="form" id="theme-d-form-{{ $theme->status }}" action="{{ route('theme.storeLight',$theme->status)}}" method="post" enctype="multipart/form-data" style="display: none">
                     {{ csrf_field() }}

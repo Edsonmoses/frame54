@@ -18,9 +18,9 @@
     color: #fff !important;
 }
  .dropdown-menu{
-    background-color:#ddd !important;
-    border-top-left-radius: 6px !important;
-    border-top-right-radius: 6px !important;
+    background-color:#ddd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
  }
  .dropdown-menu ul{
     list-style: none;
@@ -107,6 +107,7 @@
 .page-dots{
     font-size: 38px !important;
     margin: 0 -26px 0 0 !important;
+    color: #000 !important;
 }
  .subheading .photoby{
     text-align: left !important;
@@ -223,15 +224,15 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
   margin: 0 25px 0 10px;
 }
 .joinUs a{
-  border-radius: 30px;
-  background: #99d608;
-  border: 1px solid #99d608;
+  border-radius: 10px;
+  background: transparent !important;
+  border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
   margin: 16px 0 0 -10px !important;
-  color: #fff !important;
+  color: #99d608 !important;
 }
 .joinUs a:hover{
-  border-radius: 30px;
+  border-radius: 10px;
   background: #99d608 !important;
   border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
@@ -566,15 +567,15 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
     display: block;
  }
  .download .btns{
-  border-radius: 30px;
-  background: #99d608;
+  border-radius: 10px;
+  background: transparent !important;
   border: 1px solid #99d608;
   padding: 5px 15px 5px 15px !important;
   margin: 16px 0 0 -10px !important;
-  color: #fff !important;
+  color: #ccc !important;
 }
 .download .btns:hover{
-  border-radius: 30px;
+  border-radius: 10px;
   background: #99d608 !important;
   border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
@@ -985,7 +986,7 @@ border-radius: 0 5px 5px 0 !important;
     line-height: 1.42857143;
     border: 1px solid transparent;
     text-align: center;
-    color: #222 !important;
+    color: #222;
 }
 .login-section .nav-tabs > li.active > a, .login-section .nav-tabs > li.active > a:focus, .login-section .nav-tabs > li.active > a:hover{
     background: #ddd;
@@ -1777,5 +1778,22 @@ object-fit: cover;
     /*background-color: #99d608;*/
     color: #99d608 !important;
     border: 1px solid #99d608;
+}
+.profile input[type="text"],
+.profile select.form-control,
+.profile input[type="email"] ,
+.profile input[type="email"],#bio{
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.profile input[type="text"]:focus,
+.profile select.form-control:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 

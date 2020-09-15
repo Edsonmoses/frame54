@@ -26,10 +26,10 @@ class HomeController extends Controller
         $tags =tag::all();
         $theme =theme::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
-        //dd($theme);
+       //dd($items);
         if ($request->ajax()) {
 
     		$view = view('user.data',compact('posts','categories','tags', 'theme'))->render();
@@ -55,7 +55,7 @@ class HomeController extends Controller
         $tags =tag::all();
         $theme =theme::all();
         $post = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
         $posts = $category->posts();
         //dd($post);
@@ -136,8 +136,8 @@ class HomeController extends Controller
         $post->downloads = $post->downloads + 1;
         $post->save();
      }
-    public function download($image){
-        $post = post::where('image', $image)->firstOrFail();
+    public function download($id){
+        $post = post::where('id', $id)->firstOrFail();
         $post->downloads = $post->downloads + 1;
         $post->save();
         $path = public_path(). '/storage/'. $post->image;

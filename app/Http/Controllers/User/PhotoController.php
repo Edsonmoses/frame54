@@ -31,7 +31,7 @@ class PhotoController extends Controller
         $theme =theme::all();
         $categories =category::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar','users.agree','users.termsimg'])
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar','users.agree','users.termsimg'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
         if ($request->ajax()) {

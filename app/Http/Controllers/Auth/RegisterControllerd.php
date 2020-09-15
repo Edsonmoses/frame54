@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User\Auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -12,8 +12,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
-use App\Model\admin\profile;
-
 
 class RegisterController extends Controller
 {
@@ -57,8 +55,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            //'email' => ['required', 'string', 'email', 'max:255', 'unique:users, email,NULL,id,deleted_at,NULL'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users, email,NULL,id,deleted_at,NULL'],
+            //'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -75,6 +73,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
         $verifyUser = VerifyUser::create([
             'user_id' => $user->id,
             'token' => sha1(time()),

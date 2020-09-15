@@ -17,65 +17,68 @@
     <!--Main row-->
     <div class="row">
     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-        <h2>Email Settings</h2>
-        <p>Send me emails related to:</p>
+
         <form role="form" action="{{ route('profile.updateEmail',Auth::user()->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('POST') }}
         <div class="row">
             <div class="form-group">
+               <h2>Email Settings</h2>
+               <p>Send me emails related to:</p>
+            </div>
+            <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Announcements
+                    <input type="checkbox" checked name="announcements" value="1"> Announcements
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Community Updates
+                    <input type="checkbox" checked name="community" value="1"> Community Updates
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Curated Collections
+                    <input type="checkbox" checked name="collections" value="1"> Curated Collections
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Events Near Me
+                    <input type="checkbox" checked name="events" value="1"> Events Near Me
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Feedback & Surveys
+                    <input type="checkbox" checked name="feedback" value="1"> Feedback & Surveys
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Milestones and Notifications
+                    <input type="checkbox" checked name="milestones" value="1"> Milestones and Notifications
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Recommended Photos, Collections, & Photographers
+                    <input type="checkbox" checked name="recommended" value="1"> Recommended Photos, Collections, & Photographers
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status" value="1"> Resources, Tips, & Guides
+                    <input type="checkbox" checked name="resources" value="1"> Resources, Tips, & Guides
                   </label>
                 </div>
               </div>

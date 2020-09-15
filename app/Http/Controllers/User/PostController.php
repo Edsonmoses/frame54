@@ -32,8 +32,11 @@ class PostController extends Controller
             $post->increment('visit_count');
             Session::put($blogKey,1);
         }
-        $post = post::where('status',1)->orderBy('created_at')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
+
+        $post = post::where('status',1)
+        ->where('posts.id','=',$post->id)
+        ->orderBy('created_at')
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
 
         //dd($post);
@@ -77,7 +80,7 @@ class PostController extends Controller
         $tags =tag::all();
         $theme =theme::all();
         $post = post::where('status',1)->orderBy('created_at','DESC')
-        ->select(['posts.*','users.id','users.name','users.avatar'])
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
         $posts = $category->posts();
         return view('user.category',compact('posts','categories', 'tags','post','theme'));
