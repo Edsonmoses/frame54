@@ -20,12 +20,12 @@
                     </a>
                    </li>
                    <li class="nav-item header2">
-                    <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg">{{ __('Login') }}</a>
+                    <a class="nav-link dark" type="button" data-toggle="modal" data-target=".login-modal-lg">{{ __('Login') }}</a>
                    </li>
                    <li class="nav-item header2"><div class="divider"></div></li>
                    @if (Route::has('register'))
                        <li class="nav-item header2">
-                        <a class="nav-link" type="button" data-toggle="modal" data-target=".register-modal-lg">{{ __('Join') }}</a>
+                        <a class="nav-link dark" type="button" data-toggle="modal" data-target=".register-modal-lg">{{ __('Join') }}</a>
                        </li>
                    @endif
                    <li class="nav-item joinUs">
@@ -33,7 +33,65 @@
                         SUBMIT PHOTO</a>
                    </li>
                    <li class="nav-item header-moon">
-                    <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                    @foreach ($theme as $theme)
+                    @if($theme->status === 1)
+                    <a class="nav-link" href="" onclick="
+                    event.preventDefault();
+                    document.getElementById('theme-d-form-{{ $theme->status }}').submit();
+                 "><i class="fa fa-moon-o" aria-hidden="true" style="color: #fff !important"></i></a>
+
+                 <form role="form" id="theme-d-form-{{ $theme->status }}" action="{{ route('theme.storeLight',$theme->status)}}" method="post" enctype="multipart/form-data" style="display: none">
+                    {{ csrf_field() }}
+                   <div class="row agree">
+                    <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="status" name="status" value="0">
+                          </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3">
+                        <div class="download">
+                            <input type="submit" class="btns" value="Start Uploading">
+                        </div>
+                    </div>
+                </div>
+                    </form>
+                    <style>
+                        .dark{color:#fff !important}
+                        .header2 a {
+                                color: #fff !important;
+                            }
+                            .header2 .divider {
+                            border-color: rgb(250, 250, 250) !important;
+                        }
+                    </style>
+                    @else
+                    <a class="nav-link" href=""onclick="
+                    event.preventDefault();
+                    document.getElementById('theme-l-form-{{ $theme->status }}').submit();
+                 "><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+                    <form role="form" id="theme-l-form-{{ $theme->status }}" action="{{ route('theme.storeDark',$theme->status)}}" method="post" enctype="multipart/form-data" style="display: none">
+                        {{ csrf_field() }}
+                       <div class="row agree">
+                        <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="status" name="status" value="1">
+                              </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3">
+                            <div class="download">
+                                <input type="submit" class="btns" value="Start Uploading">
+                            </div>
+                        </div>
+                    </div>
+                        </form>
+                    @endif
+                    @endforeach
                   </li>
                @else
                     <li class="nav-item header-bell">
