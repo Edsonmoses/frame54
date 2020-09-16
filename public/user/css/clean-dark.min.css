@@ -1811,3 +1811,6 @@ object-fit: cover;
     border-left: none !important;
     border-top: none !important;
 }
+.modal-content{
+    background-color: #000 !important;
+}

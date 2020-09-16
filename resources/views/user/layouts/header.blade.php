@@ -37,8 +37,7 @@
                   </li>
                @else
                     <li class="nav-item header-bell">
-                        <a class="nav-link" href="#"><img alt="{{ Auth::user()->name }}" src="/user/img/Frame 54 icons-bell.svg" id="profile-bell" class="img-responsive">
-                        </a>
+                        <a class="nav-link" href="#"><img alt="{{ Auth::user()->name }}" src="/user/img/Frame 54 icons-bell.svg" id="profile-bell" class="img-responsive"></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle page-dots dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

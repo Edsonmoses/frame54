@@ -41,11 +41,9 @@ class PhotoController extends Controller
             return response()->json(['html'=>$view]);
 
         }
-        if (!empty($posts->terms) && !empty($posts->termsimg)){
-          return view('user.terms',compact('posts', 'tags','categories', 'theme'));
-        }else{
+
         return view('user.submitPhoto',compact('posts', 'tags','categories', 'theme'));
-        }
+
 	}
 
     /**
