@@ -108,7 +108,7 @@
             <div class="fdetails"><span class="ads">AD</span></div>
             @else
             <div class="fdetails">
-                @if($post->like = 1 && $post->like >= 1)
+                @if($post->like >= 1)
                 <a href="" onclick="
                                     event.preventDefault();
                                     document.getElementById('like-form-{{ $post->image }}').submit();

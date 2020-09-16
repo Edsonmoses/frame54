@@ -135,6 +135,9 @@
                     </div>
                 </div>
                     </form>
+                    <style>
+                        .dark{color:#fff !important}
+                    </style>
                     @else
                     <a class="nav-link" href=""onclick="
                     event.preventDefault();
