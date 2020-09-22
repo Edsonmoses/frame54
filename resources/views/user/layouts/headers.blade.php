@@ -97,15 +97,15 @@
                      <i class="fa fa-sort-asc" aria-hidden="true"></i>
                         <ul id="profile">
                             <li></li>
-                            <li><a href="{{ route('home.blog') }}"> Blog</a></li>
+                            <li><a href="{{ route('home.faq') }}"> Faq</a></li>
                             <li></li>
                             <li><a href="{{ route('profile.collections', Auth::user()->id) }}"> Collections</a></li>
                             <li></li>
                             <li><a href="{{ route('profile.community', Auth::user()->id) }}"> Community</a></li>
                             <li></li>
                             <li><a href="{{ route('home.about') }}">About</a></li>
-                            <li><a href="{{ route('home.press') }}">Press</a></li>
-                            <li><a href="{{ route('home.developers') }}">API/Developer</a></li>
+                            <!--<li><a href="{{ route('home.press') }}">Press</a></li>
+                            <li><a href="{{ route('home.developers') }}">API/Developer</a></li>-->
                      </ul>
                      <ul class="login-social">
                          <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>

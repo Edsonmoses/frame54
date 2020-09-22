@@ -107,7 +107,7 @@
         <div class="modal-footer">
             <p class="license">Read the Frame54 License</p>
             <div class="download" style="margin-top:-15px ">
-                <a href='{{ route('submitPhoto') }}' class="btns" style="background: none; color:black !important; margin-right: 25px !important;">Cancel</a>
+                <a href='{{ route('submitPhoto') }}' class="btns" data-dismiss="modal"  style="background: none; color:#99d608 !important; margin-right: 25px !important;">Cancel</a>
                 <input type="submit" class="btns" value="Publish">
             </div>
 

@@ -2,13 +2,13 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-11 col-md-12">
+                <div class="col-lg-12 col-md-12">
                     <img class="footer-logo"src="/user/img/Frame54-G.svg" alt="Frame54-G" />
                     <div class="row">
                         <div class="col-md-12 col-xs-12 col-sm-6 col-lg-3">
                             <ul class="footer-menu">
                                 <li><a href="{{ route('home.about') }}">About</a></li>
-                                <li><a href="{{ route('home.blog') }}">Blog</a></li>
+                                <li><a href="{{ route('home.faq') }}">FAQ</a></li>
                             </ul>
                         </div>
                         <div class="col-md-12 col-xs-12 col-sm-6 col-lg-3">
@@ -32,7 +32,9 @@
                 </div>
                 <hr>
                 <div class="row">
-                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8"></div>
+                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8">
+                    <p class="copyright text-muted">Copyright &copy; {{ config('app.name', 'frame54.com') }} <?php echo date("Y"); ?></p>
+                </div>
                 <div class="col-md-12 col-xs-12 col-sm-6 col-lg-4">
                     <ul class="list-inline footer-socials">
                         <li>
@@ -70,7 +72,7 @@
                     </ul>
                 </div>
                 </div>
-                <p class="copyright text-muted">Copyright &copy; {{ config('app.name', 'Laravel') }} <?php echo date("Y"); ?></p>
+
             </div>
         </div>
     </footer>

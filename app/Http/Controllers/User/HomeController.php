@@ -106,7 +106,7 @@ class HomeController extends Controller
 
     	return view('user.about',compact('posts','categories','tags', 'theme'));
     }
-    public function blog()
+    public function faq()
     {
         $theme =theme::all();
     	return view('user.blogs_full',compact('theme'));

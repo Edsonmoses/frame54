@@ -12,21 +12,21 @@
 	</style>
 @endsection
 @section('main-content')
-	<!-- Main Content -->
-	<div class="container">
-		 <div class="scrollmenu">
-			@foreach ($categories as $category)
-				<a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
-		   @endforeach
-          </div><br/>
-            <h3>Free PanAfrican Stock Photos</h3>
-        <div class="row" id="app">
-		<div class="gal" id="post-data">
+<!-- Main Content -->
+<div class="container">
+    <!--/.scrollmenu-->
+            <div class="scrollmenu">
+            @foreach ($categories as $category)
+                <a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
+            @endforeach
+            </div><br/>
+    <div class="row">
+    <div class="gal" id="post-data">
             @include('user/data')
             </div>
-        </div>
-        <hr>
-	</div>
+    </div>
+    <hr>
+</div>
 	<div class="ajax-load text-center" style="display:none">
 
 		<p><img src="https://demo.itsolutionstuff.com/plugin/loader.gif">Loading More Images</p>
