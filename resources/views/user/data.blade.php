@@ -141,9 +141,9 @@
              <div class="similar">
             <p> SIMILAR PHOTOS</p>
             <div class="row">
-                <div class="col-lg-6 col-md-6 gal">
+                <div class="col-lg-6 col-md-6">
             @foreach ($posts->categories as $category)
-              <div class="frame">
+              <div class="frame  gal">
              <a href="{{ $post->slug }}">
                  <div class="ftitle"><img alt="{{ $posts->name ? $posts->name : $posts->title }}" src="/uploads/avatars/{{$posts->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$posts->name? $posts->name : 'Frame54'}}</span></div>
                  <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img-sm">
