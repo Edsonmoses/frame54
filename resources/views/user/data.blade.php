@@ -138,7 +138,7 @@
                     @endif
             </div>
             <!--sponsored Images-->
-             <div class="similar">
+             <div class="similar gal">
             <p> SIMILAR PHOTOS</p>
             <div class="row">
                 <div class="col-lg-6 col-md-6">
