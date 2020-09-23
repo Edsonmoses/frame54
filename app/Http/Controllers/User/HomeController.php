@@ -29,6 +29,7 @@ class HomeController extends Controller
         ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
+
        //dd($items);
         if ($request->ajax()) {
 

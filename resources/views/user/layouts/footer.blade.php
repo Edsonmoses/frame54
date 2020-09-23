@@ -587,7 +587,7 @@
       </div>
     </div>
   </div>
-  <!--end login Model-->
+  <!--end register Model-->
 
     <!-- jQuery -->
     <script src="{{ asset('user/vendor/jquery/jquery.min.js') }}"></script>

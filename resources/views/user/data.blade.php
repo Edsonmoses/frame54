@@ -131,15 +131,15 @@
             <!--end row-->
 
             <div class="row">
-             <p>Sponsored Images/Content</p>
+                <p style="margin-bottom: 0px !important;">Sponsored Images/Content</p>
                 <div class="single-featured">
                     @if ($posts->sponsored_images = 1)
                     <img id="images" src= "{{ Storage::disk('local')->url($posts->image)}}" alt="{{ $posts->title }}">
                     @endif
             </div>
-            <!--sponsored Images-->
+            <!--end sponsored Images-->
              <div class="similar">
-            <p> SIMILAR PHOTOS</p>
+             <p style="margin-bottom: 0px !important;">SIMILAR PHOTOS</p>
             <div class="row">
                 <div class="col-lg-6 col-md-6 gal">
             @foreach ($posts->categories as $category)
@@ -192,9 +192,65 @@
                 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
             </div>
             <!--end read more -->
+            </div><!--end simila photos-->
+            <div class="similar">
+                <p style="margin-bottom: 0px !important;"> FROM SAME ARTIST</p>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 gal">
+                @foreach ($posts->categories as $category)
+                  <div class="frame">
+                 <a href="{{ $post->slug }}">
+                     <div class="ftitle"><img alt="{{ $posts->name ? $posts->name : $posts->title }}" src="/uploads/avatars/{{$posts->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$posts->name? $posts->name : 'Frame54'}}</span></div>
+                     <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img-sm">
+                     @if($posts->ads === 1)
+                     <div class="fdetails"><span class="ads">AD</span></div>
+                     @else
+                     <div class="fdetails">
+                         @if($posts->like >= 1)
+                         <a href="" onclick="
+                                             event.preventDefault();
+                                             document.getElementById('like-form-{{ $posts->id }}').submit();
+                                          " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                         @else
+                         <a href="" onclick="
+                                             event.preventDefault();
+                                             document.getElementById('like-form-{{ $posts->id }}').submit();
+                                          " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                         @endif
+                     </div>
+                     @endif
+                 </a>
             </div>
+            <form role="form" id="like-form-{{ $posts->id }}" action="{{ route('post.likeUpdate',$posts->id)}}" method="post" enctype="multipart/form-data" style="display: none">
+             {{ csrf_field() }}
+            <div class="row agree">
+             <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+
+             </div>
+             <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+                 <div class="form-group">
+                     <input type="text" class="form-control" id="like" name="like" value="1">
+                   </div>
+             </div>
+             <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3">
+                 <div class="download">
+                     <input type="submit" class="btns" value="Start Uploading">
+                 </div>
+             </div>
+         </div>
+             </form>
+                @endforeach
+                 </div>
+                </div>
+                 <div class="col-lg-1 col-md-1" style="display: none">
+                    <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img-sm">
+                    <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                </div>
+                <!--end read more -->
+                </div><!--end FROM SAME ARTIST-->
             <!--end row -->
-            </div><!--simila photos-->
+            </div>
+
                 </div>
          <!--end container-->
             </div>
