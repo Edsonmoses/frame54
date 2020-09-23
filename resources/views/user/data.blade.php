@@ -138,10 +138,10 @@
                     @endif
             </div>
             <!--sponsored Images-->
-             <div class="similar gal">
+             <div class="similar">
             <p> SIMILAR PHOTOS</p>
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 gal">
             @foreach ($posts->categories as $category)
               <div class="frame">
              <a href="{{ $post->slug }}">
