@@ -599,7 +599,8 @@
     <script src="{{ asset('user/js/jqBootstrapValidation.js') }}"></script>
     <script src="{{ asset('user/js/contact_me.js') }}"></script>
    <!-- dropzone JavaScript-->
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.js"></script>
+   <!-- <script src=" https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.js"></script>-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="{{ asset('user/js/clean-blog.min.js') }}"></script>

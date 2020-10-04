@@ -193,15 +193,15 @@ class PhotoController extends Controller
         return redirect()->back();
     }
 
-    public function download($image){
-        $post = post::where('image', $image)->firstOrFail();
+    public function download($id){
+        $post = post::where('id', $id)->firstOrFail();
         $post->downloads = $post->downloads + 1;
         $post->save();
         $path = public_path(). '/storage/'. $post->image;
         return response()->download($path, $post->original_filename, ['Content-Type' => $post->mime]);
      }
      public function uguideline(){
-        return view('user.uploadGuideline',compact('posts', 'tags','categories', 'theme'));
+        return view('user.uploadGuideline',compact('posts => 3', 'tags','categories', 'theme'));
      }
 
 }

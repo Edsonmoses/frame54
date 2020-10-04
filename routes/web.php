@@ -47,9 +47,9 @@ Route::group(['namespace' => 'User'],function(){
 	Route::post('store','PhotoController@store')->name('photo.store');
     Route::post('termsUpdate','PhotoController@termsUpdate')->name('photo.termsUpdate');
     Route::post('agree','PhotoController@agreeUpdate')->name('photo.agreeUpdate');
-    Route::get('photo/download/{image}','PhotoController@download')->name('photo.download');
+    Route::get('photo/download/{id}','PhotoController@download')->name('photo.download');
     Route::get('uguideline','PhotoController@uguideline')->name('photo.uguideline');
-    Route::post('likeUpdate/{image}','PostController@likeUpdate')->name('post.likeUpdate');
+    Route::post('likeUpdate/{id}','PostController@likeUpdate')->name('post.likeUpdate');
     Route::post('follow', 'PostController@follwUserRequest')->name('follow');
 
     //Profile Routegit add .s
@@ -80,7 +80,8 @@ Route::group(['namespace' => 'User'],function(){
      Route::post('darktheme/{id}','ThemeController@storeDark')->name('theme.storeDark');
      Route::post('lighttheme/{id}','ThemeController@storeLight')->name('theme.storeLight');
 
-
+     Route::get('multifileupload', 'HomeController@multifileupload')->name('multifileupload');
+     Route::post('multifileupload', 'HomeController@store')->name('multifileupload');
 
 	//vue routes
 	Route::post('getPosts','PostController@getAllPosts');

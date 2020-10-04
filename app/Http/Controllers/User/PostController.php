@@ -85,9 +85,9 @@ class PostController extends Controller
         $posts = $category->posts();
         return view('user.category',compact('posts','categories', 'tags','post','theme'));
     }
-    public function likeUpdate($image)
+    public function likeUpdate($id)
     {
-        $posts = post::where('image', $image)->firstOrFail();
+        $posts = post::where('id', $id)->firstOrFail();
         $posts->like = $posts->like + 1;
         $posts->save();
         return redirect(route('home'));
