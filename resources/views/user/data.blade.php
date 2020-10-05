@@ -199,7 +199,7 @@
                     <!-- Team Member 1 -->
                     @foreach ($posts->categories as $category)
                         <div class="col-xl-3 col-md-3 mb-3">
-                            <div class="card border-0 shadow">
+                            <div class="card shadow" style="padding-left: 10px">
                             <img src="{{ Storage::url($posts->image)}}" class="card-img-top" alt="{{$posts->title}}">
                             <!--<div class="card-body text-center">
                                 <h5 class="card-title mb-0">Team Member</h5>
