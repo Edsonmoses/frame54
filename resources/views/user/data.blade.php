@@ -198,7 +198,7 @@
                 <div class="row">
                     <!-- Team Member 1 -->
                     @foreach ($posts->categories as $category)
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-3 mb-3">
                             <div class="card border-0 shadow">
                             <img src="{{ Storage::url($posts->image)}}" class="card-img-top" alt="{{$posts->title}}">
                             <!--<div class="card-body text-center">
