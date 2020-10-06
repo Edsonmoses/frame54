@@ -130,7 +130,7 @@
                     <p>FREE Afrocentric stock photos shared by creators everywhere.</p>
                 </div>
                 <div class="popclose">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myBlurem()">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -726,6 +726,23 @@ $('#register-form-links').click(function(e) {
     e.preventDefault();
 });
     });
+function myBlur() {
+  var element = document.getElementById("myDIV");
+  element.classList.add("blured");
+  var element = document.getElementById("myDIV1");
+  element.classList.add("blured");
+  var element = document.getElementById("myDIV2");
+  element.classList.add("blured");
+}
+function myBlurem() {
+  var element = document.getElementById("myDIV");
+  element.classList.remove("blured");
+  var element = document.getElementById("myDIV1");
+  element.classList.remove("blured");
+  var element = document.getElementById("myDIV2");
+  element.classList.remove("blured");
+}
+
 </script>
     @section('footer')
         @show

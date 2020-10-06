@@ -1,6 +1,6 @@
 
  <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-trans navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-trans navbar-fixed-top" id="myDIV1">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -17,12 +17,12 @@
                    <!-- Authentication Links -->
                    @guest
                    <li class="nav-item">
-                       <a class="nav-link dark" type="button" data-toggle="modal" data-target=".login-modal-lg">{{ __('Login') }}</a>
+                       <a class="nav-link dark" type="button" data-toggle="modal" data-target=".login-modal-lg" onclick="myBlur()">{{ __('Login') }}</a>
                    </li>
                    <li><div class="divider"></div></li>
                    @if (Route::has('register'))
                        <li class="nav-item">
-                           <a class="nav-link dark" type="button" data-toggle="modal" data-target=".register-modal-lg">{{ __('Join') }}</a>
+                           <a class="nav-link dark" type="button" data-toggle="modal" data-target=".register-modal-lg" onclick="myBlur()">{{ __('Join') }}</a>
                        </li>
                    @endif
                    <li class="nav-item joinUs">
@@ -230,7 +230,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url(@yield('bg-img'))">
+    <header id="myDIV2" class="intro-header" style="background-image: url(@yield('bg-img'))">
         <div class="container">
             <div class="row">
                 <div class="col-lg-11 col-lg-offset-1 col-md-11 col-md-offset-1">
@@ -249,7 +249,7 @@
                             </form>
                             </div>
                             <div style="clear: both"></div>
-                        <span class="subheading" style="text-align: left !important; padding-left:78px;">@yield('sub-heading')</span>
+                        <span class="subheading" style="text-align: left !important; padding-left:20px;">@yield('sub-heading')</span>
                         <span class="subheading"><p class="photoby">Photo by :</p></span>
                     </div>
                 </div>

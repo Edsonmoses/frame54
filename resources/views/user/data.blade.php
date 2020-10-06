@@ -1,7 +1,7 @@
 
 @foreach ($posts as $posts)
     <div class="frame">
-        <a type="button"  data-toggle="modal" data-target="#exampleModal{{$posts->id}}">
+        <a type="button" onclick="myBlurem()" data-toggle="modal" data-target="#exampleModal{{$posts->id}}">
             <div class="ftitle"><img alt="{{ $posts->name ? $posts->name : $posts->title }}" src="/uploads/avatars/{{$posts->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$posts->name? $posts->name : 'Frame54'}}</span></div>
             <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img">
             @if($posts->ads === 1)

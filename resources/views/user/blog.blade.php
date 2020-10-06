@@ -13,7 +13,8 @@
 @endsection
 @section('main-content')
 <!-- Main Content -->
-<div class="container">
+<div id="myDIV">
+    <div class="container">
     <div class="row">
     <div class="gal" id="post-data">
             @include('user/data')
@@ -21,6 +22,7 @@
     </div>
     <hr>
     </div>
+</div>
 </div>
 	<div class="ajax-load text-center" style="display:none">
 
