@@ -143,10 +143,10 @@
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs loginTabs" role="tablist">
-                    <li role="presentation"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">SIGN IN</a>
+                    <li role="presentation" class="active"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">SIGN IN</a>
 
                     </li>
-                    <li role="presentation" class="active"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">SIGN UP</a>
+                    <li role="presentation" class="actived"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">SIGN UP</a>
 
                     </li>
                 </ul>
@@ -182,13 +182,13 @@
                                                 </div>
                                                 <div class="login-social">
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span></a>
                                                     </div>
                                                 </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
@@ -360,7 +360,7 @@
             <div class="modal-header popup-hd">
                 <div class="popup-logo">
                     <img src="/user/img/Frame54-W.svg" alt="Frame54-W" />
-                    <p>FREE Afrocentric stock photos & videos shared by creators everywhere.</p>
+                    <p>FREE Afrocentric stock photos shared by creators everywhere.</p>
                 </div>
                 <div class="popclose">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -376,10 +376,10 @@
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs loginTabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#loginTabs" aria-controls="loginTabs" role="tab" data-toggle="tab">SIGN IN</a>
+                    <li role="presentation" class="actived"><a href="#loginTabs" aria-controls="loginTabs" role="tab" data-toggle="tab">SIGN IN</a>
 
                     </li>
-                    <li role="presentation"><a href="#registerTabs" aria-controls="registerTabs" role="tab" data-toggle="tab">SIGN UP</a>
+                    <li role="presentation" class="active"><a href="#registerTabs" aria-controls="registerTabs" role="tab" data-toggle="tab">SIGN UP</a>
 
                     </li>
                 </ul>
@@ -415,13 +415,13 @@
                                                 </div>
                                                 <div class="login-social">
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span></a>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                        <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span></a>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
@@ -456,15 +456,15 @@
                                   @enderror
                                   </div>
                                   <div class="form-group row mb-0">
-                                      <div class="form-check" style="float: left; padding-left: 52px; font-size: 17px; color: #666;">
+                                      <div class="form-check" style="float: left; padding-left: 52px; font-size: 17px; color: #666; font-family:'Roboto', sans-serif !important">
                                           <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                          <label class="form-check-label" for="remember" style="font-weight: 200 !important">
+                                          <label class="form-check-label" for="remember" style="font-weight: 200 !important; font-family:'Roboto', sans-serif !important; font-weight: bolder !important;">
                                               {{ __('Keep me signed in') }}
                                           </label>
                                       </div>
                                       @if (Route::has('password.request'))
-                                      <a class="btn btn-link underlineHover" href="{{ route('password.request') }}" style="text-transform: none; margin-top:-15px; float: right; padding-right: 81px; font-size: 17px; color: #666;">
+                                      <a class="btn btn-link underlineHover" href="{{ route('password.request') }}" style="text-transform: none; margin-top:-15px; float: right; padding-right: 81px; font-size: 17px; color: #666; font-family:'Roboto', sans-serif !important;">
                                           {{ __('Forgot your password?') }}
                                       </a>
                                      @endif
@@ -499,13 +499,13 @@
                                                     </div>
                                                     <div class="login-social">
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Google</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ url('/login/google') }}"><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span></a>
                                                         </div>
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('/login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Facebook</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ url('/login/facebook') }}"><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span></a>
                                                         </div>
                                                         <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4">
-                                                            <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
+                                                            <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span></a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
@@ -555,7 +555,7 @@
                                         </div>
                                         <div class="col-md-12">
                                         <div class="form-group row mb-0">
-                                            <div class="text-center ml-5 ml-5-c">Your password should be at least 6 characters long and must contain letters,
+                                            <div class="text-center ml-5-c">Your password should be at least 8 characters long and must contain letters,
                                                 numbers & special characters. Cannot contain whitespace</div>
                                             <div class="checkbox login-colors ml-5 ">
                                                 <label>

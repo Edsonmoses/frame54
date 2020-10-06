@@ -787,6 +787,8 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
 }
 .ml-5-c{
     color: #ccc;
+    font-size: 13px !important;
+    padding: 0px 15px 0px 15px !important;
 }
 .ml-5{
     padding: 15px;
@@ -951,12 +953,12 @@ border-radius: 0 5px 5px 0 !important;
 }
 .login-colors{
     font-size: 13px;
-    padding-bottom: 24px;
+    padding-bottom: 0px;
 }
 .login-color{
     color: #ccc !important;
     font-size: 13px !important;
-    padding: 25px 0 32px 0 !important;
+    padding: 0px 0 20px 0 !important;
 }
 
 .login-color a{
@@ -1007,12 +1009,13 @@ border-radius: 0 5px 5px 0 !important;
     width: 75% !important;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: -70px;
     border: none;
 }
 .login-section .popup-hd p{
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
+    margin: 4px 0 10px 0 !important;
 }
 .popup-logo img{
     width: 50%;
@@ -1048,7 +1051,7 @@ border-radius: 0 5px 5px 0 !important;
     text-align: center;
     color: #222;
 }
-.login-section .nav-tabs > li.active > a, .login-section .nav-tabs > li.active > a:focus, .login-section .nav-tabs > li.active > a:hover{
+.login-section .nav-tabs > li.actived > a, .login-section .nav-tabs > li.actived > a:focus, .login-section .nav-tabs > li.actived > a:hover{
     background: #ddd;
     height: 63px;
     text-align: center;
@@ -1137,12 +1140,12 @@ border-radius: 0 5px 5px 0 !important;
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
-  padding: 15px 32px;
+  padding: 8px 32px;
   text-align: left;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
+  margin: -4px;
   width: 85%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
