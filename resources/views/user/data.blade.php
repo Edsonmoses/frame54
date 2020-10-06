@@ -10,21 +10,21 @@
             <div class="fdetails">
                 @guest
                 @if($posts->like >= 1)
-                <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg"><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg"><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}"></a></span>
                 @else
-                <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg"><i class="fa fa-heart-o" aria-hidden="true"></i></a><i class="fa fa-plus" aria-hidden="true">{{ $posts->like}}</i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                <a class="nav-link" type="button" data-toggle="modal" data-target=".login-modal-lg"><i class="fa fa-heart-o" aria-hidden="true"></i></a><i class="fa fa-plus" aria-hidden="true">{{ $posts->like}}</i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}"></a></span>
                 @endif
                 @else
                 @if($posts->like >= 1)
                 <a href="" onclick="
                                     event.preventDefault();
                                     document.getElementById('like-form-{{ $posts->id }}').submit();
-                                 " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                                 " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}"></a></span>
                 @else
                 <a href="" onclick="
                                     event.preventDefault();
                                     document.getElementById('like-form-{{ $posts->id }}').submit();
-                                 " ><i class="fa fa-heart-o" aria-hidden="true"></i></a><i class="fa fa-plus" aria-hidden="true">{{ $posts->like}}</i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                                 " ><i class="fa fa-heart-o" aria-hidden="true"></i></a><i class="fa fa-plus" aria-hidden="true">{{ $posts->like}}</i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}"></a></span>
                 @endif
                 @endguest
             </div>
@@ -69,12 +69,12 @@
                                 <a href="" onclick="
                                                 event.preventDefault();
                                                 document.getElementById('like-form-{{ $posts->id }}').submit();
-                                             " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                                             " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_g.svg" alt="{{$posts->title}}"></a></span>
                                 @else
                                 <a href="" onclick="
                                                 event.preventDefault();
                                                 document.getElementById('like-form-{{ $posts->id }}').submit();
-                                             " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span>
+                                             " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_g.svg" alt="{{$posts->title}}"></a></span>
                                 @endif
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                 <hr/>
                                 <small>Downloads <span class="pull-right">{{$posts->downloads}}</span></small>
                                 <div class="download" style="padding: 20px 0 20px 10px;">
-                                    <a href="{{ route('photo.download', $posts->id) }}" target="_blank"><small class="btns download-text" style="background: #99d608 !important; color:#fff !important;font-size: 30px;">FREE DOWNLOAD <i class="fa fa-arrow-down" aria-hidden="true"></i></small></a><br/>
+                                    <a href="{{ route('photo.download', $posts->id) }}" target="_blank"><small class="btns download-text" style="background: #99d608 !important; color:#fff !important;font-size: 30px;">FREE DOWNLOAD <img src= "/user/img/download_w.svg" alt="{{$posts->title}}"></small></a><br/>
                                 </div>
                                 <hr/>
                                 <small class="tags-post">TAGS<br/>
@@ -157,12 +157,12 @@
                                         <a href="" onclick="
                                                             event.preventDefault();
                                                             document.getElementById('like-form-{{ $posts->id }}').submit();
-                                                         " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a  href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true" style="margin-top:-25px !important;z-index: 999; position: absolute;"></i></a></span>
+                                                         " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a  href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}" style="margin-top: -29px; z-index:999; position: absolute;"></a></span>
                                         @else
                                         <a href="" onclick="
                                                             event.preventDefault();
                                                             document.getElementById('like-form-{{ $posts->id }}').submit();
-                                                         " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true" style="margin-top:-25px !important;z-index: 999; position: absolute;"></i></a></span>
+                                                         " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}" style="margin-top: -29px; z-index:999; position: absolute;"></a></span>
                                         @endif
                                     </div>
                                     @endif
@@ -215,12 +215,12 @@
                                                <a href="" onclick="
                                                                    event.preventDefault();
                                                                    document.getElementById('like-form-{{ $posts->id }}').submit();
-                                                                " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true" style="margin-top:-25px !important;z-index: 999; position: absolute;"></i></a></span>
+                                                                " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}" style="margin-top: -29px; z-index:999; position: absolute;"></a></span>
                                                @else
                                                <a href="" onclick="
                                                                    event.preventDefault();
                                                                    document.getElementById('like-form-{{ $posts->id }}').submit();
-                                                                " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><i class="fa fa-arrow-down" aria-hidden="true" style="margin-top:-25px !important;z-index: 999; position: absolute;"></i></a></span>
+                                                                " ><i class="fa fa-heart-o" aria-hidden="true">{{ $posts->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $posts->id) }}"><img src= "/user/img/download_w.svg" alt="{{$posts->title}}" style="margin-top: -29px; z-index:999; position: absolute;"></a></span>
                                                @endif
                                            </div>
                                            @endif

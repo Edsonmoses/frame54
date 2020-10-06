@@ -14,18 +14,13 @@
 @section('main-content')
 <!-- Main Content -->
 <div class="container">
-    <!--/.scrollmenu-->
-            <div class="scrollmenu">
-            @foreach ($categories as $category)
-                <a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
-            @endforeach
-            </div><br/>
     <div class="row">
     <div class="gal" id="post-data">
             @include('user/data')
             </div>
     </div>
     <hr>
+    </div>
 </div>
 	<div class="ajax-load text-center" style="display:none">
 

@@ -61,14 +61,14 @@
                                 </span>
                             </a>
                         </li>
-                        <li>
+                       <!-- <li>
                             <a href="#">
                                 <span class="fa-stack fa-sm">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
                 </div>
@@ -143,10 +143,10 @@
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs loginTabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">SIGN IN</a>
+                    <li role="presentation"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">SIGN IN</a>
 
                     </li>
-                    <li role="presentation"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">SIGN UP</a>
+                    <li role="presentation" class="active"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">SIGN UP</a>
 
                     </li>
                 </ul>
@@ -191,13 +191,12 @@
                                                         <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                     </div>
                                                 </div>
-                                            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                                                <div class="networks-social" style="font-size: 30px !important">or</div>
+                                            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
+                                                <div class="line">or</div>
                                             </div>
                                             </div>
                                         </div>
                                   </div>
-                                      <hr>
                                   </div>
                                  </div>
                                 </div>
@@ -238,7 +237,7 @@
                                      @endif
                                       <div class="col-md-12 offset-md-1">
                                           <div class=" text-center">
-                                              <input type="submit" class="fadeIn fourth" style="font-size: 30px; padding:10px 36% 10px 24% !important;" value="Log In">
+                                              <input type="submit" class="fadeIn fourth" style="font-size: 30px; padding:10px 36% 10px 24% !important;" value="Sign In">
                                           </div>
                                           <div class="login-color">By joining Frame 54, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></div>
                                       </div>
@@ -276,9 +275,9 @@
                                                             <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                         </div>
                                                     </div>
-                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                                                    <div class="networks-social" style="font-size: 30px !important">or</div>
-                                                </div>
+                                                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
+                                                        <div class="line">or</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                       </div>
@@ -377,10 +376,10 @@
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs loginTabs" role="tablist">
-                    <li role="presentation"><a href="#loginTabs" aria-controls="loginTabs" role="tab" data-toggle="tab">SIGN IN</a>
+                    <li role="presentation" class="active"><a href="#loginTabs" aria-controls="loginTabs" role="tab" data-toggle="tab">SIGN IN</a>
 
                     </li>
-                    <li role="presentation"  class="active"><a href="#registerTabs" aria-controls="registerTabs" role="tab" data-toggle="tab">SIGN UP</a>
+                    <li role="presentation"><a href="#registerTabs" aria-controls="registerTabs" role="tab" data-toggle="tab">SIGN UP</a>
 
                     </li>
                 </ul>
@@ -425,13 +424,12 @@
                                                         <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                     </div>
                                                 </div>
-                                            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                                                <div class="networks-social" style="font-size: 30px !important">or</div>
-                                            </div>
+                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
+                                                    <div class="line">or</div>
+                                                </div>
                                             </div>
                                         </div>
                                   </div>
-                                      <hr>
                                   </div>
                                  </div>
                                 </div>
@@ -472,7 +470,7 @@
                                      @endif
                                       <div class="col-md-12 offset-md-1">
                                           <div class=" text-center">
-                                              <input type="submit" class="fadeIn fourth" style="font-size: 30px; padding:10px 36% 10px 24% !important;" value="Log In">
+                                              <input type="submit" class="fadeIn fourth" style="font-size: 30px; padding:10px 36% 10px 24% !important;" value="Sign In">
                                           </div>
                                           <div class="login-color">By joining Frame 54, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></div>
                                       </div>
@@ -510,13 +508,12 @@
                                                             <a class="btn-icon btn-block text-left " href="{{ url('/login/twitter') }}"><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Twitter</a>
                                                         </div>
                                                     </div>
-                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                                                    <div class="networks-social" style="font-size: 30px !important">or</div>
-                                                </div>
+                                                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 networks-social ">
+                                                        <div class="line">or</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                       </div>
-                                        <hr>
                                     </div>
                                    </div>
                                 </div>
