@@ -5,12 +5,15 @@ namespace App\Http\Controllers\User;
 use App\Model\user\User;
 use App\Model\admin\profile;
 use App\Model\user\post;
+use App\Model\user\category;
+use App\Model\user\tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Model\user\theme;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 use Illuminate\Support\Facades\Validator;
@@ -29,10 +32,16 @@ class ProfileController extends Controller
         $user = profile::all();
         $user = profile::find($id);
         $post =post::find($id);
+        $categories =category::all();
+        $tags =tag::all();
         $theme =theme::all();
+        $posts = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')
+        ->paginate(6);
 
         if($user){
-            return view('user.profile.profile')->withUser($user)->withPost($post)->withTheme($theme);
+            return view('user.profile.profile')->withUser($user)->withPost($post)->withTheme($theme)->withPosts($posts)->withTags($tags)->withCategories($categories);
         }else{
             return redirect()->back();
         }
@@ -80,7 +89,8 @@ class ProfileController extends Controller
     public function edit($id)
     {
      $user = profile::find($id);
-      $theme =theme::all();
+     $theme =theme::all();
+
       return view('user.profile.profileEdit',compact('user','profile','theme'))->with('success', 'Your Image has been added successfully. Please wait for the admin to approve.');
 
     }
@@ -325,11 +335,17 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $post =post::find($id);
+        $categories =category::all();
+        $tags =tag::all();
         $theme =theme::all();
+        $posts = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')
+        ->paginate(6);
 
         if($user){
 
-            return view('user.profile.following')->withUser($user)->withPost($post)->withTheme($theme);
+            return view('user.profile.following')->withUser($user)->withPost($post)->withTheme($theme)->withPosts($posts)->withTags($tags)->withCategories($categories);
         }else{
             return redirect()->back();
         }
@@ -351,5 +367,7 @@ class ProfileController extends Controller
         $post->like = $request->like + 1;
         $post->save();
      }
+
+
 
 }

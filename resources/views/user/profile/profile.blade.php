@@ -21,7 +21,7 @@
     </div>
     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
         <div class="download">
-            <h2 style="float: left; padding-right: 35px; margin-top: -7px;">{{$user['name']}}</h2><a href="{{ route('profile.edit',$user->id) }}"> <small class="btns">Edit Profile </small></a>
+            <h2 style="float: left; padding-right: 45px; margin-top: -7px;">{{$user['name']}}</h2> <a href="{{ route('profile.edit',$user->id) }}"> <small class="btns">Edit Profile </small></a>
         </div>
         <p>{{count($post->posted_by)}} images</p>
         <div class="row">
@@ -41,7 +41,14 @@
    <hr>
    <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-        <p class="text-center">Wow, that’s a very clean portfolio!</p>
+        <!--<p class="text-center">Wow, that’s a very clean portfolio!</p>-->
+        <div class="container">
+            <div class="row">
+            <div class="gal" id="post-data">
+                    @include('user/data')
+                    </div>
+            </div>
+            </div>
     </div>
     </div>
     <hr>

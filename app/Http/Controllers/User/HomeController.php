@@ -29,17 +29,19 @@ class HomeController extends Controller
         ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')
         ->paginate(6);
+        $artists = post::all();
+        $artists = $artists->firstWhere('posted_by','id');
 
-       //dd($items);
+       //dd($artists);
         if ($request->ajax()) {
 
-    		$view = view('user.data',compact('posts','categories','tags', 'theme'))->render();
+    		$view = view('user.data',compact('posts','categories','tags', 'theme','artists'))->render();
 
             return response()->json(['html'=>$view]);
 
         }
 
-    	return view('user.blog',compact('posts','categories','tags', 'theme'));
+    	return view('user.blog',compact('posts','categories','tags', 'theme','artists'));
     }
     public function tag(tag $tag)
     {
@@ -163,5 +165,16 @@ class HomeController extends Controller
         else {
             return response()->json('error', 400);
         }
+    }
+    public function artists(Request $request,$id)
+    {
+        $artists =post::find($id);
+        $categories =category::all();
+        $tags =tag::all();
+        $posts = post::where('status',1)->orderBy('created_at','DESC')
+        ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
+        ->join('users','users.id','=','posts.posted_by')
+        ->paginate(6);
+        return view('user.artists',compact('artists','categories','tags', 'theme', 'posts'));
     }
 }

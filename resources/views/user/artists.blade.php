@@ -27,7 +27,7 @@
             </div>
             <div class="col-md- col-xs-12 col-sm-4 col-lg-4">
                 <div class="download" style="margin: 35px 0 0 -251px !important;">
-                    <a href="{{ route('profile.edit', $user->id) }}"> <small class="btns follow-img" style="background: #ddd !important; border:1px solid #ddd !important; margin-right:10px !important; padding-left:36px !important;"><img alt="{{Auth::user()->name}}" src="/user/img/Frame 54 icons-userplus.svg" id="userplus" class="img-responsive"> Follow</small></a>
+                    <a href="#"> <small class="btns follow-img" style="background: #ddd !important; border:1px solid #ddd !important; margin-right:10px !important; padding-left:36px !important;"><img alt="{{Auth::user()->name}}" src="/user/img/Frame 54 icons-userplus.svg" id="userplus" class="img-responsive"> Follow</small></a>
                     <a type="button" data-toggle="modal" data-target=".bd-message-modal-lg" class=" mail-img"> <small class="btns" style="padding-left: 36px !important"><img alt="{{Auth::user()->name}}" src="/user/img/Frame 54 icons-email.svg" id="userplus" class="img-responsive"> Message</small></a>
                 </div>
             </div>
