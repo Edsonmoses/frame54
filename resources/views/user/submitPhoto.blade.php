@@ -9,7 +9,33 @@
 		.fa-thumbs-up:hover{
 			color:#f41115;
 		}
-	</style>
+    </style>
+    <script>
+
+        function previewFile(input){
+            var file = $("input[type=file]").get(0).files[0];
+
+            if(file){
+                var reader = new FileReader();
+
+                reader.onload = function(){
+                    $("#previewImg").attr("src", reader.result);
+                    $("#photos").hide();
+                    $("#hidetags").show();
+                }
+
+                reader.readAsDataURL(file);
+            }
+        }
+        $(function(){
+    $("input[type='submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length)>10){
+         alert("You can only upload a maximum of 2 files");
+        }
+    });
+});
+    </script>
 @endsection
 @section('main-content')
 	<!-- Main Content -->
@@ -47,8 +73,8 @@
         <div class="modal-body">
           <!-- Main content -->
             <section class="content">
-                <div class="row">
-                <div class="col-md-12">
+                <div class="row pub-p">
+                <div class="col-md-12 published">
                     <!-- general form elements -->
                     <div class="box box-primary">
                     @include('includes.messages')
@@ -57,22 +83,24 @@
                     <form role="form" action="{{ route('photo.store') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Add a tag">
-                          </div>
-
-                          <div class="form-group">
-                            <textarea name="body" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" placeholder="Add a description"></textarea>
-                          </div>
+                            <div class="col-lg-12">
+                                <p>
+                                    <input type="file" name="image" id="photos" onchange="previewFile(this);" required>
+                                </p>
+                                <img id="previewImg" src="/user/img/holder.jpeg" width="200" height="200" alt="Placeholder">
+                                <p>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                          <div class="form-group">
-                                <input type="file"  class="dropzone custom-file-input" name="image" id="image" multiple="multiple" title=" ">
-                          </div>
-                        </div>
+                            <div class="col-lg-12" id="hidetags">
+                                <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Add a tag">
+                              </div>
+
+                              <div class="form-group">
+                                <textarea name="body" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" placeholder="Add a description"></textarea>
+                              </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
@@ -181,43 +209,7 @@
 </div>
 @endsection
 @section('footer')
-<script>
-  var uploadedDocumentMap = {}
-  Dropzone.options.documentDropzone = {
-    url: '{{ route('photo.store') }}',
-    maxFilesize: 2, // MB
-    addRemoveLinks: true,
-    headers: {
-      'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    },
-    success: function (file, response) {
-      $('form').append('<input type="hidden" name="document[]" value="' + response.name + '">')
-      uploadedDocumentMap[file.name] = response.name
-    },
-    removedfile: function (file) {
-      file.previewElement.remove()
-      var name = ''
-      if (typeof file.file_name !== 'undefined') {
-        name = file.file_name
-      } else {
-        name = uploadedDocumentMap[file.name]
-      }
-      $('form').find('input[name="document[]"][value="' + name + '"]').remove()
-    },
-    init: function () {
-      @if(isset($project) && $project->document)
-        var files =
-          {!! json_encode($project->document) !!}
-        for (var i in files) {
-          var file = files[i]
-          this.options.addedfile.call(this, file)
-          file.previewElement.classList.add('dz-complete')
-          $('form').append('<input type="hidden" name="document[]" value="' + file.file_name + '">')
-        }
-      @endif
-    }
-  }
-</script>
+
 <style>
     .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
     cursor: pointer;

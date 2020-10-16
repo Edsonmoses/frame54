@@ -1,6 +1,6 @@
 
  <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-trans navbar-fixed-top" id="myDIV1">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="myDIV1">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -8,7 +8,8 @@
                     <span class="sr-only">Toggle navigation</span>
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}"><img class="frame-logo"src="/user/img/Frame54-W.svg" alt="Frame54-G" /></a>
+                <a class="navbar-brand js-scroll-W" href="{{ url('/') }}"><img class="frame-logo"src="/user/img/Frame54-W.svg" alt="Frame54-W" /></a>
+                <a class="navbar-brand js-scroll-G" href="{{ url('/') }}"><img class="frame-logo"src="/user/img/Frame54-G.svg" alt="Frame54-G" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

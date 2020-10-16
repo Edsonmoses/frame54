@@ -143,10 +143,10 @@
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs loginTabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">SIGN IN</a>
+                    <li role="presentation" class="active" id="myActives"  onclick="myActived()"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">SIGN IN</a>
 
                     </li>
-                    <li role="presentation" class="actived"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">SIGN UP</a>
+                    <li role="presentation" id="myActive" class="actived"  onclick="myActivedrem()"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">SIGN UP</a>
 
                     </li>
                 </ul>
@@ -172,8 +172,8 @@
                                           {{ session('warning') }}
                                       </div>
                                   @endif
-                                  <div class="panel-login">
-                                  <div class="panel-heading">
+                                  <div class="panel-login" style="margin-top: 25px !important;">
+                                  <div class="panel-heading" style="display: none !important; ">
                                     <div class="row ">
                                         <div class="col-md-10 col-md-offset-1 col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1">
                                             <div class="row ">
@@ -256,8 +256,8 @@
                                 <!-- Tabs Titles -->
                                 <!-- Icon -->
                                 <div class="fadeIn first">
-                                  <div class="panel-login">
-                                    <div class="panel-heading">
+                                  <div class="panel-login" style="margin-top: 25px !important;">
+                                    <div class="panel-heading" style="display: none !important">
                                         <div class="row ">
                                             <div class="col-md-10 col-md-offset-1 col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1">
                                                 <div class="row ">
@@ -376,10 +376,10 @@
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs loginTabs" role="tablist">
-                    <li role="presentation" class="actived"><a href="#loginTabs" aria-controls="loginTabs" role="tab" data-toggle="tab">SIGN IN</a>
+                    <li role="presentation"  id="myActive1" class="actived"  onclick="myActivedrem()"><a href="#loginTabs" aria-controls="loginTabs" role="tab" data-toggle="tab">SIGN IN</a>
 
                     </li>
-                    <li role="presentation" class="active"><a href="#registerTabs" aria-controls="registerTabs" role="tab" data-toggle="tab">SIGN UP</a>
+                    <li role="presentation" class="active"  id="myActives1"  onclick="myActived()"><a href="#registerTabs" aria-controls="registerTabs" role="tab" data-toggle="tab">SIGN UP</a>
 
                     </li>
                 </ul>
@@ -405,8 +405,8 @@
                                           {{ session('warning') }}
                                       </div>
                                   @endif
-                                  <div class="panel-login">
-                                  <div class="panel-heading">
+                                  <div class="panel-login" style="margin-top: 25px !important;">
+                                  <div class="panel-heading" style="display: none !important">
                                     <div class="row ">
                                         <div class="col-md-10 col-md-offset-1 col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1">
                                             <div class="row ">
@@ -489,8 +489,8 @@
                                 <!-- Tabs Titles -->
                                 <!-- Icon -->
                                 <div class="fadeIn first">
-                                  <div class="panel-login">
-                                    <div class="panel-heading">
+                                  <div class="panel-login" style="margin-top: 25px !important;">
+                                    <div class="panel-heading" style="display: none !important">
                                         <div class="row ">
                                             <div class="col-md-10 col-md-offset-1 col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1">
                                                 <div class="row ">
@@ -742,6 +742,48 @@ function myBlurem() {
   var element = document.getElementById("myDIV2");
   element.classList.remove("blured");
 }
+function myActived() {
+  var element = document.getElementById("myActives");
+  element.classList.remove("actived");
+  var element = document.getElementById("myActive");
+  element.classList.add("actived");
+
+  var element = document.getElementById("myActives");
+  element.classList.remove("actived");
+  var element = document.getElementById("myActive");
+  element.classList.add("actived");
+
+}
+
+function myActivedrem() {
+  var element = document.getElementById("myActive1");
+  element.classList.remove("actived");
+  var element = document.getElementById("myActives1");
+  element.classList.add("actived");
+
+  var element = document.getElementById("myActive1");
+  element.classList.remove("actived");
+  var element = document.getElementById("myActives1");
+  element.classList.add("actived");
+}
+
+$(function() {
+    //caches a jQuery object containing the header element
+    var header = $(".navbar-custom");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 50) {
+            header.removeClass('navbar-custom').addClass("navbar-whitecustom");
+            $(".js-scroll-W").addClass("scroll-logo-hide");
+		    $(".js-scroll-G").removeClass("scroll-logo-hide");
+        } else {
+            header.removeClass("navbar-whitecustom").addClass('navbar-custom');
+            $(".js-scroll-G").addClass("scroll-logo-hide");
+		    $(".js-scroll-W").removeClass("scroll-logo-hide");
+        }
+    });
+});
 
 </script>
     @section('footer')

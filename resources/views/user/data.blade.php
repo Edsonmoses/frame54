@@ -1,7 +1,7 @@
 
 @foreach ($posts as $posts)
     <div class="frame">
-        <a type="button" onclick="myBlurem()" data-toggle="modal" data-target="#exampleModal{{$posts->id}}">
+        <a type="button" href="{{ route('home.artists', $posts->posted_by) }} onclick="myBlurem()" data-toggle="modal" data-target="#exampleModal{{$posts->id}}">
             <div class="ftitle"><img alt="{{ $posts->name ? $posts->name : $posts->title }}" src="/uploads/avatars/{{$posts->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$posts->name? $posts->name : 'Frame54'}}</span></div>
             <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img">
             @if($posts->ads === 1)
@@ -54,7 +54,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="{{ route('home.artists', $posts->id) }}"><img alt="{{ $posts->name }}" src="/uploads/avatars/{{$posts->avatar}}" width="45" height="45" class="img-circle img-responsive"><span style="color: #ccc; margin:-35px 0 0 50px !important; float: left;">{{$posts['name']? $posts['name'] : 'Frame54'}}</span></a>
+                <a href="{{ route('home.artists', $posts->posted_by) }}"><img alt="{{ $posts->name }}" src="/uploads/avatars/{{$posts->avatar}}" width="45" height="45" class="img-circle img-responsive"><span style="color: #ccc; margin:-35px 0 0 50px !important; float: left;">{{$posts['name']? $posts['name'] : 'Frame54'}}</span></a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -200,56 +200,22 @@
             <div class="similar">
                 <p style="margin-bottom: 0px !important;"> FROM SAME ARTIST</p>
                 <div class="row">
-                    <!-- Team Member 1 -->
-                    @foreach ($artists as $artist)
-                        <div class="col-xl-3 col-md-3 mb-3" >
-                            <div class="card shadow">
-                                @if ($artist->id == '{{$posts->id}}')
-                            <div class="frame">
-                                <a type="button" data-toggle="modal" data-target="#exampleModal{{$artist->id}}">
-                                        <div class="ftitle"><img alt="{{ $artist->name ? $artist->name : $artist->title }}" src="/uploads/avatars/{{$artist->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$artist->name? $artist->name : 'Frame54'}}</span></div>
-                                           <img src="{{ Storage::url($artist->image)}}" class="card-img-top" style="padding-right: 10px" alt="{{$artist->title}}">
-                                           @if($artist->ads === 1)
-                                           <div class="fdetails"><span class="ads">AD</span></div>
-                                           @else
-                                           <div class="fdetails">
-                                               @if($artist->like >= 1)
-                                               <a href="" onclick="
-                                                                   event.preventDefault();
-                                                                   document.getElementById('like-form-{{ $artist->id }}').submit();
-                                                                " ><i class="fa fa-heart-o" aria-hidden="true" style="color: red">{{ $artist->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $artist->id) }}"><img src= "/user/img/download_w.svg" alt="{{$artist->title}}" style="margin-top: -29px; z-index:999; position: absolute;"></a></span>
-                                               @else
-                                               <a href="" onclick="
-                                                                   event.preventDefault();
-                                                                   document.getElementById('like-form-{{ $artist->id }}').submit();
-                                                                " ><i class="fa fa-heart-o" aria-hidden="true">{{ $artist->like }}</i></a><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('home.download', $artist->id) }}"><img src= "/user/img/download_w.svg" alt="{{$artist->title}}" style="margin-top: -29px; z-index:999; position: absolute;"></a></span>
-                                               @endif
-                                           </div>
-                                           @endif
-                                       </a>
-                                  </div>
-                                  @endif
-                                  <form role="form" id="like-form-{{ $artist->id }}" action="{{ route('post.likeUpdate',$artist->id)}}" method="post" enctype="multipart/form-data" style="display: none">
-                                   {{ csrf_field() }}
-                                  <div class="row agree">
-                                   <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
+                    <div class="gal" id="post-data">
+                        @foreach ($artists as $artists)
+                           <div class="frame">
 
-                                   </div>
-                                   <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4">
-                                       <div class="form-group">
-                                           <input type="text" class="form-control" id="like" name="like" value="1">
-                                         </div>
-                                   </div>
-                                   <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3">
-                                       <div class="download">
-                                           <input type="submit" class="btns" value="Start Uploading">
-                                       </div>
-                                   </div>
-                               </div>
-                                   </form>
-                            </div>
-                        </div>
-                        @endforeach
+                            <a type="button" onclick="myBlurem()" data-toggle="modal" data-target="#exampleModal{{$posts->id}}">
+                                  <div class="ftitle"><img alt="{{ $artists->name ? $artists->name : $artists->title }}" src="/uploads/avatars/{{$artists->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$artists->name? $artists->name : 'Frame54'}}</span></div>
+                                  <img src= "{{ Storage::url($artists->image)}}" alt="{{$artists->title}}" class="img">
+                                  @if($artists->ads === 1)
+                                  <div class="fdetails"><span class="ads">AD</span></div>
+                                  @else
+                                  <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>
+                                  @endif
+                              </a>
+                           </div>
+                          @endforeach
+                      </div>
                 </div>
                  <div class="col-lg-1 col-md-1" style="display: none">
                     <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img-sm">

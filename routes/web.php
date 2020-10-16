@@ -38,7 +38,7 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('security','HomeController@security')->name('home.security');
     Route::get('home/download/{id}','HomeController@download')->name('home.download');
     Route::get('home/likes/{like}','HomeController@likes')->name('home.likes');
-    Route::get('artists/{id}','HomeController@artists')->name('home.artists');
+    Route::get('artists/{posted_by}','HomeController@artists')->name('home.artists');
 
 	Route::get('post/tag/{tag}','HomeController@tag')->name('tag');
 	Route::get('post/category/{category}','HomeController@category')->name('category');

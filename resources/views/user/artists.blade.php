@@ -66,13 +66,13 @@
    <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
         <div class="gal" id="post-data">
-            @foreach ($posts as $posts)
+            @foreach ($artists as $artists)
                <div class="frame">
 
-                  <a href="{{ $posts->slug }}">
-                      <div class="ftitle"><img alt="{{ $posts->name ? $posts->name : $posts->title }}" src="/uploads/avatars/{{$posts->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$posts->name? $posts->name : 'Frame54'}}</span></div>
-                      <img src= "{{ Storage::url($posts->image)}}" alt="{{$posts->title}}" class="img">
-                      @if($posts->ads === 1)
+                <a type="button" onclick="myBlurem()" data-toggle="modal" data-target="#exampleModal{{$posts->id}}">
+                      <div class="ftitle"><img alt="{{ $artists->name ? $artists->name : $artists->title }}" src="/uploads/avatars/{{$artists->avatar}}" class="ftitle-img  img-responsive" width="50" height="50"> <span>{{$artists->name? $artists->name : 'Frame54'}}</span></div>
+                      <img src= "{{ Storage::url($artists->image)}}" alt="{{$artists->title}}" class="img">
+                      @if($artists->ads === 1)
                       <div class="fdetails"><span class="ads">AD</span></div>
                       @else
                       <div class="fdetails"><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i><span><a href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></div>

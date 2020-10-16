@@ -13,6 +13,8 @@
     filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
 filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 }
+.navbar-whitecustom{background: #fff !important;}
+.scroll-logo-hide{display: none !important;}
 body.modal-open .container:focus {
     outline: none;
     box-shadow: none;
@@ -238,19 +240,19 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
   margin: 0 25px 0 10px;
 }
 .joinUs a{
-  border-radius: 10px;
+  border-radius: 50px;
   background: transparent !important;
   border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
-  margin: 16px 0 0 -10px !important;
+  margin: 10px 0 0 -10px !important;
   color: #99d608 !important;
 }
 .joinUs a:hover{
-  border-radius: 10px;
+  border-radius: 50px;
   background: #99d608 !important;
   border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
-  margin-top: 9px;
+  margin-top: 10px;
   color: #fff !important;
 }
 
@@ -1055,13 +1057,18 @@ border-radius: 0 5px 5px 0 !important;
     text-align: center;
     color: #222;
 }
+.login-section .nav-tabs > li.active > a, .login-section .nav-tabs > li.active > a:focus, .login-section .nav-tabs > li.active > a:hover{
+    border: 1px solid #fff !important;
+}
 .login-section .nav-tabs > li.actived > a, .login-section .nav-tabs > li.actived > a:focus, .login-section .nav-tabs > li.actived > a:hover{
     background: #ddd;
     height: 63px;
     text-align: center;
+    border: 1px solid #fff !important;
 }
 .login-section .nav-tabs > li > a:hover{
     height: 63px;
+    border: 1px solid #fff !important;
 }
 
 .login-section h2.inactive {
@@ -1116,8 +1123,8 @@ border-radius: 0 5px 5px 0 !important;
   font-size: 13px;
   -webkit-box-shadow: 0 10px 30px 0 rgba(153, 214, 8,0.4);
   box-shadow: 0 10px 30px 0 rgba(153, 214, 8,0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 50px 50px 50px 50px;
+  border-radius: 50px 50px 50px 50px;
   margin: 5px 20px 40px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1864,3 +1871,24 @@ object-fit: cover;
   box-shadow: none !important;
 }
 
+.published {
+
+    padding: 20px;
+    border-width: 2px;
+    margin-bottom: 20px;
+    color: #646c7f !important;
+    border-style: dashed !important;
+    border-color: #ccc !important;
+    background: #f5f5f5 !important;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #html_btn {
+    display:none;
+   }
+  .pub-p{
+      padding: 0 20px 0 20px !important;
+  }
+  #hidetags{
+     display: none;
+  }
