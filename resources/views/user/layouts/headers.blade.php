@@ -244,7 +244,7 @@
                             <input class="form-control" placeholder="Search Free hi-resolution Afrocentric images" name="term" id="ed-srch-term" type="text">
                             <div class="input-group-btn">
                             <button type="submit" id="searchbtn">
-                            <small>|</small><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                             </div>
                             </form>

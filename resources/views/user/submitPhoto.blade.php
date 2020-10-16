@@ -21,6 +21,8 @@
                 reader.onload = function(){
                     $("#previewImg").attr("src", reader.result);
                     $("#photos").hide();
+                    $("#photo1").hide();
+                    $("#photo2").hide();
                     $("#hidetags").show();
                 }
 
@@ -84,11 +86,16 @@
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-lg-12">
+                                <div class="file-upload">
                                 <p>
                                     <input type="file" name="image" id="photos" onchange="previewFile(this);" required>
+                                    <img id="photo1" src="/user/img/1x.png" width="150" height="93" alt="Placeholder">
+                                    <p id="photo2" class="updrag">Drag and drop up to 10<br/> images or <span id="span">Browse</span> to choose <br/> a file</p>
                                 </p>
-                                <img id="previewImg" src="/user/img/holder.jpeg" width="200" height="200" alt="Placeholder">
+                            </div>
+                                <img id="previewImg" src="/user/img/transparent.png" width="200" height="200" alt="Placeholder">
                                 <p>
+
                             </div>
                             <div class="col-lg-12" id="hidetags">
                                 <div class="col-lg-6">

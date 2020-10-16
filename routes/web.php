@@ -30,7 +30,7 @@ Route::group(['namespace' => 'User'],function(){
     Route::get('policy','HomeController@framePolicy')->name('home.framePolicy');
     Route::get('conditions','HomeController@conditions')->name('home.conditions');
     Route::get('about','HomeController@about')->name('home.about');
-    Route::get('faq','HomeController@blog')->name('home.faq');
+    Route::get('faq','HomeController@faq')->name('home.faq');
     Route::get('team','HomeController@team')->name('home.team');
     Route::get('developers','HomeController@developers')->name('home.developers');
     Route::get('press','HomeController@press')->name('home.press');

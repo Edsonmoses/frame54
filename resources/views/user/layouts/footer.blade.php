@@ -777,14 +777,28 @@ $(function() {
             header.removeClass('navbar-custom').addClass("navbar-whitecustom");
             $(".js-scroll-W").addClass("scroll-logo-hide");
 		    $(".js-scroll-G").removeClass("scroll-logo-hide");
+            $(".scrollmenu").addClass("scroll-logo-hide");
         } else {
             header.removeClass("navbar-whitecustom").addClass('navbar-custom');
             $(".js-scroll-G").addClass("scroll-logo-hide");
 		    $(".js-scroll-W").removeClass("scroll-logo-hide");
+            $(".scrollmenu").removeClass("scroll-logo-hide");
         }
     });
 });
+$(function() {
+    //caches a jQuery object containing the header element
+    var header = $(".navbar-custom");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
 
+        if (scroll >= 0) {
+            $(".scrollmenu").addClass("scroll-logo-hide");
+        } else {
+            $(".scrollmenu").removeClass("scroll-logo-hide");
+        }
+    });
+});
 </script>
     @section('footer')
         @show

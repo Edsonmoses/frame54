@@ -1892,3 +1892,24 @@ object-fit: cover;
   #hidetags{
      display: none;
   }
+
+  .file-upload input[type='file'] {
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    border: 1px solid #000;
+  }
+  .file-upload img{
+      margin-left: 13em;
+  }
+  .file-upload #span{
+    color: #0080ff !important;
+}
+  .file-upload .updrag{
+    color: #000 !important;
+    text-align: center;
+}
