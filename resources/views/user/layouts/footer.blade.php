@@ -748,17 +748,17 @@ function myActived() {
   var element = document.getElementById("myActive");
   element.classList.add("actived");
 
-  var element = document.getElementById("myActives");
+  var element = document.getElementById("myActives1");
   element.classList.remove("actived");
-  var element = document.getElementById("myActive");
+  var element = document.getElementById("myActive1");
   element.classList.add("actived");
 
 }
 
 function myActivedrem() {
-  var element = document.getElementById("myActive1");
+  var element = document.getElementById("myActive");
   element.classList.remove("actived");
-  var element = document.getElementById("myActives1");
+  var element = document.getElementById("myActives");
   element.classList.add("actived");
 
   var element = document.getElementById("myActive1");

@@ -941,7 +941,7 @@ border-radius: 0 5px 5px 0 !important;
 .login-section #formContent {
   -webkit-border-radius: 0px 0px 10px 10px;
   border-radius: 0px 0px 10px 10px;
-  background: #000 !important;
+  background: #fff;
   padding: 30px;
   width: 90%;
   max-width: 900px;
@@ -1064,7 +1064,7 @@ border-radius: 0 5px 5px 0 !important;
     background: #ddd;
     height: 63px;
     text-align: center;
-    border: 1px solid #fff !important;
+    border: 1px solid #fff;
 }
 .login-section .nav-tabs > li > a:hover{
     height: 63px;
@@ -1148,9 +1148,9 @@ border-radius: 0 5px 5px 0 !important;
 .login-section input[type=email],
 .login-section input[type=password],
 .login-section input[type=text]  {
-  background-color: #000 !important;
+  background-color: #f6f6f6;
   border: none;
-  color: #f6f6f6;
+  color: #0d0d0d;
   padding: 8px 32px;
   text-align: left;
   text-decoration: none;
