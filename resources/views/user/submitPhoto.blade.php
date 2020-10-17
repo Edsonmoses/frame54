@@ -37,13 +37,14 @@
         }
     });
 });
-    </script>
+
+</script>
 @endsection
 @section('main-content')
 	<!-- Main Content -->
   <div class="container">
     <!--/.scrollmenu-->
-		 <div class="scrollmenu">
+		 <div class="scrollmenu scroll-logo-hide">
 			@foreach ($categories as $category)
 				<a href="{{ route('category',$category->slug, $post->id) }}">{{ $category->name }}</a>
 		   @endforeach

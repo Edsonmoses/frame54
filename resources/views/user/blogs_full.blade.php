@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-11 col-lg-offset-1 col-md-11">
-                <div class="site-heading"   style=" margin-top:-52px;">
+                <div class="site-heading"   style=" margin-top:10px;">
                     <div class="col-xs-10" >
                         <form action="{{ route('search') }}" method="GET" role="search">
 

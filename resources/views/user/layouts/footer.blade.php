@@ -767,6 +767,19 @@ function myActivedrem() {
   element.classList.add("actived");
 }
 
+function darktheme() {
+  var element = document.getElementById("myActive1");
+  element.classList.remove("actived");
+  var element = document.getElementById("myActives1");
+  element.classList.add("actived");
+}
+function lighttheme() {
+  var element = document.getElementById("myActive1");
+  element.classList.remove("actived");
+  var element = document.getElementById("myActives1");
+  element.classList.add("actived");
+}
+
 $(function() {
     //caches a jQuery object containing the header element
     var header = $(".navbar-custom");

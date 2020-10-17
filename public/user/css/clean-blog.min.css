@@ -120,7 +120,7 @@ body.modal-open .container:focus {
     color: #555;
     background-color: rgba(255, 255, 255, 0.10) !important;
 }
-.page-dots{
+.page-dots {
     font-size: 31px !important;
     margin: 0 -26px 0 0 !important;
     color: #000 !important;
@@ -244,7 +244,7 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
   background: transparent !important;
   border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
-  margin: 10px 0 0 -10px !important;
+  margin: 21px 0 0 -10px !important;
   color: #99d608 !important;
 }
 .joinUs a:hover{
@@ -252,7 +252,7 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
   background: #99d608 !important;
   border: 1px solid #99d608 !important;
   padding: 5px 15px 5px 15px !important;
-  margin-top: 10px;
+  margin-top: 21px;
   color: #fff !important;
 }
 
@@ -315,7 +315,7 @@ div.scrollmenu a:hover,div.scrollmenus a:hover {
   position: relative;
   display: inline-block;
 }
-.show i{
+.shows i{
   margin-top: -19px !important;
   position: fixed;
   font-size: 35px;
@@ -941,7 +941,7 @@ border-radius: 0 5px 5px 0 !important;
 .login-section #formContent {
   -webkit-border-radius: 0px 0px 10px 10px;
   border-radius: 0px 0px 10px 10px;
-  background: #fff;
+  background: #000 !important;
   padding: 30px;
   width: 90%;
   max-width: 900px;
@@ -1058,7 +1058,7 @@ border-radius: 0 5px 5px 0 !important;
     color: #222;
 }
 .login-section .nav-tabs > li.active > a, .login-section .nav-tabs > li.active > a:focus, .login-section .nav-tabs > li.active > a:hover{
-    border: 1px solid #fff !important;
+    border: 1px solid transparent !important;
 }
 .login-section .nav-tabs > li.actived > a, .login-section .nav-tabs > li.actived > a:focus, .login-section .nav-tabs > li.actived > a:hover{
     background: #ddd;
@@ -1148,9 +1148,9 @@ border-radius: 0 5px 5px 0 !important;
 .login-section input[type=email],
 .login-section input[type=password],
 .login-section input[type=text]  {
-  background-color: #f6f6f6;
+  background-color: #000 !important;
   border: none;
-  color: #0d0d0d;
+  color: #f6f6f6;
   padding: 8px 32px;
   text-align: left;
   text-decoration: none;
@@ -1385,7 +1385,7 @@ object-fit: cover;
 /***page-section**/
 .pagesheader{
     margin-top: -10%;
-    height: 300px;
+    height: 400px;
 }
 .team .page-title h3{
     color: #666;
@@ -1912,4 +1912,7 @@ object-fit: cover;
   .file-upload .updrag{
     color: #000 !important;
     text-align: center;
+}
+.modal-content {
+    background-color: #000 !important;
 }
