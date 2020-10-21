@@ -34,7 +34,7 @@ class ProfileController extends Controller
         $post =post::find($id);
         $categories =category::all();
         $tags =tag::all();
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')
@@ -89,7 +89,7 @@ class ProfileController extends Controller
     public function edit($id)
     {
      $user = profile::find($id);
-     $theme =theme::all();
+     $theme = theme::where('status', 1)->firstOrFail();
 
       return view('user.profile.profileEdit',compact('user','profile','theme'))->with('success', 'Your Image has been added successfully. Please wait for the admin to approve.');
 
@@ -152,7 +152,7 @@ class ProfileController extends Controller
     }
     public function updateAvatar(Request $request)
     {
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
@@ -167,7 +167,7 @@ class ProfileController extends Controller
     }
 
     public function showChangePasswordForm(){
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         return view('user.profile.changepassword')->withTheme($theme);
     }
 
@@ -226,7 +226,7 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $post =post::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
            // $posts =post::all();
@@ -239,7 +239,7 @@ class ProfileController extends Controller
     public function settings($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -252,7 +252,7 @@ class ProfileController extends Controller
     public function emailSetting($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -269,7 +269,7 @@ class ProfileController extends Controller
     public function connect($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -282,7 +282,7 @@ class ProfileController extends Controller
     public function applications($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -295,7 +295,7 @@ class ProfileController extends Controller
     public function close($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -308,7 +308,7 @@ class ProfileController extends Controller
     public function collections($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -321,7 +321,7 @@ class ProfileController extends Controller
     public function community($id)
     {
         $user = User::find($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -337,7 +337,7 @@ class ProfileController extends Controller
         $post =post::find($id);
         $categories =category::all();
         $tags =tag::all();
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')

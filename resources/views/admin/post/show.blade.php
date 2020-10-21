@@ -61,7 +61,7 @@
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->subtitle }}</td>
-                            <td>{{ $post->slug }}</td>
+                            <td><img width="100" height="100" src= "{{ Storage::disk('local')->url($post->image)}}" alt="{{ $post->title }}"></td>
                             <td>{{ $post->created_at }}</td>
 
                               <td><a href="{{ route('post.edit',$post->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>

@@ -26,7 +26,7 @@
                            <a class="nav-link dark" type="button" data-toggle="modal" data-target=".register-modal-lg" onclick="myBlur()">{{ __('Join') }}</a>
                        </li>
                    @endif
-                   <li class="nav-item joinUs">
+                   <li class="nav-item joinUs" style="margin-top: -6px">
                     <a class="nav-link" href="{{ route('submitPhoto') }}"><i class="fa fa-arrow-up" aria-hidden="true"></i>
                         SUBMIT PHOTO</a>
                    </li>

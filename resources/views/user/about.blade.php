@@ -1,7 +1,7 @@
 @extends('user/app')
 
 @section('bg-img',asset('user/img/home-bg.jpg'))
-@section('title','FREE Afrocentric stock photos & videos shared by creators everywhere.')
+@section('title','About Frame 54')
 @section('sub-heading','Trending: ')
 @section('head')
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -12,111 +12,88 @@
 	</style>
 @endsection
 @section('main-content')
-	<!-- Main Content -->
-	<div class="container about-section">
-	    <div class="row" id="app">
-            <div class="col-md-12 col-xs-12 col-sm-5 col-lg-5">
-                <h1>About</h1>
-                <p>Free high-resolution panafrican images brought to you by the world’s most generous community of photographers.</p>
-                <div class="links">
-                <a href="#">Start browsing</a><a href="#">Contribute</a>
+<header class="intro-header pagesheader" style="background-image: url(@yield('bg-img'))">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 col-lg-offset-1 col-md-11">
+                <div class="site-heading"   style=" margin-top:-59px; ">
+                    <div class="col-xs-8" >
+                        <form action="{{ route('search') }}" method="GET" role="search">
+
+                        <div class="input-group">
+                        <input class="form-control" style="height: 10px !important" placeholder="Search For articles...." name="term" id="ed-srch-term" type="text">
+                        <div class="input-group-btn">
+                        <button type="submit" id="searchbtn">
+                        <i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                        </div>
+                        </form>
+
+                        </div>
                 </div>
             </div>
-            <div class="col-md-12 col-xs-12 col-sm-7 col-lg-7">
-                     <div class="half-img">
-                        <img src= "{{ Storage::disk('local')->url('1595337324.jpeg')}}" alt="{{ $post->title }}">
-                    </div>
-                    <div class="qt-img">
-                        <img class="pb-5" src= "{{ Storage::disk('local')->url('1595337324.jpeg')}}" alt="{{ $post->title }}">
-                        <img class="pt-5" src= "{{ Storage::disk('local')->url('1595337324.jpeg')}}" alt="{{ $post->title }}">
-                    </div>
-            </div>
-            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 bt-img">
-                <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
+        </div>
+    </div>
+</header>
+	<!-- Main Content -->
+	<div class="container about-section" style="margin-top: -195px">
+	    <div class="row" id="app">
+
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                <h1 style="color:#000 !important">@yield('title')</h1>
+                <h3>Who we are</h3>
+                <p>Although the concept of negative space isn’t one that is commonly known (unless you’re a professional photographer or designer), the technique itself is one that most people would recognize.</p>
+                <p>Most people who look at this photo are familiar with this sort of visual manipulation. The blades of grass found in the center of the photo are clear and in focus while everything around them is blurred. This is how the pho-tographer tells us where to look. Those blades of grass are the positive space (or subject) in this photo. The blurred area that allows us to focus on the subject is the negative space.</p>
+                <p>Like the negative space of a photograph, that is how we envision ourselves at NegativeSpace.</p>
+                <p>Our goal in launching NegativeSpace is to give photographers a platform whereby they can share their pho-tography with the world. We want to provide those out-of-focus surroundings so the beautiful high-resolution images found within them have a chance to shine.</p>
+                <p>NegativeSpace is about creating communities: A community of photographers who want to share their work. And a community of online visitors who want to use their beautiful, free high-resolution images without any restrictions.</p>
+                <h3>Welcoming All Photographers</h3>
+                <p>Looking toward the future, our mission is a simple one: we want to encourage photographers to contribute their work and join our global community. We want NegativeSpace to be the place to find the most beautiful, free high-resolution images on the web, so we’re inviting you to send us your photographs today.</p>
+                <p>For more information on how to join our community of photographers and start submitting your work, visit our Join Us page.</p>
+                <h3>Welcoming All Visitors</h3>
+                <p>If you’ve just arrived on our website and wondering what this is all about: welcome. Each of the high-quality photographs you find here has been taken by a photographer from the NegativeSpace community. We have something for everybody, so be sure to check out our categories: Abstract, Animals, Architecture, Business, Black & White, Food, Landscapes, Nature, People, Sport, Street, Technology, Transport, and Work.</p>
+                <p>Because we want to give our visitors easy access to beautiful, high-resolution photography, all of the photos on this site are free. Free in cost as well as free to use under a Creative Commons CC0 license. For more information on how we manage the image licensing on this website, visit our License and Privacy pages.</p>
+                <p>Our network of content sites also includes 1stWebDesigner (web design resources & tutorials) and PSDDD (free web & mobile app design resources).</p>
+                <p>We also maintain a collection of tools for web developers, they are JSONLint, JSCompress, JSONCompare, RandomKeygen and DNS-Lookup.</p>
             </div>
         </div><!--row-->
         <div class="row">
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                <h3>Frame 54 is internet’s source of free to use panafrican images.</h3>
+                <h3>Contact Frame54</h3>
+                <p>If you need to contact us regarding the ShotStash website or anything else regarding ShotStash, please email us at hello@frame54.com.</p>
             </div>
             <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4">
               <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-              <h4>Over one million curated photos</h4>
-              <p>We hand-select every photo and accept only the best, so that no matter what you need—you’ll find exactly what you’re looking for on Frame 54.</p>
+              <h4>Free to use</h4>
+              <p>Free content is licensed under a CC0 license and can be freely used and redistributed.</p>
            </div>
            <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4">
             <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-            <h4>A community of 157,866 photographers</h4>
-            <p>Frame 54 is home to a growing commu-nity of photographers—from hobbyists, professionals, emerging brands and everyone in between.</p>
+            <h4>New each week</h4>
+            <p>Each week we add new content to FOCA. Come back often and check out what’s new.</p>
           </div>
           <div class="col-md-12 col-xs-12 col-sm-4 col-lg-4 img-4">
             <img src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-            <h4>Fuelling your favourite platforms</h4>
-            <p>With partners like BuzzFeed, Squarespace and Trello being powered by our API, the Frame 54 library is more widely accessible than ever.</p>
+            <h4>Highly curated</h4>
+            <p>The best photos, tagged for easy search and discovery.</p>
           </div>
         </div><!--row-->
-        <div class="row spaced">
-            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
-                <img class="left" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="right" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-              </div>
-              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6">
-                <h3>Make something awesome</h3>
-                <p>Frame 54 was born from the pain we had in finding great, usable imagery. And we weren’t alone. Which is why, today many creators from around the world have downloaded Frame 54 images to create presentations, artwork, mockups and more.</p>
-                <div class="links">
-                    <a href="#">Find the Perfect Image</a>
-                    </div>
-              </div>
-        </div><!--row-->
-        <div class="row spaced">
-            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
-                <h3>Is it really free?</h3>
-                <p>YES its free. Frame 54 is a platform powered by an amazing community that has gifted hundreds of thousands of their own photos to fuel creativity around the world. So sign up for free and you’ve got access to over a million photos under the Frame 54 license—which makes them free to do-whatever-you-want with.</p>
-                <div class="links">
-                    <a href="#">Frame 54 License</a>
-                    </div>
-              </div>
-              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
-                <img class="full" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-              </div>
-        </div><!--row-->
-        <div class="row spaced">
-            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
-                Anyone can join the Frame 54 community
-                <img class="left" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="right" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-              </div>
-              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6">
-                <h3>Anyone can join the Frame 54 community</h3>
-                <p>Frame 54 was born from the pain we had in finding great, usable imagery. And we weren’t alone. Which is why, today many creators from around the world have downloaded Frame 54 images to create presentations, artwork, mockups and more.</p>
-                <div class="links">
-                    <a href="#">Join the community</a>
-                    </div>
-              </div>
-              <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                <img class="left" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="right" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="left" style="width: 113px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="right" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="left" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-                <img class="right" style="width: 200px; height:200px" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-              </div>
-        </div><!--row-->
-        <div class="row spaced">
-            <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
-                <h3>Powering the internet’s visuals</h3>
-                <p>YES its free. Frame 54 is a platform powered by an amazing community that has gifted hundreds of thousands of their own photos to fuel creativity around the world. So sign up for free and you’ve got access to over a million photos under the Frame 54 license—which makes them free to do-whatever-you-want with.</p>
-                <div class="links">
-                    <a href="#">Sign up now</a>
-                    </div>
-              </div>
-              <div class="col-md-12 col-xs-12 col-sm-6 col-lg-6 img-6">
-                <img class="full" src= "{{ Storage::disk('local')->url('1595337428.jpeg')}}" alt="{{ $post->title }}">
-              </div>
-        </div><!--row-->
+        <hr/>
+        <div class="row newsletter">
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                <h3>Get first access to free photos and other Burst content. Unsubscribe anytime.Free content is licensed under a CC0 license and can be freely used and redistributed.</h3>
+                <div class="content">
+                <div class="input-group">
+                     <input type="email" class="form-control" placeholder="Enter your email">
+                     <span class="input-group-btn">
+                     <button class="btn" type="submit">Submit</button>
+                     </span>
+                      </div>
+                </div>
 
-        <hr>
-    </div>
+        </div><!--col-lg-12-->
+    </div><!--row-->
+    <hr/>
 @endsection
 @section('footer')
 	<script src="{{ asset('js/app.js') }}"></script>

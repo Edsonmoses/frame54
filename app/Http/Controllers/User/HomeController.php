@@ -150,7 +150,7 @@ class HomeController extends Controller
      }
      public function multifileupload()
     {
-        return view('user.dropzoneJs');
+        return view('vandor.mail.html.message');
     }
 
     public function store(Request $request)

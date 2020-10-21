@@ -24,7 +24,7 @@ class PostController extends Controller
     public function post(post $post)
     {
     	$categories =category::all();
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         $tags =tag::all();
         $blogKey = 'blog_' . $post->id;
 
@@ -45,7 +45,7 @@ class PostController extends Controller
 
     public function getAllPosts()
     {
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
 		return $posts = post::with('likes')->where('status',1)->orderBy('created_at','DESC')->paginate(6);
     }
     public function getSponsored ()
@@ -70,7 +70,7 @@ class PostController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         $posts = $tag->posts();
         return view('user.blog',compact('posts','categories', 'tags', 'theme'));
     }
@@ -78,7 +78,7 @@ class PostController extends Controller
     {
         $categories =category::all();
         $tags =tag::all();
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         $post = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id AS user_id','users.name','users.avatar'])
         ->join('users','users.id','=','posts.posted_by')->first();
@@ -96,14 +96,14 @@ class PostController extends Controller
      public function users()
      {
          $users = User::get();
-         $theme =theme::all();
+         $theme = theme::where('status', 1)->firstOrFail();
          return view('user.users', compact('users','theme'));
      }
 
      public function user($id)
      {
          $user = User::find($id);
-         $theme =theme::all();
+         $theme = theme::where('status', 1)->firstOrFail();
          return view('user.usersView', compact('user','theme'));
      }
      public function follwUserRequest(Request $request){

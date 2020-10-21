@@ -28,7 +28,7 @@ class PhotoController extends Controller
     {
 
         $tags =tag::all();
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         $categories =category::all();
         $posts = post::where('status',1)->orderBy('created_at','DESC')
         ->select(['posts.*','users.id AS user_id','users.name','users.avatar','users.agree','users.termsimg'])
@@ -55,7 +55,7 @@ class PhotoController extends Controller
     {
 
             $tags =tag::all();
-            $theme =theme::all();
+            $theme = theme::where('status', 1)->firstOrFail();
             $categories =category::all();
             return view('user.submitPhoto',compact('tags','categories', 'theme'));
 
@@ -91,8 +91,8 @@ class PhotoController extends Controller
         $post->posted_by = Auth::user()->id;
         $post->visit_count = $request->visit_count;
         $post->save();
-        $post->tags()->sync($request->tags);
-        $post->categories()->sync($request->categories);
+        $post->tags()->sync($request->title);
+        $post->categories()->sync($request->title);
 
         return redirect(route('submitPhoto'));
     }
@@ -119,7 +119,7 @@ class PhotoController extends Controller
             $post = post::with('tags','categories')->where('id',$id)->first();
             $tags =tag::all();
             $categories =category::all();
-            $theme =theme::all();
+            $theme = theme::where('status', 1)->firstOrFail();
 
             return view('user.submitPhotoedit',compact('tags','categories','post', 'theme'));
     }

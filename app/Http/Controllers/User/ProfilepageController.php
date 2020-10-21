@@ -25,7 +25,7 @@ class ProfilepageController extends Controller
     public function index()
     {
          $user = User::find();
-         $theme =theme::all();
+         $theme = theme::where('status', 1)->firstOrFail();
 
         if($user){
 
@@ -96,7 +96,7 @@ class ProfilepageController extends Controller
     public function edit($id)
     {
         $profile = Profile::findOrFail($id);
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         return view('user.profile.profileEdit', compact('profile','theme'));
     }
 
@@ -146,7 +146,7 @@ class ProfilepageController extends Controller
     }
     public function updateAvatar(Request $request)
     {
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $avatar = time().'.'.$request->image->extension();
@@ -160,7 +160,7 @@ class ProfilepageController extends Controller
     }
 
     public function showChangePasswordForm(){
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         return view('user.profile.changepassword')->withTheme($theme);
     }
 

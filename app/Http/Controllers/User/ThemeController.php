@@ -7,6 +7,7 @@ use App\Model\user\theme;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+
 class ThemeController extends Controller
 {
     /**
@@ -16,7 +17,7 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        $theme =theme::all();
+        $theme = theme::where('status', 1)->firstOrFail();
         return view('user.layouts.head',compact('theme'));
     }
 
@@ -38,13 +39,15 @@ class ThemeController extends Controller
      */
     public function storeDark(Request $request, $status)
     {
+        //$theme = new theme;
         $theme = theme::where('status', $status)->firstOrFail();
         $theme->status = $theme->status + 1;
         $theme->save();
         return redirect()->back();
     }
-    public function storeLight(Request $request, $status)
+    public function storeLight(Request $request, $status, $themed_by)
     {
+        $theme = theme::find($themed_by);
         $theme = theme::where('status', $status)->firstOrFail();
         $theme->status = 0;
         $theme->save();

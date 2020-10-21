@@ -133,10 +133,10 @@ class PostController extends Controller
             'subtitle' => 'required',
             'slug' => 'required',
             'body' => 'required',
-            'image'=>'required',
+            'image'=>'nullable',
             'visit_count' => 'nullable',
             ]);
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image') && $request->image != '') {
             $imageName = $request->file('image');
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('/storage'), $imageName);
