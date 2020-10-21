@@ -783,6 +783,7 @@ function lighttheme() {
 $(function() {
     //caches a jQuery object containing the header element
     var header = $(".navbar-custom");
+    $(".js-scroll-G").addClass("scroll-logo-hide");
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 

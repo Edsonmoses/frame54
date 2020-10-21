@@ -1946,12 +1946,12 @@ object-fit: cover;
     }
 /******* ./navbar-whitecustom onscroll  *********/
 .navbar-whitecustom{background: #fff !important;}
-.navbar-whitecustom .header-bell img {margin-right: 10px;}
+.navbar-whitecustom .header-bell img {margin-right: 10px !important;}
 .navbar-whitecustom .joinUs a{margin-top: 14px !important;}
-.navbar-whitecustom .divider{border-color: #000; margin-top: 18px;}
-.navbar-whitecustom #profile li a{margin-left: -15px;}
-.navbar-whitecustom .footer-out a{padding-left: 26px;}
-.navbar-whitecustom .footer-out .artname{margin-left: 0px;}
-.navbar-whitecustom .footer-out .artnames{margin-left:-18px;}
+.navbar-whitecustom .divider{border-color: #000 !important; margin-top: 18px !important;}
+.navbar-whitecustom #profile li a{margin-left: -15px !important;}
+.navbar-whitecustom .footer-out a{padding-left: 26px !important;}
+.navbar-whitecustom .footer-out .artname{margin-left: 0px !important;}
+.navbar-whitecustom .footer-out .artnames{margin-left:-18px !important;}
 .navbar-whitecustom .dropdown-menu .login-social li{margin-left: 39px !important;}
 .navbar-whitecustom .page-dots{margin-right: -17px !important;}
